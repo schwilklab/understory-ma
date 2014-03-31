@@ -55,27 +55,40 @@ Exotic.Richness
 - burn vs control
 - thin vs control
 - thin vs burn (low number of papers)
+
 ### S.Richness ###
+
 - burn vs control
 - thin vs control
 - thin vs burn
 ### Total.Cover ###
+
 - burn vs control (but almost)
 - thin vs control
 - thin vs burn
+
 ### Native.Cover ###
+
 - burn vs control
+
 ### Exotic.Cover ###
+
 - thin vs burn
+
 ### G.Cover ###
+
 - burn vs control
 - thin vs control
 - thin vs burn
+
 ### F.Cover ###
+
 - burn vs control
 - thin vs control
 - thin vs burn
+
 ### S.Cover ###
+
 - burn vs control (but almost)
 - thin vs control
 - thin vs burn
