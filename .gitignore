@@ -1,0 +1,4 @@
+# R ignores
+*.Rdata
+*.Rhistory
+ 
