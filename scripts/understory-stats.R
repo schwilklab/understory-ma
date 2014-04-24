@@ -1,43 +1,66 @@
-
 library(ggplot2)
 library(metafor)
+library(stringr)
 
+RESULTS_DIR = "../results/"
+DATA_DIR = "../data/"
 
+#options(error = recover)
+
+# run through a data file and create three forest plots for each and print
+# confidence intervals to stdout
 graphmaker <- function(x) {
+     
+    t <- read.csv(x, header = TRUE)
 
-# Random effects model using standardized differences
+   bname <- strsplit(basename(x),".", fixed=TRUE)[[1]][1]
+                                       
+    print(paste("Running tests on", bname))
+    
+    # burn vs control
+    dat <- escalc("SMD",  m1i=burn.mean, m2i=control.mean,
+                  sd2i=control.s, sd1i=burn.s, n2i=control.n,
+                  n1i=burn.n, data=t)
+    res <- rma(yi, vi, data=dat)
 
-# pick variable
-t <- read.csv(x, header = true)
+    print(paste("burn vs control", bname))
+    print(confint(res))
 
+    pdf(paste(RESULTS_DIR, bname, "-burn-vs-control.pdf", sep=""))
+        forest(res, slab=dat$Paper)
+    dev.off()
+    
+    # thin vs control
+    dat <- escalc("SMD", m1i=thin.mean, m2i=control.mean, 
+                  sd1i=thin.s, sd2i=control.s, n1i=thin.n, n2i=control.n, data=t)
+    res <- rma(yi, vi, data=dat)
 
-# burn vs control
-dat <- escalc("SMD", m2i=control.mean, m1i=burn.mean,sd2i=control.s, sd1i=burn.s, n2i=control.n, n1i=burn.n, data=t)
-res <- rma(yi, vi, data=dat)
-confint(res)
-forest(res, slab=dat$Paper)
+    print(paste("thin vs control", bname))
+    print(confint(res))
 
-# thin vs control
-dat <- escalc("SMD", m2i=thin.mean, m1i=control.mean,sd2i=control.
-s, sd1i=thin.s, n2i=control.n, n1i=thin.n, data=t)
-res <- rma(yi, vi, data=dat)
-confint(res)
-forest(res, slab=dat$Paper)
+    pdf(paste(RESULTS_DIR, bname, "-thin-vs-control.pdf", sep="") )
+    forest(res, slab=dat$Paper)
+    dev.off()
 
-
-# thin vs burn
-dat <- escalc("SMD", m1i=burn.mean, m2i=thin.mean,sd1i=burn.s, sd2i=thin.s, n1i=burn.n, n2i=thin.n, data=t)
-res <- rma(yi, vi, data=dat)
-confint(res)
-forest(res, slab=dat$Paper)
+    # thin vs burn
+    dat <- escalc("SMD", m1i=burn.mean, m2i=thin.mean,
+                  sd1i=burn.s, sd2i=thin.s, n1i=burn.n, n2i=thin.n, data=t)
+    res <- rma(yi, vi, data=dat)
+    
+    print(paste("burn vs thin", bname))
+    print(confint(res))
+    
+    pdf(paste(RESULTS_DIR, bname, "-burn-vs-thin.pdf", sep=""))
+    forest(res, slab=dat$Paper)
+    dev.off()
 }
 
 
 # makes a list of the files in your working directory
 # the user needs to specify their directory path
-my.files <- list.files(path = "your directory path here")
+varfiles <- list.files(DATA_DIR, pattern = "*.csv", full.names = TRUE)
 
 
-# the lappy command loops through the files executing the function for each one
-graphs <- lapply(my.files,FUN=graphmaker)
+# make graphs and results
+lapply(varfiles,FUN=graphmaker)
 
