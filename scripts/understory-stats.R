@@ -1,38 +1,43 @@
+
 library(ggplot2)
 library(metafor)
 
 
-# function to calc standard deviations from standard errors
-
-SE2SD <- function(se,n) {se*sqrt(n-1)}
-
-getSDs <- function(d){
-    d$control.SD <- SE2SD(d$control.s, d$control.n)
-    d$burn.SD <- SE2SD(d$burn.s, d$burn.n)
-    d$thin.SD <- SE2SD(d$thin.s,d$thin.n)
-    return(d)
-}
+graphmaker <- function(x) {
 
 # Random effects model using standardized differences
-# pick variable
 
-t <- read.csv("data/exotic.richness.csv")
-t <- getSDs(t)
+# pick variable
+t <- read.csv(x, header = true)
+
 
 # burn vs control
-dat <- escalc("SMD", m2i=control.mean, m1i=burn.mean, sd2i=control.SD, sd1i=burn.SD, n2i=control.n, n1i=burn.n, data=t)
+dat <- escalc("SMD", m2i=control.mean, m1i=burn.mean,sd2i=control.s, sd1i=burn.s, n2i=control.n, n1i=burn.n, data=t)
 res <- rma(yi, vi, data=dat)
-confint(res, level=90)
-forest(res, slab=dat$Paper, level=90)
+confint(res)
+forest(res, slab=dat$Paper)
 
 # thin vs control
-dat <- escalc("SMD", m1i=thin.mean, m2i=control.mean, sd2i=control.SD, sd1i=thin.SD, n2i=control.n, n1i=thin.n, data=t)
+dat <- escalc("SMD", m2i=thin.mean, m1i=control.mean,sd2i=control.
+s, sd1i=thin.s, n2i=control.n, n1i=thin.n, data=t)
 res <- rma(yi, vi, data=dat)
-confint(res, level=90)
-forest(res, slab=dat$Paper, level=90)
+confint(res)
+forest(res, slab=dat$Paper)
+
 
 # thin vs burn
-dat <- escalc("SMD", m2i=burn.mean, m1i=thin.mean, sd2i=burn.SD, sd1i=thin.SD, n2i=burn.n, n1i=thin.n, data=t)
+dat <- escalc("SMD", m1i=burn.mean, m2i=thin.mean,sd1i=burn.s, sd2i=thin.s, n1i=burn.n, n2i=thin.n, data=t)
 res <- rma(yi, vi, data=dat)
-confint(res, level=90)
-forest(res, slab=dat$Paper,level=90)
+confint(res)
+forest(res, slab=dat$Paper)
+}
+
+
+# makes a list of the files in your working directory
+# the user needs to specify their directory path
+my.files <- list.files(path = "your directory path here")
+
+
+# the lappy command loops through the files executing the function for each one
+graphs <- lapply(my.files,FUN=graphmaker)
+
