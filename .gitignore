@@ -1,4 +1,5 @@
 # R ignores
 *.Rdata
 *.Rhistory
- 
+# ignore plots created by R
+*.pdf
