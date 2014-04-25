@@ -2,7 +2,7 @@ library(ggplot2)
 library(metafor)
 library(stringr)
 
-RESULTS_DIR = "../results/"
+RESULTS_DIR = "../results/plots/"
 DATA_DIR = "../data/"
 
 #files to exclude
