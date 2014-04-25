@@ -5,10 +5,20 @@ library(stringr)
 RESULTS_DIR = "../results/"
 DATA_DIR = "../data/"
 
+#files to exclude
+EXCLUDES = c("f-richness.csv",  # only three papers, too few
+             "g-richness.csv",  # too few papers
+             "g-cover.csv",  # issue #7: zenner 2006 values make no sense
+              "s-cover.csv",   # check zenner et al 2006 weird values
+              "s-richness.csv"   # check, escalc failing on thin vs control
+            )
+
 #options(error = recover)
 
 # run through a data file and create three forest plots for each and print
 # confidence intervals to stdout
+
+
 graphmaker <- function(x) {
      
     t <- read.csv(x, header = TRUE)
@@ -59,7 +69,7 @@ graphmaker <- function(x) {
 # makes a list of the files in your working directory
 # the user needs to specify their directory path
 varfiles <- list.files(DATA_DIR, pattern = "*.csv", full.names = TRUE)
-
+varfiles <- varfiles[! basename(varfiles) %in% EXCLUDES]
 
 # make graphs and results
 lapply(varfiles,FUN=graphmaker)
