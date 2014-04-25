@@ -3,6 +3,8 @@ understory-ma
 
 Metanalysis project effects of thinning and burning on understory vegetation
 
+Authors: Josh Willms, Anne Bartuszevige, Dylan Schwilk, Pat Kennedy.
+
 Introduction
 ------------
 
@@ -13,7 +15,6 @@ Methods
 
 TODO
 
-
 Results
 -------
 
@@ -22,5 +23,3 @@ Forest plots of effect sizes are produced by the R code (https://github.com/schw
 A spreadsheet of the confidence intervals is here: [../results/confidence-intervals.csv] on github:  https://github.com/schwilklab/understory-ma/blob/master/results/confidence-intervals.csv
 
 And there is also a results summary: [./results/results-outline.md](https://github.com/schwilklab/understory-ma/blob/master/results/results-outline.md)
-
-
