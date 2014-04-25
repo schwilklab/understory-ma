@@ -1,6 +1,6 @@
 library(ggplot2)
 library(metafor)
-library(stringr)
+library(plyr) # for rbind.fill
 
 RESULTS_DIR = "../results/plots/"
 DATA_DIR = "../data/"
@@ -15,16 +15,11 @@ EXCLUDES = c("f-richness.csv",  # only three papers, too few
 
 #options(error = recover)
 
-# run through a data file and create three forest plots for each and print
+# Create three forest plots for a file and save them, 
 # confidence intervals to stdout
-
-
-graphmaker <- function(x) {
-     
+plotsAndConfint <- function(x) {
     t <- read.csv(x, header = TRUE)
-
-   bname <- strsplit(basename(x),".", fixed=TRUE)[[1]][1]
-                                       
+    bname <- strsplit(basename(x),".", fixed=TRUE)[[1]][1]    
     print(paste("Running tests on", bname))
     
     # burn vs control
@@ -34,7 +29,9 @@ graphmaker <- function(x) {
     res <- rma(yi, vi, data=dat)
 
     print(paste("burn vs control", bname))
-    print(confint(res))
+    ci.bc <- data.frame(confint(res)[1])
+    ci.bc$contrast <- "burn-control"
+    ci.bc$measure <- row.names(ci.bc)
 
     pdf(paste(RESULTS_DIR, bname, "-burn-vs-control.pdf", sep=""))
         forest(res, slab=dat$Paper)
@@ -46,8 +43,10 @@ graphmaker <- function(x) {
     res <- rma(yi, vi, data=dat)
 
     print(paste("thin vs control", bname))
-    print(confint(res))
-
+    ci.tc <- data.frame(confint(res)[1])
+    ci.tc$contrast = "thin-control"
+    ci.tc$measure <- row.names(ci.tc)
+    
     pdf(paste(RESULTS_DIR, bname, "-thin-vs-control.pdf", sep="") )
     forest(res, slab=dat$Paper)
     dev.off()
@@ -58,13 +57,18 @@ graphmaker <- function(x) {
     res <- rma(yi, vi, data=dat)
     
     print(paste("burn vs thin", bname))
-    print(confint(res))
+    ci.bt <- data.frame(confint(res)[1])
+    ci.bt$contrast = "burn-thin"
+    ci.bt$measure <- row.names(ci.bt)
     
     pdf(paste(RESULTS_DIR, bname, "-burn-vs-thin.pdf", sep=""))
     forest(res, slab=dat$Paper)
     dev.off()
+    
+    r.df <- rbind(ci.bc,ci.tc,ci.bt)
+    r.df$var <- bname
+    return(r.df)
 }
-
 
 # makes a list of the files in your working directory
 # the user needs to specify their directory path
@@ -72,5 +76,8 @@ varfiles <- list.files(DATA_DIR, pattern = "*.csv", full.names = TRUE)
 varfiles <- varfiles[! basename(varfiles) %in% EXCLUDES]
 
 # make graphs and results
-lapply(varfiles,FUN=graphmaker)
+r.list <-  lapply(varfiles,FUN=plotsAndConfint)
 
+# make big data frame of all confint results
+conf.int.df <- rbind.fill(r.list)
+write.csv(conf.int.df, "../results/confidence-intervals.csv", row.names=FALSE)
