@@ -3,3 +3,8 @@
 *.Rhistory
 # ignore plots created by R
 *.pdf
+# ignore ms office stuff
+*.docx
+*.doc
+*.xls
+*.md~

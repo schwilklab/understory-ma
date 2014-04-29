@@ -3,11 +3,23 @@ understory-ma
 
 Metanalysis project effects of thinning and burning on understory vegetation
 
+Authors: Josh Willms, Anne Bartuszevige, Dylan Schwilk, Pat Kennedy.
 
-git commit message format
--------------------------
+Introduction
+------------
 
-Short one-line ( <=50 chars) summary, blank line, then longer version if needed. Example: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+TODO
 
-Note that you can refer to github issues and close issues: https://help.github.com/articles/closing-issues-via-commit-messages
+Methods
+-------
 
+TODO
+
+Results
+-------
+
+Forest plots of effect sizes are produced by the R code (https://github.com/schwilklab/understory-ma/blob/master/scripts/understory-stats.R).  Those plots are saved in [.results/plots] which is not under version control
+
+A spreadsheet of the confidence intervals is here: [../results/confidence-intervals.csv] on github:  https://github.com/schwilklab/understory-ma/blob/master/results/confidence-intervals.csv
+
+And there is also a results summary: [./results/results-outline.md](https://github.com/schwilklab/understory-ma/blob/master/results/results-outline.md)

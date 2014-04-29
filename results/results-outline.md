@@ -1,12 +1,11 @@
-Outline of Results
+Outline of Results:
 ==================
 
 Significant results were present for thin vs control in Native.Richness, Exotic.Richness, Native.Cover, and Exotic.Cover.
+Significant results were present for burn vs control in Exotic.Richness and Exotic.Cover.
+Significant results were present for thin vs burn in Native.Cover.
 
-Lower in treatment. But check that.
-
-May be flipped around… Check to make sure that.
-(Make a results folder and make it a markdown file)
+Lower in treatment. But may be flipped around… Check to make sure on that.
 
 
 Significant:
@@ -17,14 +16,15 @@ Significant:
  
 ### Exotic.Richness ###
 - thin vs control
+- burn vs control
 
 ### Native.Cover ###
 - thin vs control
 - thin vs burn
-- burn vs control
 
 ### Exotic.Cover ###
 - thin vs control
+- burn vs control
 
 
 Non significant:
@@ -42,7 +42,6 @@ Non significant:
 Exotic.Richness
 ---------------
 
-- burn vs control (but almost)
 - thin vs burn
 
 ### G.Richness ###
@@ -51,44 +50,37 @@ Exotic.Richness
 - thin vs burn (low number of papers)
 
 ### F.Richness ###
-- 
 - burn vs control
 - thin vs control
 - thin vs burn (low number of papers)
 
 ### S.Richness ###
-
 - burn vs control
 - thin vs control
 - thin vs burn
-### Total.Cover ###
 
+### Total.Cover ###
 - burn vs control (but almost)
 - thin vs control
 - thin vs burn
 
 ### Native.Cover ###
-
 - burn vs control
 
 ### Exotic.Cover ###
-
 - thin vs burn
 
 ### G.Cover ###
-
 - burn vs control
 - thin vs control
 - thin vs burn
 
 ### F.Cover ###
-
 - burn vs control
 - thin vs control
 - thin vs burn
 
 ### S.Cover ###
-
 - burn vs control (but almost)
 - thin vs control
 - thin vs burn
