@@ -5,34 +5,33 @@ We utilized pairwise comparisons of a continuous response variable using standar
 Significance was determined by whether the 95% confidence intervals for the standardized mean difference crossed zero.
 
 Summary of Results:
-There were very few differences. Of the differences that were significant, most tended to be between thin and control groups for native species, thin and control groups for exotic species,
-burn and control groups for exotic species. Specifically, the richness of all native plants was significantly higher in thin treatments than richness of all native plants in control treatments.
-The richness of all exotic plants was significantly higher in thin treatments than richness of all exotic plants in control treatments.
-However, the richness of all exotic plants was significantly lower in burn treatments than richness of all exotic plants in control treatments.
-The percent cover of all native plants was significantly higher in thin treatments than richness of all native plants in control treatments.
-In addition, the percent cover of all native plants was significantly higher in thin treatments than richness of all native plants in burn treatments.
-The percent cover of all exotic plants was significantly higher in thin treatments than percent cover of all exotic plants in control treatments.
-However, the percent cover of all exotic plants was significantly lower  in burn treatments than percent cover of all exotic plants in control treatments.
-With the addition of additional papers to the study, it may be possible to see additional trends.
+Most understory variables did not vary among treatments. Of the differences that were significant, most tended to be between thin and control groups for native species, thin and control groups for exotic species, and burn and control groups for exotic species.
 
+Summary of Species Richness Results:
+The richness of native and exotic plants was significantly higher in thin treatments than in control treatments. However, the richness of exotic plants was significantly lower in burn treatments than in control treatments.
+
+Summary of Percent Cover Results:
+The cover of native and exotic plants was significantly higher in thin treatments than in control treatments. The cover of native plants was also significanly higher in thin treatments than in burn treatments. However, the cover of exotic plants was significantly lower in burn treatments than in control treatments.
+
+Outline of All Tests:
 
 Significant:
 ------------
 
 ### Native.Richness ###
- - thin vs control
+- Greater richness in thin than control treatments.
  
 ### Exotic.Richness ###
-- thin vs control
-- burn vs control
+- Greater richness in thin than control treatments.
+- Lower richness in burn than control treatments.
 
 ### Native.Cover ###
-- thin vs control
-- thin vs burn
+- Greater cover in thin than control treatments.
+- Greater cover in thin than burn treatments.
 
 ### Exotic.Cover ###
-- thin vs control
-- burn vs control
+- Greater cover in thin than control treatments.
+- Lower cover in burn than control treatments.
 
 
 Non significant:
@@ -47,20 +46,8 @@ Non significant:
 - burn vs control
 - thin vs burn
 
-Exotic.Richness
----------------
-
+### Exotic.Richness ###
 - thin vs burn
-
-### G.Richness ###
-- burn vs control
-- thin vs control (low number of papers)
-- thin vs burn (low number of papers)
-
-### F.Richness ###
-- burn vs control
-- thin vs control
-- thin vs burn (low number of papers)
 
 ### S.Richness ###
 - burn vs control
@@ -92,3 +79,16 @@ Exotic.Richness
 - burn vs control (but almost)
 - thin vs control
 - thin vs burn
+
+Not Enough Papers:
+----------------
+
+### G.Richness ###
+- burn vs control
+- thin vs control (low number of papers)
+- thin vs burn (low number of papers)
+
+### F.Richness ###
+- burn vs control
+- thin vs control
+- thin vs burn (low number of papers)
