@@ -1,10 +1,14 @@
-Methods:
-We conducted a formal meta-analysis using means and standard errors to calculate effect sizes.
-We looked at continuous traits, but discrete factors. We looked at the effect of discrete factors for control vs treatments.
-We utilized pairwise comparisons of a continuous response variable using standardized mean difference in a nested model.
-Significance was determined by whether the 95% confidence intervals for the standardized mean difference crossed zero.
+Methods
+=======
+We conducted a formal [Josh: what do you mean by "formal"?]  meta-analysis using means and standard errors to calculate effect sizes.
 
-Summary of Results:
+For each response variable, we examine comparisons across three treatment pairs: (burn versus control, thin vs control and thin vs burn). We calculated  standardized mean differences (Hedges’ adjusted g, Hedges and Olkin 1985) for each pair and tested if this differed from zero using a random effects model fit with restricted maximum likelihood (Borenstein et al. 2009, Viechtbauer, 2010, other citations?). We conducted all analyses in R (R Core Team 2013) using the metafor package (Viechtbauer 2010).
+
+Results
+=======
+
+Summary of Results
+------------------
 Most understory variables did not vary among treatments. Of the differences that were significant, most tended to be between thin and control groups for native species, thin and control groups for exotic species, and burn and control groups for exotic species.
 
 Summary of Species Richness Results:
@@ -13,69 +17,81 @@ The richness of native and exotic plants was significantly higher in thin treatm
 Summary of Percent Cover Results:
 The cover of native and exotic plants was significantly higher in thin treatments than in control treatments. The cover of native plants was also significanly higher in thin treatments than in burn treatments. However, the cover of exotic plants was significantly lower in burn treatments than in control treatments.
 
-Outline of All Tests:
+Test result details
+-------------------
 
-Significant:
-------------
+### Significant ###
 
-### Native.Richness ###
+#### Native.Richness ####
+
 - Greater richness in thin than control treatments.
  
-### Exotic.Richness ###
+#### Exotic.Richness ####
+
 - Greater richness in thin than control treatments.
 - Lower richness in burn than control treatments.
 
-### Native.Cover ###
+#### Native.Cover ####
+
 - Greater cover in thin than control treatments.
 - Greater cover in thin than burn treatments.
 
-### Exotic.Cover ###
+#### Exotic.Cover ####
+
 - Greater cover in thin than control treatments.
 - Lower cover in burn than control treatments.
 
+### Non significant ###
 
-Non significant:
-----------------
+#### Total.Richness ####
 
-### Total.Richness ###
 - burn vs control
 - thin vs control
 - thin vs burn
 
-### Native.Richness ###
+#### Native.Richness ####
+
 - burn vs control
 - thin vs burn
 
-### Exotic.Richness ###
+#### Exotic.Richness ####
+
 - thin vs burn
 
-### S.Richness ###
+#### S.Richness ####
+
 - burn vs control
 - thin vs control
 - thin vs burn
 
-### Total.Cover ###
+#### Total.Cover ####
+
 - burn vs control (but almost)
 - thin vs control
 - thin vs burn
 
-### Native.Cover ###
+#### Native.Cover ####
+
 - burn vs control
 
-### Exotic.Cover ###
+#### Exotic.Cover ####
+
 - thin vs burn
 
-### G.Cover ###
-- burn vs control
-- thin vs control
-- thin vs burn
+#### G.Cover ####
 
-### F.Cover ###
 - burn vs control
 - thin vs control
 - thin vs burn
 
-### S.Cover ###
+#### F.Cover ####
+
+- burn vs control
+- thin vs control
+- thin vs burn
+
+#### S.Cover ####
+
 - burn vs control (but almost)
 - thin vs control
 - thin vs burn
@@ -83,12 +99,32 @@ Non significant:
 Not Enough Papers:
 ----------------
 
-### G.Richness ###
+#### G.Richness ####
+
 - burn vs control
 - thin vs control (low number of papers)
 - thin vs burn (low number of papers)
 
-### F.Richness ###
+#### F.Richness ####
+
 - burn vs control
 - thin vs control
 - thin vs burn (low number of papers)
+
+
+References
+----------
+
+Hedges, L.V., Olkin, I., 1985. Statistical Methods for Meta-Analysis. Academic
+  Press, New York.
+
+R Core Team (2013). R: A language and environment for statistical computing. R
+  Foundation for Statistical Computing, Vienna, Austria. URL
+  http://www.R-project.org/.
+
+
+Wolfgang Viechtbauer (2010). Conducting meta-analyses in R with the metafor
+  package. Journal of Statistical Software, 36(3), 1-48. URL
+  http://www.jstatsoft.org/v36/i03/.
+
+
