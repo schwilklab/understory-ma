@@ -1,45 +1,53 @@
+
+
+
 Methods
 =======
-We conducted a formal [Josh: what do you mean by "formal"?]  meta-analysis using means and standard errors to calculate effect sizes.
+We conducted a meta-analysis using means and standard errors to calculate effect sizes.
 
-For each response variable, we examine comparisons across three treatment pairs: (burn versus control, thin vs control and thin vs burn). We calculated  standardized mean differences (Hedges’ adjusted g, Hedges and Olkin 1985) for each pair and tested if this differed from zero using a random effects model fit with restricted maximum likelihood (Borenstein et al. 2009, Viechtbauer, 2010, other citations?). We conducted all analyses in R (R Core Team 2013) using the metafor package (Viechtbauer 2010).
+For each response variable, we examine comparisons across three treatment pairs: burn versus control, thin vs control and thin vs burn. We calculated  standardized mean differences (Hedges’ adjusted g, Hedges and Olkin 1985) for each pair and tested if this differed from zero using a random effects model fit with restricted maximum likelihood (Borenstein et al. 2009, Viechtbauer, 2010, other citations?). We conducted all analyses in R (R Core Team 2013) using the metafor package (Viechtbauer 2010).
 
 Results
 =======
 
 Summary of Results
 ------------------
-Most understory variables did not vary among treatments. Of the differences that were significant, most tended to be between thin and control groups for native species, thin and control groups for exotic species, and burn and control groups for exotic species.
+Most understory variables did not vary among treatments. Of the differences that were significant, most tended to take place with regards to native and exotic plants.
 
-Summary of Species Richness Results:
-The richness of native and exotic plants was significantly higher in thin treatments than in control treatments. However, the richness of exotic plants was significantly lower in burn treatments than in control treatments.
+###Summary of Species Richness Results:
 
-Summary of Percent Cover Results:
-The cover of native and exotic plants was significantly higher in thin treatments than in control treatments. The cover of native plants was also significanly higher in thin treatments than in burn treatments. However, the cover of exotic plants was significantly lower in burn treatments than in control treatments.
+The richness of exotic plants was significantly higher in thin treatments than in control and burn treatments.
+
+###Summary of Percent Cover Results:
+
+The cover of native plants was significantly higher in thin treatments than in control and burn treatments. The cover of exotic plants was  significantly higher in thin treatments than in control treatments. In addition, the cover of shrubs was significantly lower in burn treatments than in control treatments.
+
 
 Test result details
 -------------------
 
 ### Significant ###
 
-#### Native.Richness ####
-
-- Greater richness in thin than control treatments.
- 
-#### Exotic.Richness ####
-
-- Greater richness in thin than control treatments.
-- Lower richness in burn than control treatments.
-
 #### Native.Cover ####
 
-- Greater cover in thin than control treatments.
-- Greater cover in thin than burn treatments.
+- Higher cover in thin than control treatments.
+- Higher cover in thin than burn treatments.
+
+
+#### Exotic.Richness ####
+
+- Higher richness in thin than control treatments.
+- Higher richness in thin than burn treatments.
 
 #### Exotic.Cover ####
 
-- Greater cover in thin than control treatments.
+- Higher cover in thin than control treatments.
+
+#### Shrub.Cover ####
+
 - Lower cover in burn than control treatments.
+
+
 
 ### Non significant ###
 
@@ -48,15 +56,16 @@ Test result details
 - burn vs control
 - thin vs control
 - thin vs burn
-
+ 
 #### Native.Richness ####
 
 - burn vs control
+- thin vs control
 - thin vs burn
 
 #### Exotic.Richness ####
 
-- thin vs burn
+- burn vs control
 
 #### S.Richness ####
 
@@ -64,11 +73,25 @@ Test result details
 - thin vs control
 - thin vs burn
 
-#### Total.Cover ####
+#### G.Richness ####
 
-- burn vs control (but almost)
+- burn vs control
 - thin vs control
 - thin vs burn
+
+#### F.Richness ####
+
+- burn vs control
+- thin vs control
+- thin vs burn
+
+
+#### Total.Cover ####
+
+- burn vs control
+- thin vs control
+- thin vs burn
+
 
 #### Native.Cover ####
 
@@ -76,6 +99,12 @@ Test result details
 
 #### Exotic.Cover ####
 
+- thin vs burn
+- burn vs control
+
+#### S.Cover ####
+
+- thin vs control
 - thin vs burn
 
 #### G.Cover ####
@@ -90,11 +119,6 @@ Test result details
 - thin vs control
 - thin vs burn
 
-#### S.Cover ####
-
-- burn vs control (but almost)
-- thin vs control
-- thin vs burn
 
 Not Enough Papers:
 ----------------
@@ -102,15 +126,32 @@ Not Enough Papers:
 #### G.Richness ####
 
 - burn vs control
-- thin vs control (low number of papers)
-- thin vs burn (low number of papers)
+- thin vs control
+- thin vs burn
 
 #### F.Richness ####
 
 - burn vs control
 - thin vs control
-- thin vs burn (low number of papers)
+- thin vs burn
 
+#### F.Cover ####
+
+- burn vs control
+- thin vs control
+- thin vs burn
+
+
+###Nearly Significant Results:
+
+- Richness or Cover: x vs y (left)
+	- Indicates that there was lower richness or cover in x treatment than in y treatment.
+
+- Total richness: thin vs control (right)
+- Native richness: thin vs control (right)
+- Total cover: burn vs control (left)
+- Exotic cover: burn vs control (right)
+- Exotic cover: thin vs burn (right)
 
 References
 ----------
@@ -128,3 +169,7 @@ Wolfgang Viechtbauer (2010). Conducting meta-analyses in R with the metafor
   http://www.jstatsoft.org/v36/i03/.
 
 
+
+Talk about how native and total are very similar
+
+Talk about how native was used for total in many cases, when total was not reported

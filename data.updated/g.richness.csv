@@ -1,0 +1,4 @@
+Paper,control.mean,control.s,control.n,thin.mean,thin.s,thin.n,burn.mean,burn.s,burn.n,d.thin.control,d.burn.control,d.thin.burn,Years,Notes:
+Metlen and Fiedler 2006,11.16666667,2.074179891,3,12.53333333,1.414213562,3,9.7,2.404163056,3,0.7699,-0.6532,1.4366,,
+Kane et al. 2010,0.2,0.346410162,4,0.2,0.173205081,4,,,,0,,,,
+Nelson et al. 2008,2.818,0.053851648,30,3.763,0.06244998,40,2.89,0.055677644,32,16.0342,1.3138,15.9299,,
