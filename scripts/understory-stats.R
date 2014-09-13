@@ -6,11 +6,7 @@ RESULTS_DIR = "../results/plots/"
 DATA_DIR = "../data/"
 
 #files to exclude
-EXCLUDES = c("f-richness.csv",  # only three papers, too few
-             "g-richness.csv",  # too few papers
-             "g-cover.csv",  # issue #7: zenner 2006 values make no sense
-              "s-cover.csv",   # check zenner et al 2006 weird values
-              "s-richness.csv"   # check, escalc failing on thin vs control
+EXCLUDES = c("f-richness.csv"  # only three papers, too few
             )
 
 #options(error = recover)
