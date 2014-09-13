@@ -1,7 +1,7 @@
 The Effects of Thinning and Burning on Understory Vegetation in North America: A Meta-Analysis
 ==============================================================================================
 
-Joshua Willms (a)(b), Anne Bartuszevige (c), Dylan Schwilk (a), Pat Kennedy (d)(e)
+Joshua Willms (a)(b), Anne Bartuszevige (c), Dylan W. Schwilk (a), Pat Kennedy (d)(e)
 
 a Texas Tech University, Department of Biological Science, Box 43131, Lubbock, TX 79409. J.willms@ttuhsc.edu
 
@@ -38,7 +38,6 @@ Our objective was to complete a literature review of those studies that investig
 2. Do thin and thin and burn treatments have similar species richness of native species, exotic species, graminoids, forbs, and shrubs compared to prescribed burn and control treatments?
 
 We hypothesize that thin and burn treatments have higher percent cover and species richness of native species, graminoids, forbs and shrubs compared to control and lower percent cover and species richness of exotic species compared to control. We hypothesize that thin and burn treatments have the same percent cover and species richness of native species, graminoids, forbs and shrubs compared to prescribed burn treatments and lower percent cover and species richness compared to prescribed fire.
-
 
 
 Methods
