@@ -5,72 +5,64 @@ library(plyr) # for rbind.fill
 RESULTS_DIR = "../results/plots/"
 DATA_DIR = "../data/"
 
-#files to exclude
-EXCLUDES = c("f-richness.csv"  # only three papers, too few
+EXCLUDES = c("g-richness.csv"  # Only three lines for thin-control and only 2
+                               # for others. Won't run at all
             )
 
-#options(error = recover)
+# Run a single treatment comparison.  neds some tricky text parsing
+runComparison <- function(data, bname, t1, t2) {
+    dat <- escalc("SMD",  m1i=eval(parse(text=paste(t1, ".mean",sep=""))),
+                          m2i=eval(parse(text=paste(t2, ".mean", sep=""))),
+                          sd2i=eval(parse(text=paste(t1, ".s", sep=""))),
+                          sd1i=eval(parse(text=paste(t2, ".s", sep=""))),
+                          n1i=eval(parse(text=paste(t1, ".n", sep=""))),
+                          n2i=eval(parse(text=paste(t2, ".n", sep=""))),
+                  data=data)
+    
+    res <- rma(yi, vi, data=dat)
+
+    print(paste(t1, " vs ", t2, bname))
+    ci <- data.frame(confint(res)[1])
+    ci$contrast <- paste(t1,"-", t2,sep="")
+    ci$measure <- row.names(ci)
+
+    pdf(paste(RESULTS_DIR, bname, paste("-", t1, "-vs-", t2, ".pdf", sep="")))
+        forest(res, slab=dat$Paper)
+    dev.off()
+    return(ci)
+}
+
+
 
 # Create three forest plots for a file and save them, 
 # confidence intervals to stdout
 plotsAndConfint <- function(x) {
-    t <- read.csv(x, header = TRUE)
+    df <- read.csv(x, header = TRUE)
     bname <- strsplit(basename(x),".", fixed=TRUE)[[1]][1]    
     print(paste("Running tests on", bname))
-    
-    # burn vs control
-    dat <- escalc("SMD",  m1i=burn.mean, m2i=control.mean,
-                  sd2i=control.s, sd1i=burn.s, n2i=control.n,
-                  n1i=burn.n, data=t)
-    res <- rma(yi, vi, data=dat)
 
-    print(paste("burn vs control", bname))
-    ci.bc <- data.frame(confint(res)[1])
-    ci.bc$contrast <- "burn-control"
-    ci.bc$measure <- row.names(ci.bc)
-
-    pdf(paste(RESULTS_DIR, bname, "-burn-vs-control.pdf", sep=""))
-        forest(res, slab=dat$Paper)
-    dev.off()
+    returnNull <- function(err) NULL # we just need to skip any errors
     
+    # burn vs control  
+    ci.bc <- tryCatch(runComparison(df, bname, "burn", "control"),
+                      error = returnNull)
     # thin vs control
-    dat <- escalc("SMD", m1i=thin.mean, m2i=control.mean, 
-                  sd1i=thin.s, sd2i=control.s, n1i=thin.n, n2i=control.n, data=t)
-    res <- rma(yi, vi, data=dat)
-
-    print(paste("thin vs control", bname))
-    ci.tc <- data.frame(confint(res)[1])
-    ci.tc$contrast = "thin-control"
-    ci.tc$measure <- row.names(ci.tc)
-    
-    pdf(paste(RESULTS_DIR, bname, "-thin-vs-control.pdf", sep="") )
-    forest(res, slab=dat$Paper)
-    dev.off()
-
+    ci.tc <- tryCatch(runComparison(df, bname, "thin", "control"),
+                      error = returnNull)
     # thin vs burn
-    dat <- escalc("SMD", m1i=burn.mean, m2i=thin.mean,
-                  sd1i=burn.s, sd2i=thin.s, n1i=burn.n, n2i=thin.n, data=t)
-    res <- rma(yi, vi, data=dat)
-    
-    print(paste("burn vs thin", bname))
-    ci.bt <- data.frame(confint(res)[1])
-    ci.bt$contrast = "burn-thin"
-    ci.bt$measure <- row.names(ci.bt)
-    
-    pdf(paste(RESULTS_DIR, bname, "-burn-vs-thin.pdf", sep=""))
-    forest(res, slab=dat$Paper)
-    dev.off()
-    
+    ci.bt <- tryCatch(runComparison(df, bname, "burn", "thin"),
+                      error = returnNull)
+        
     r.df <- rbind(ci.bc,ci.tc,ci.bt)
     r.df$var <- bname
     return(r.df)
 }
 
+
 # makes a list of the files in your working directory
 # the user needs to specify their directory path
 varfiles <- list.files(DATA_DIR, pattern = "*.csv", full.names = TRUE)
 varfiles <- varfiles[! basename(varfiles) %in% EXCLUDES]
-
 # make graphs and results
 r.list <-  lapply(varfiles,FUN=plotsAndConfint)
 
