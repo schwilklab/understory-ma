@@ -2,7 +2,7 @@
 *.Rdata
 *.Rhistory
 # ignore plots created by R
-*.pdf
+results/plots/*.pdf
 # ignore ms office stuff
 *.docx
 *.doc
