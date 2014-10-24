@@ -19,7 +19,7 @@ runComparison <- function(data, bname, t1, t2) {
                           n2i=eval(parse(text=paste(t2, ".n", sep=""))),
                   data=data)
     
-    res <- rma(yi, vi, data=dat, level=95) # change confidence interval alpha,
+    res <- rma(yi, vi, data=dat, level=90) # change confidence interval alpha,
                                            # set level, eg level=90
 
     print(paste(t1, " vs ", t2, bname))
