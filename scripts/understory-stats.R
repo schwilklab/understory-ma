@@ -70,3 +70,11 @@ r.list <-  lapply(varfiles,FUN=plotsAndConfint)
 # make big data frame of all confint results
 conf.int.df <- rbind.fill(r.list)
 write.csv(conf.int.df, "../results/confidence-intervals.csv", row.names=FALSE)
+
+## write table for manuscript. TODO
+library(reshape2)
+
+melted <- melt(subset(conf.int.df, measure=="tau" | measure=="H^2"))
+tabledat <- dcast(melted, var + contrast  ~ variable + measure)
+
+#library(pander)
