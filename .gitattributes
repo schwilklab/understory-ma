@@ -18,3 +18,7 @@
 *.jpg binary
 *.pdf binary
 *.docx binary
+
+*.doc diff=pandoc
+*.docx diff=pandoc
+

@@ -7,4 +7,11 @@ results/plots/*.pdf
 *.docx
 *.doc
 *.xls
+*.pdf
 *.md~
+*.bcf
+*.aux
+*.xml
+*.out
+*.log
+
