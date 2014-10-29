@@ -46,14 +46,14 @@ docx:	clean $(DOCX)
 	cat $^ | ./include.py | pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -w html -S --template=$(PREFIX)/templates/html.template --css=$(PREFIX)/kultiad-serif.css --filter pandoc-citeproc --bibliography=$(BIB) -o $@ $<
 
 %.tex:	%.md
-	cat $^ | ./include.py | pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -w latex -s -S --latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template --filter pandoc-citeproc  --bibliography=$(BIB) -o $@ $<
+	cat $^ | ./include.py | pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -w latex -s -S --latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template --filter pandoc-citeproc   --csl=$(PREFIX)/csl/ecology.csl --bibliography=$(BIB) -o $@ $<
 
 
 %.pdf:	%.md
-	cat $^ | ./include.py | pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S --latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template  --filter pandoc-citeproc  --bibliography=$(BIB) -o $@ $<
+	cat $^ | ./include.py | pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S --latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template  --filter pandoc-citeproc  --csl=$(PREFIX)/csl/ecology.csl --bibliography=$(BIB) -o $@ $<
 
 %.docx:	%.md
-	cat $^ | ./include.py | pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S  --filter pandoc-citeproc  --bibliography=$(BIB) -o $@ $<
+	cat $^ | ./include.py | pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S  --filter pandoc-citeproc   --csl=$(PREFIX)/csl/ecology.csl --bibliography=$(BIB) -o $@ $<
 
 clean:
 	rm -f *.html *.pdf *.tex
