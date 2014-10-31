@@ -3,7 +3,7 @@
 *.Rhistory
 # ignore plots created by R
 results/plots/*.pdf
-# ignore ms office stuff
+# ignore output formats and intermediate files
 *.docx
 *.doc
 *.xls
@@ -14,4 +14,4 @@ results/plots/*.pdf
 *.xml
 *.out
 *.log
-
+*.html

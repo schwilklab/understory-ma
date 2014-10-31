@@ -19,15 +19,17 @@ MEXT = md
 ## All markdown files in the working directory
 SRC = $(wildcard *.$(MEXT))
 
-## Location of Pandoc support files.
-PREFIX = .
+## Location of Pandoc support files including tempaltes, csl files, latex
+## styles specific to pandoc build system, etc
+PREFIX = $(HOME)/write/pandoc
 
 ## Location of your working bibliography file
 BIB = ./schwilk.bib
 
 ## CSL stylesheet (located in the csl folder of the PREFIX directory).
-CSL = apsa
+CSL = ecology.csl
 
+export TEXINPUTS := $(PREFIX)/tex//:${TEXINPUTS}
 
 PDFS=$(SRC:.md=.pdf)
 HTML=$(SRC:.md=.html)
@@ -43,18 +45,38 @@ tex:	clean $(TEX)
 docx:	clean $(DOCX)
 
 %.html:	%.md
-	cat $^ | ./include.py | pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -w html -S --template=$(PREFIX)/templates/html.template --css=$(PREFIX)/kultiad-serif.css --filter pandoc-citeproc --bibliography=$(BIB) -o $@ $<
+	cat $^ | ./include.py | pandoc -r \
+             markdown+simple_tables+table_captions+yaml_metadata_block \
+             -w html -S \
+             --template=$(PREFIX)/templates/healy-ms.html \
+             --css=$(PREFIX)/css/kultiad-serif.css \
+             --filter pandoc-citeproc --bibliography=$(BIB) -o $@ $<
 
 %.tex:	%.md
-	cat $^ | ./include.py | pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -w latex -s -S --latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template --filter pandoc-citeproc   --csl=$(PREFIX)/csl/ecology.csl --bibliography=$(BIB) -o $@ $<
+	cat $^ | ./include.py | pandoc -r \
+             markdown+simple_tables+table_captions+yaml_metadata_block \
+             -w latex -s -S --latex-engine=pdflatex \
+             --template=$(PREFIX)/templates/healy-ms.latex \
+             --filter pandoc-citeproc   \
+             --csl=$(PREFIX)/csl/$(CSL) --bibliography=$(BIB) -o $@ $<
 
 
 %.pdf:	%.md
-	cat $^ | ./include.py | pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S --latex-engine=pdflatex --template=$(PREFIX)/templates/latex.template  --filter pandoc-citeproc  --csl=$(PREFIX)/csl/ecology.csl --bibliography=$(BIB) -o $@ $<
+	cat $^ | ./include.py | pandoc -r \
+             markdown+simple_tables+table_captions+yaml_metadata_block -s -S \
+             --latex-engine=pdflatex \
+             --template=$(PREFIX)/templates/healy-ms.latex  \
+             --filter pandoc-citeproc  \
+             --csl=$(PREFIX)/csl/$(CSL) \
+             --bibliography=$(BIB) -o $@ $<
 
 %.docx:	%.md
-	cat $^ | ./include.py | pandoc -r markdown+simple_tables+table_captions+yaml_metadata_block -s -S  --filter pandoc-citeproc   --csl=$(PREFIX)/csl/ecology.csl --bibliography=$(BIB) -o $@ $<
+	cat $^ | ./include.py | pandoc -r \
+             markdown+simple_tables+table_captions+yaml_metadata_block \
+             -s -S  --filter pandoc-citeproc   \
+             --reference-docx=$(PREFIX)/templates/reference.docx \
+             --csl=$(PREFIX)/csl/$(CSL) --bibliography=$(BIB) -o $@ $<
 
 clean:
-	rm -f *.html *.pdf *.tex
+	rm -f *.html *.pdf *.tex *.docx *.log *.aux
 
