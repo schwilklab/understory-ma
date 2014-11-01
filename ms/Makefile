@@ -29,6 +29,13 @@ BIB = ./schwilk.bib
 ## CSL stylesheet (located in the csl folder of the PREFIX directory).
 CSL = ecology.csl
 
+## latex template
+LATEXT = schwilk-ms.latex
+
+## HTML template and CSS style
+HTMLT = schwilk-ms.html
+CSS = kultiad-serif.css
+
 export TEXINPUTS := $(PREFIX)/tex//:${TEXINPUTS}
 
 PDFS=$(SRC:.md=.pdf)
@@ -47,25 +54,25 @@ docx:	clean $(DOCX)
 %.html:	%.md
 	cat $^ | ./include.py | pandoc -r \
              markdown+simple_tables+table_captions+yaml_metadata_block \
-             -w html -S \
-             --template=$(PREFIX)/templates/healy-ms.html \
-             --css=$(PREFIX)/css/kultiad-serif.css \
-             --filter pandoc-citeproc --bibliography=$(BIB) -o $@ $<
+             -w html -S --mathml \
+             --template=$(PREFIX)/templates/$(HTMLT) \
+             --css=$(PREFIX)/css/$(CSS) \
+             --filter pandoc-citeproc \
+             --csl=$(PREFIX)/csl/$(CSL)  --bibliography=$(BIB) -o $@ $<
 
 %.tex:	%.md
 	cat $^ | ./include.py | pandoc -r \
              markdown+simple_tables+table_captions+yaml_metadata_block \
              -w latex -s -S --latex-engine=pdflatex \
-             --template=$(PREFIX)/templates/healy-ms.latex \
+             --template=$(PREFIX)/templates/$(LATEXT) \
              --filter pandoc-citeproc   \
              --csl=$(PREFIX)/csl/$(CSL) --bibliography=$(BIB) -o $@ $<
-
 
 %.pdf:	%.md
 	cat $^ | ./include.py | pandoc -r \
              markdown+simple_tables+table_captions+yaml_metadata_block -s -S \
              --latex-engine=pdflatex \
-             --template=$(PREFIX)/templates/healy-ms.latex  \
+             --template=$(PREFIX)/templates/$(LATEXT)  \
              --filter pandoc-citeproc  \
              --csl=$(PREFIX)/csl/$(CSL) \
              --bibliography=$(BIB) -o $@ $<

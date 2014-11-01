@@ -1,20 +1,26 @@
 ---
 title: 'The Effects of Thinning and Burning on Understory Vegetation in North America: A Meta-Analysis'
-author:
+authors:
 - name: Joshua Willms
-  affiliation: Texas Tech University, Department of Biological Sciences
+  affiliation: 1
   email:  J.willms@ttuhsc.edu
 - name: Anne Bartuszevige
-  affiliation: Playa Lakes Joint Venture, Lafayette, CO 80026
+  affiliation: 2
   email: Anne.bartuszevige@pljv.org
 - name: Dylan W. Schwilk
-  affiliation: Texas Tech University, Department of Biological Sciences
+  affiliation: 1
   email: dylan.schwilk@ttu.edu
 - name: Pat Kennedy
-  affiliation: Eastern Oregon Agriculture & Natural Resource Program and Dept. of Fisheries and Wildlife, Oregon State University
+  affiliation: 3
   email: pat.kennedy@oregonstate.edu
-abstract: "We conducted a meta-analysis to determine the effects of fire and fire-surrogates on
-understory vegetation in dry forests in North America. Means and standard errors were extracted from papers containing data on the response of understory functional groups to thinning and burning treatments to calculate effect sizes. For each response variable, we compared three treatment pairs: burn versus control, thin vs control and thin vs burn. We calculated standardized mean differences (Hedges’ d), for each pair and tested if this differed from zero using a random effects model fit with restricted maximum likelihood. Most understory variables did not vary among treatments. Of the differences that were significant, they were the result of thinning and burning on native and non-native species. Richness of non-native plants was significantly higher in thin treatments than in control or burn treatments. In addition, cover of native plants was significantly higher in thin treatments than in control and burn treatments. Non-native plant cover was also significantly higher in thin treatments than in control treatments. In addition, shrubs cover was significantly lower after fire compared to the controls."
+affiliations:
+- id: 1
+  address: Texas Tech University, Department of Biological Sciences
+- id: 2
+  address: Playa Lakes Joint Venture, Lafayette, CO 80026
+- id: 3
+  address: Eastern Oregon Agriculture & Natural Resource Program and Dept. of Fisheries and Wildlife, Oregon State University
+abstract: "We conducted a meta-analysis to determine the effects of fire and fire-surrogates on understory vegetation in dry forests in North America. Means and standard errors were extracted from papers containing data on the response of understory functional groups to thinning and burning treatments to calculate effect sizes. For each response variable, we compared three treatment pairs: burn versus control, thin vs control and thin vs burn. We calculated standardized mean differences (Hedges’ d), for each pair and tested if this differed from zero using a random effects model fit with restricted maximum likelihood. Most understory variables did not vary among treatments. Of the differences that were significant, they were the result of thinning and burning on native and non-native species. Richness of non-native plants was significantly higher in thin treatments than in control or burn treatments. In addition, cover of native plants was significantly higher in thin treatments than in control and burn treatments. Non-native plant cover was also significantly higher in thin treatments than in control treatments. In addition, shrubs cover was significantly lower after fire compared to the controls."
 bibliography: schwilk.bib
  - <!-- \bibliography{schwilk} So that RefTeX knows about the bibliography -->
 
@@ -50,21 +56,23 @@ Methods
 Literature Search and Vetting
 -----------------------------
 
-In May 2014 we performed a search of the scientific literature investigating effects of prescribed fire and thinning treatments on understory vegetation. We used multiple databases: Web of Science [CITE] and AGRICOLA [CITE] both of which searched literature published since 1970 and Forest Science which searched literature published since 1939. We also used [Google Scholar](http://scholar.google.com/) which, in addition to excellent coverage of recent journal articles, has good coverage of gray literature publications as well as proceedings which sometimes led to published articles. See search terms, Appendix 1 [DWS: TODO]. In addition to these three search engines, we included additional references gleaned from publications found in the literature search and from a recent U.S. Department of Agriculture / U.S. Department of Interior Joint Fire Sciences Rainbow Series document on the effects of fire on invasive plant species [@Zouhar+Smith+etal-2008]. The literature search from the databases yielded approximately 3,500 references which were then vetted for appropriate material. Documents were eliminated that dealt with medical issues (i.e. new treatments for burn victims), investigations of ecological processes related to fire but not relevant to the scope of this document (i.e. nutrient cycling, insect infestation, etc.), or modeling studies with little empirical data. Papers from geographical locations outside of North America were also excluded.
+In May 2014 we performed a search of the scientific literature investigating effects of prescribed fire and thinning treatments on understory vegetation. We used multiple databases: Web of Science [CITE] and AGRICOLA [CITE] both of which searched literature published since 1970 and Forest Science which searched literature published since 1939. We also used Google Scholar (http://scholar.google.com/) which, in addition to excellent coverage of recent journal articles, has good coverage of gray literature publications as well as proceedings which sometimes led to published articles. See search terms, Appendix 1 [DWS: TODO]. In addition to these three search engines, we included additional references gleaned from publications found in the literature search and from a recent U.S. Department of Agriculture / U.S. Department of Interior Joint Fire Sciences Rainbow Series document on the effects of fire on invasive plant species [@Zouhar+Smith+etal-2008]. The literature search from the databases yielded approximately 3,500 references which were then vetted for appropriate material. Documents were eliminated that dealt with medical issues (i.e. new treatments for burn victims), investigations of ecological processes related to fire but not relevant to the scope of this document (i.e. nutrient cycling, insect infestation, etc.), or modeling studies with little empirical data. Papers from geographical locations outside of North America were also excluded.
 
 We were specifically interested in studies that were experimental in nature and that collected quantitative data on the response of understory herbaceous plants to a prescribed fire or thinning treatment. We further narrowed our search to papers that specifically compared thinning (understory or overstory) and prescribed fire. We excluded papers that dealt exclusively with thinning, prescribed fire or wildfire. This vetting process yielded the 35 references included in this document.
 
-Because statistical reporting was not uniform across references, we performed a second round of vetting to exclude papers that could not be placed in a quantitative meta analysis. Papers that reported chi square tests, standardized mean differences, and failed to include standard errors were excluded [DWS: Josh, why, shouldn't those work for H^2?]. In addition, studies which reported data that was collected 20 or more years after the thinning or burning event were excluded. After the final vetting, a total of 22 references remained.
+Because statistical reporting was not uniform across references, we performed a second round of vetting to exclude papers that could not be placed in a quantitative meta analysis. Papers that reported chi square tests, standardized mean differences, and failed to include standard errors were excluded [DWS: Josh, why, shouldn't those work for calculating d?]. In addition, studies which reported data that was collected 20 or more years after the thinning or burning event were excluded. After the final vetting, a total of 22 references remained.
 
 Data Extraction and Analysis
 ----------------------------
 
-qWe investigate the effect of burning and thinning treatments on two response variables describing effects on understory vegetation: species richness and plant cover.  Each of these was recorded separately for each of six species groups: total species, native only, non-native only, graminoids, forbs, and shrubs. These results in 12 possible variables, although not all were available in each study included.
+We investigate the effect of burning and thinning treatments on two response variables describing effects on understory vegetation: species richness and plant cover.  Each of these was recorded separately for each of six species groups: total species, native only, non-native only, graminoids, forbs, and shrubs. These results in 12 possible variables, although not all were available in each study included.
 
 [Josh:  How did you deal with papers that reported herbaceous rather than graminoid, forb?  Can we lump these?  It does not make much sense to keep them separate.]
 
-For each selected article, we extracted means and either standard deviations or standard errors of the mean for each response variable across each treatment. We calculated pairwise treatment effect sizes for each response variable for three different pairwise comparisons: Thin vs Burn, Thin vs Control, and Burn vs Control. For each comparison, we calculated the unbiased standardized mean difference (Hedge's d) between the mean values in with the following equation:
-$$d = \frac{X^E - X^C}{S^{EC}} J$$
+For each selected article, we extracted means and either standard deviations or standard errors of the mean for each response variable across each treatment. We calculated pairwise treatment effect sizes for each response variable for three different pairwise comparisons: Thin vs Burn, Thin vs Control, and Burn vs Control. For each comparison, we calculated the unbiased standardized mean difference (Hedge's d) between mean values with the following equation:
+
+(@HedgesD) $$d = \frac{X^E - X^C}{S^{EC}} J$$
+
 where $X^E$ is the mean value of the response variable in the "experimental treatment" (Burn or Thin depending on contrast), $X^C$ is the mean value of the response variables in the "experimental control" (Control or Burn depending on the contrast), $S^{EC}$ is the pooled standard deviation of both groups, and $J$ is a term that corrects for bias due to small sample size [@Gurevitch+Hedges-2001]. The effect size, d, can be interpreted as the difference between the cover or species richness of plants in treatments relative to controls, measured in units of standard deviations.
 
 We conducted all analyses in R [@R_Development_Core_Team-2013] using the metafor package [@Viechtbauer-2010]. We assumed effect sizes varied randomly among comparisons and therefore  we used random-effects models [@Gurevitch+Hedges-2001]. We fit models using restricted maximum-likelihood.
