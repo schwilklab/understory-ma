@@ -21,11 +21,10 @@ affiliations:
 - id: 3
   address: Eastern Oregon Agriculture & Natural Resource Program and Dept. of Fisheries and Wildlife, Oregon State University
 abstract: "We conducted a meta-analysis to determine the effects of fire and fire-surrogates on understory vegetation in dry forests in North America. Means and standard errors were extracted from papers containing data on the response of understory functional groups to thinning and burning treatments to calculate effect sizes. For each response variable, we compared three treatment pairs: burn versus control, thin vs control and thin vs burn. We calculated standardized mean differences (Hedges’ d), for each pair and tested if this differed from zero using a random effects model fit with restricted maximum likelihood. Most understory variables did not vary among treatments. Of the differences that were significant, they were the result of thinning and burning on native and non-native species. Richness of non-native plants was significantly higher in thin treatments than in control or burn treatments. In addition, cover of native plants was significantly higher in thin treatments than in control and burn treatments. Non-native plant cover was also significantly higher in thin treatments than in control treatments. In addition, shrubs cover was significantly lower after fire compared to the controls."
-bibliography: schwilk.bib
- - <!-- \bibliography{schwilk} So that RefTeX knows about the bibliography -->
+bibliography: understory-ma.bib
+note: <!-- \bibliography{understory-ma} So that RefTeX knows about the bibliography -->
 
 ---
-
 
 Introduction
 ============

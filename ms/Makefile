@@ -23,9 +23,6 @@ SRC = $(wildcard *.$(MEXT))
 ## styles specific to pandoc build system, etc
 PREFIX = $(HOME)/write/pandoc
 
-## Location of your working bibliography file
-BIB = ./schwilk.bib
-
 ## CSL stylesheet (located in the csl folder of the PREFIX directory).
 CSL = ecology.csl
 
@@ -58,7 +55,7 @@ docx:	clean $(DOCX)
              --template=$(PREFIX)/templates/$(HTMLT) \
              --css=$(PREFIX)/css/$(CSS) \
              --filter pandoc-citeproc \
-             --csl=$(PREFIX)/csl/$(CSL)  --bibliography=$(BIB) -o $@ $<
+             --csl=$(PREFIX)/csl/$(CSL)  -o $@ $<
 
 %.tex:	%.md
 	cat $^ | ./include.py | pandoc -r \
@@ -66,7 +63,7 @@ docx:	clean $(DOCX)
              -w latex -s -S --latex-engine=pdflatex \
              --template=$(PREFIX)/templates/$(LATEXT) \
              --filter pandoc-citeproc   \
-             --csl=$(PREFIX)/csl/$(CSL) --bibliography=$(BIB) -o $@ $<
+             --csl=$(PREFIX)/csl/$(CSL) -o $@ $<
 
 %.pdf:	%.md
 	cat $^ | ./include.py | pandoc -r \
@@ -74,15 +71,14 @@ docx:	clean $(DOCX)
              --latex-engine=pdflatex \
              --template=$(PREFIX)/templates/$(LATEXT)  \
              --filter pandoc-citeproc  \
-             --csl=$(PREFIX)/csl/$(CSL) \
-             --bibliography=$(BIB) -o $@ $<
+             --csl=$(PREFIX)/csl/$(CSL) -o $@ $<
 
 %.docx:	%.md
 	cat $^ | ./include.py | pandoc -r \
              markdown+simple_tables+table_captions+yaml_metadata_block \
              -s -S  --filter pandoc-citeproc   \
              --reference-docx=$(PREFIX)/templates/reference.docx \
-             --csl=$(PREFIX)/csl/$(CSL) --bibliography=$(BIB) -o $@ $<
+             --csl=$(PREFIX)/csl/$(CSL) -o $@ $<
 
 clean:
 	rm -f *.html *.pdf *.tex *.docx *.log *.aux
