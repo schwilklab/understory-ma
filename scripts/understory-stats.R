@@ -1,6 +1,7 @@
 library(ggplot2)
 library(metafor)
 library(plyr) # for rbind.fill
+library(reshape2)
 
 RESULTS_DIR = "../results/plots/"
 DATA_DIR = "../data/"
@@ -22,10 +23,10 @@ runComparison <- function(data, bname, t1, t2) {
     res <- rma(yi, vi, data=dat, level=90) # change confidence interval alpha,
                                            # set level, eg level=90
 
+    ci <- data.frame( contrast = paste(t1,"-", t2,sep=""),
+                     zval = res$zval, ci.lb = res$ci.lb, ci.ub = res$ci.ub)
     print(paste(t1, " vs ", t2, bname))
-    ci <- data.frame(confint(res)[1])
-    ci$contrast <- paste(t1,"-", t2,sep="")
-    ci$measure <- row.names(ci)
+    print(res)
 
     pdf(paste(RESULTS_DIR, bname, paste("-", t1, "-vs-", t2, ".pdf", sep="")))
         forest(res, slab=dat$Paper)
@@ -70,11 +71,3 @@ r.list <-  lapply(varfiles,FUN=plotsAndConfint)
 # make big data frame of all confint results
 conf.int.df <- rbind.fill(r.list)
 write.csv(conf.int.df, "../results/confidence-intervals.csv", row.names=FALSE)
-
-## write table for manuscript. TODO
-library(reshape2)
-
-melted <- melt(subset(conf.int.df, measure=="tau" | measure=="H^2"))
-tabledat <- dcast(melted, var + contrast  ~ variable + measure)
-
-#library(pander)
