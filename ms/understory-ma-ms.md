@@ -39,7 +39,7 @@ Early forest management emphasized recruiting trees for commercial harvest. Howe
 Objectives
 ----------
 
-Our objective was to conduct a meta-analysis of the literature that investigated effects of thin and burn treatments on understory herbaceous and shrub species in dry forests in North America. Specifically, we were interested in the degree to which thin treatments mimic prescribed burn treatments and control or no treatment patches.
+Our objective was to conduct a meta-analysis of the literature that investigated effects of thin and burn treatments on understory herbaceous and shrub species in dry forests in North America. Specifically, we were interested in the degree to which thin treatments mimic prescribed burn treatments and to what extent bunring or thinning differ from control or no treatment patches.
 
 We ask the following questions:
 
@@ -55,18 +55,35 @@ Methods
 Literature Search and Vetting
 -----------------------------
 
-In May 2014 we performed a search of the scientific literature investigating effects of prescribed fire and thinning treatments on understory vegetation. We used multiple databases: Web of Science [CITE] and AGRICOLA [CITE] both of which searched literature published since 1970 and Forest Science which searched literature published since 1939. We also used Google Scholar (http://scholar.google.com/) which, in addition to excellent coverage of recent journal articles, has good coverage of gray literature publications as well as proceedings which sometimes led to published articles. See search terms, Appendix 1 [DWS: TODO]. In addition to these three search engines, we included additional references gleaned from publications found in the literature search and from a recent U.S. Department of Agriculture / U.S. Department of Interior Joint Fire Sciences Rainbow Series document on the effects of fire on invasive plant species [@Zouhar+Smith+etal-2008]. The literature search from the databases yielded approximately 3,500 references which were then vetted for appropriate material. Documents were eliminated that dealt with medical issues (i.e. new treatments for burn victims), investigations of ecological processes related to fire but not relevant to the scope of this document (i.e. nutrient cycling, insect infestation, etc.), or modeling studies with little empirical data. Papers from geographical locations outside of North America were also excluded.
+In May 2014 we performed a search of the scientific literature investigating effects of prescribed fire and thinning treatments on understory vegetation. We used multiple databases: ISI Web of Science (http://www.webofknowledge.com) and AGRICOLA (http://agricola.nal.usda.gov/) both of which searched literature published since 1970 and Forest Science [Ann and Pat: citation or url?] which searched literature published since 1939. We also supplemented these with a search using Google Scholar (http://scholar.google.com/) which, despite limitations in coverage, includes gray literature publications as well as proceedings which sometimes led to published articles. In addition to these search engines, we included additional references gleaned from publications found in the literature search and from a recent U.S. Department of Agriculture / U.S. Department of Interior Joint Fire Sciences Rainbow Series document on the effects of fire on invasive plant species [@Zouhar+Smith+etal-2008]. We searched for the following terms in which '*' indicate wild card searches uses to include plural forms, etc. :
 
-We were specifically interested in studies that were experimental in nature and that collected quantitative data on the response of understory herbaceous plants to a prescribed fire or thinning treatment. We further narrowed our search to papers that specifically compared thinning (understory or overstory) and prescribed fire. We excluded papers that dealt exclusively with thinning, prescribed fire or wildfire. This vetting process yielded the 35 references included in this document.
+- Understory AND native*
+- Percent Cover AND native*
+- Fire AND Understory*
+- Understory AND exotic*
+- Percent Cover AND exotic*
+- Fire AND Percent Cover*
+- Understory AND forb*
+- Percent Cover AND forb*
+- Burn* AND Understory
+- Understory AND graminoid*
+- Percent Cover AND graminoid*
+- Burn* AND Percent Cover
+- Understory AND shrub*
+- Percent Cover AND shrub*
+- Thin* AND Understory
+- Thin* AND Percent Cover
 
-Because statistical reporting was not uniform across references, we performed a second round of vetting to exclude papers that could not be placed in a quantitative meta analysis. Papers that reported chi square tests, standardized mean differences, and failed to include standard errors were excluded [DWS: Josh, why, shouldn't those work for calculating d?]. In addition, studies which reported data that was collected 20 or more years after the thinning or burning event were excluded. After the final vetting, a total of 22 references remained.
+The literature search from the databases yielded approximately 3,500 references which were then vetted for appropriate material. Documents were eliminated that dealt with medical issues (i.e. new treatments for burn victims), investigations of ecological processes related to fire but not relevant to the scope of this document (i.e. nutrient cycling, insect infestation, etc.), or modeling studies with little empirical data. Papers from geographical locations outside of North America were also excluded. We were specifically interested in studies that were experimental in nature and that collected quantitative data on the response of understory plants to a prescribed fire or thinning treatment. We further narrowed our search to papers that specifically compared thinning (understory or overstory) and prescribed fire. We excluded papers that dealt exclusively with thinning, prescribed fire or wildfire. This vetting process yielded the 35 references included in this document.
+
+Because statistical reporting was not uniform across references, we performed a second round of vetting to exclude papers that could not be placed in a quantitative meta analysis. Papers that reported chi square tests, standardized mean differences, and failed to include standard errors were excluded [DWS: Josh, why, shouldn't those work for calculating d?]. In addition, studies which reported data that was collected 20 or more years after the thinning or burning event were excluded. After the final vetting, a total of 22 references remained. [DWS: Josh, see issues #10 and #11]
 
 Data Extraction and Analysis
 ----------------------------
 
-We investigate the effect of burning and thinning treatments on two response variables describing effects on understory vegetation: species richness and plant cover.  Each of these was recorded separately for each of six species groups: total species, native only, non-native only, graminoids, forbs, and shrubs. These results in 12 possible variables, although not all were available in each study included.
+We investigate the effect of burning and thinning treatments on two response variables describing effects on understory vegetation: species richness and plant cover. Each of these was recorded separately for each of six species groups: total species, native only, non-native only, graminoids, forbs, and shrubs. These results in 12 possible variables, although not all were available in each study included.
 
-[Josh:  How did you deal with papers that reported herbaceous rather than graminoid, forb?  Can we lump these?  It does not make much sense to keep them separate.]
+[Josh:  How did you deal with papers that reported herbaceous rather than graminoid, forb?  Can we lump these?  It does not make much sense to keep them separate. see issue #10]
 
 For each selected article, we extracted means and either standard deviations or standard errors of the mean for each response variable across each treatment. We calculated pairwise treatment effect sizes for each response variable for three different pairwise comparisons: Thin vs Burn, Thin vs Control, and Burn vs Control. For each comparison, we calculated the unbiased standardized mean difference (Hedge's d) between mean values with the following equation:
 
@@ -74,26 +91,28 @@ For each selected article, we extracted means and either standard deviations or 
 
 where $X^E$ is the mean value of the response variable in the "experimental treatment" (Burn or Thin depending on contrast), $X^C$ is the mean value of the response variables in the "experimental control" (Control or Burn depending on the contrast), $S^{EC}$ is the pooled standard deviation of both groups, and $J$ is a term that corrects for bias due to small sample size [@Gurevitch+Hedges-2001]. The effect size, d, can be interpreted as the difference between the cover or species richness of plants in treatments relative to controls, measured in units of standard deviations.
 
-We conducted all analyses in R [@R_Development_Core_Team-2013] using the metafor package [@Viechtbauer-2010]. We assumed effect sizes varied randomly among comparisons and therefore  we used random-effects models [@Gurevitch+Hedges-2001]. We fit models using restricted maximum-likelihood.
+We conducted all analyses in R [@R_Development_Core_Team-2013] using the metafor package [@Viechtbauer-2010]. We assumed effect sizes varied randomly among comparisons and therefore  we used random-effects models [@Gurevitch+Hedges-2001]. We fit models using restricted maximum-likelihood. To test whether mean effect sizes for a comparison differed significantly from zero, we assumed a normal distribution of effect sizes and their confidence intervals [z statistics, @Viechtbauer-2010]. 
 
-All hypotheses were a priori, thus no adjustments for multiple comparisons were made [DWS: NO, this does not make sense.  We need to adjust and/or reduce comparisons.  Our comparisons are highly correlated with one another!]. Because we were making one-tail comparisons, we used $\alpha = 0.1$. [DWS; then make sure your hypotheses are one-tailed and make sure CIs are alpha=0.1. Right now both are 2-tailed, see https://github.com/schwilklab/understory-ma/issues/12]
+All hypotheses were a priori, thus no adjustments for multiple comparisons were made [DWS: NO, this does not make sense. We need to adjust and/or reduce comparisons. Our comparisons are highly correlated with one another!]. Because we were making one-tail comparisons, we used $\alpha = 0.1$. [DWS; then make sure your hypotheses are one-tailed and make sure CIs are alpha=0.1. Right now both are 2-tailed, see https://github.com/schwilklab/understory-ma/issues/12]
 
-For each article, we extracted treatment mean values, standard errors or standard deviations, and sample sizes from the results text, tables or figures as required.  A handful of compromises and assumptions were necessary to reconcile each reference into a single, comparable format. When papers reported mean species richness or percent cover values and standard errors for multiple years per treatment, the mean of these means and standard errors was taken to generate a single representative value. This methodology was used when extracting data from @Metlen+Fiedler-2006, @Phillips+Waldrop-2008, @Laughlin+Fulé-2008, @Mason+Baker+etal-2009, and @Waldrop+Yaussy+etal-2008. All other sources reported data for a single year.
+For each article, we extracted treatment mean values, standard errors or standard deviations, and sample sizes from the results text, tables or figures as required. A handful of compromises and assumptions were necessary to reconcile each reference into a single, comparable format. When papers reported mean species richness or percent cover values and standard errors for multiple years per treatment, the mean of these means and standard errors was taken to generate a single representative value. This methodology was used when extracting data from @Metlen+Fiedler-2006, @Phillips+Waldrop-2008, @Laughlin+Fule-2008, @Mason+Baker+etal-2009, and @Waldrop+Yaussy+etal-2008. All other sources reported data for a single year.
 
 [DWS: Josh, Your references table in the repo does not have the full references. Please solve this and make sure the schwilk.bib file has all references we used.only Zald etal 2008 ref I could find was for overstory only ??. Could not find correct Fule ref, but he has others which should have data.  See https://github.com/schwilklab/understory-ma/issues/11].
 
 Because native species represented over 99% of species richness and percent cover for papers in which both parameters were reported, 'total' and 'native' species were used interchangeably for papers in which only one or the other was reported [@Metlen+Fiedler-2006; @Nelson+Halpern+etal-2008; @Kerns+Thies+etal-2006]. 'Native' was used for 'total' in @Dodson+Metlen+etal-2007, @Collins+Moghaddas+etal-2007, and Huffman+Stoddard-2013. 'Total' was used for 'native' in @Youngblood+Metlen+etal-2006, @Wolk+Rocca-2009, @Phillips+Waldrop-2008, @Fule+Covington+etal-2002, @Laughlin+Bakker+etal-2008, @Mason+Baker+etal-2009, @Zenner+Kabrick+etal-2006, @Waldrop+Yaussy+etal-2008, @Stoddard+McGlone+etal-2011, @Shive+Kenzi+etal-2013, and @Scudieri+Sieg+etal-2010.
 
-[DWS: Josh, check references.  You had (Fule et al 2007) but table said 2002, see other notes, above]
+[DWS: Josh, check references.  You had (Fule et al 2007) but table said 2002, see other notes, above, ALso, can we simplify and simply report total species richness and non-native and ignore native?]
 
 Papers with a wide degree of sampling methodologies and time-lines were included. Length of time from treatment to sampling ranged from 1 to 13 years (mean = 4 years) [DWS: median=?]. Only two papers reported data that was collected more than 9 years after treatment. Varying levels of prescribed burn severity were inherent due to differences in species composition, terrain, weather, and season. For studies which reported data for multiple levels of burning severity, the moderate level of burning was selected for inclusion in this analysis. Varying forms of thinning and mastication were used in thinning treatments. These included, chainsaw, dragging a chain between tractors, hand-thinning, thin-and-pile, thin-and-burn, thin-and-scatter, thin-only, thin-and-chip, partial-cut, and clear-cut. For each paper, data were selected that were close to a thin-only treatment as possible.
 
+[DWS: something on other per-study variables recorded, use of those?  Did we simply not have the replication?]
 
 Results
 =======
 
 [DWS: No need for predictions here, those are not results]
 
+[DWS: perhaps an overview, however?]
 
 Species Richness
 ----------------
@@ -113,21 +132,26 @@ Shrubs were the only functional group to experience a significant decrease in pe
 Table 1: Standardized mean differences. An "*" indicates a significant result at $\alpha = 0.1$. [DWS: is this true? Table need to be improved.  Perhaps separate tables for subsets of variables?]
 
 
-There were not a sufficient number of papers that reported data on forb richness, forb cover, and graminoid richness for burn vs control, thin vs control, or thin vs control groups. Because of this, further study on the effects of burning and thinning on forb richness, forb cover, and graminoid richness are needed for analysis to take place.
+There were not a sufficient number of papers that reported data on forb richness, forb cover, and graminoid richness for burn vs control, thin vs control, or thin vs control groups. Because of this, further study on the effects of burning and thinning on forb richness, forb cover, and graminoid richness are needed for analysis to take place. [DWS: can we lump and or eliminate variables then?]
 
 
 Discussion
 ==========
 
-In general, understory plant species did not respond as predicted to fire surrogate treatments. Disturbance treatments were different from controls as predicted but thinning and burning were not surrogates. Thinning increased understory cover and richness (both native and non-native) which presumably increased understory diversity and thus, forest diversity. In addition thinning has the negative consequence of enhancing richness and cover of non-native species which is not a desirable outcome in most management scenarios. Burning reduced shrub cover as compared to the other two treatments and this may or may not be a negative consequence depending on the management objective. 
+Understory communities response to fire and thinning was highly variable across the included studies and few comparisons had mean differences signfiicantly different from zero [Table ??].
+In general, understory plant species did not respond as predicted to fire surrogate treatments.
 
-In addition to the significant findings reported above, there were a handful of results that suggested a trend, and could be analyzed in the near future after additional data has been collected. Total species richness and native richness may increase after thinning. This would support our finding that both native cover and non-native richness increase after this disturbance treatment. Total species percent cover may also decrease in response to fire. Our analyses suggest burning does not increase exotic plants in the understory but this also requires further work.
+Thinning treatments had higher understory species richness, especially of non-native plants, than did burn treatments or controls.
 
-Increase of exotic species due to disturbance is well established as is the intensity of disturbance and amount of increase [@Bartuszevige+Kennedy-2009; @Schwilk+Keeley+etal-2009]. One concern of manipulating systems for conservation outcomes (e.g. fire surrogate treatments) is the risk of increasing the amount of exotic species. This is especially true when large-scale manipulations are applied such as in national forests for which follow-up treatment may be unfeasible. Although increases in these studies were not large, they could be biologically significant if they were allowed to increase in forest understory or if they were introduced after the treatment application. However, some forest stands may be at greater risk for establishment of exotic species. For example, exotic species are less likely to establish in the interior of forests, and more likely to establish in areas near other large invasions and human establishments [CITATIONS, @Bartuszevige+Gorchov+etal-2006]. Thus, an important consideration for treatment application is proximity to the wildland urban interface (WUI).
+Disturbance treatments were different from controls as predicted but thinning and burning were not surrogates. Thinning increased understory cover and richness (both native and non-native) which presumably increased understory diversity and thus, forest diversity. In addition thinning has the negative consequence of enhancing richness and cover of non-native species which is not a desirable outcome in most management scenarios. Burning reduced shrub cover as compared to the other two treatments and this may or may not be a negative consequence depending on the management objective. 
+
+[DWS: TODO, more]
+
+Increase of exotic species due to disturbance is well established as is the intensity of disturbance and amount of increase [@Bartuszevige+Kennedy-2009; @Schwilk+Keeley+etal-2009]. One concern of manipulating systems for conservation outcomes (e.g. fire surrogate treatments) is the risk of increasing the amount of exotic species. This is especially true when large-scale manipulations are applied such as in national forests for which follow-up treatment may be unfeasible. Although increases in these studies were not large, they could be biologically significant if they were allowed to increase in forest understory or if they were introduced after the treatment application. However, some forest stands may be at greater risk for establishment of exotic species. For example, exotic species are less likely to establish in the interior of forests, and more likely to establish in areas near other large invasions and human establishments [OTHER CITATIONS, @Bartuszevige+Gorchov+etal-2006]. Thus, an important consideration for treatment application is proximity to the wildland urban interface (WUI).
 
 To prevent the spread of exotic plants into forest ecosystems after thinning, managers should consider several management options including: no treatment, pre-treatment of exotic plants to reduce their abundance prior to treatment, seeding with native plants [@Korb+Johnson+etal-2004], reducing grazing by domestic livestock prior to and immediately after treatment [@Keeley-2006b], or conducting a low impact disturbance (e.g. burning only); [@Dodson+Fiedler-2006; @Laughlin+Bakker+etal-2008]. Thinning treatments in particular can be modified to reduce soil disturbance (which facilitates invasion of exotic plants). Also, thinning in winter months when equipment will drive over snow will also minimize soil disturbance and thus, the probability of invasion [@Gundale+DeLuca+etal-2005].
 
-We had insufficient data on forbs to generate significant results. Further studies directed at the effects of fire and fire surrogates on forb richness and cover are needed for analysis to take place.
+We had insufficient data on forbs to generate significant results. Further studies directed at the effects of fire and fire surrogates on forb richness and cover are needed for analysis to take place. [DWS: then remove, lump]
 
 
 Many of the studies included in this review concluded that multiple entries into a forest are needed to properly restore the understory to the historical range of variation [Harrington+Edwards-1999; @Metlen+Fiedler-2006; @Laughlin+Bakker+etal-2008; @Waldrop+Yaussy+etal-2008]. Few studies have followed systems over multiple entries; however, Laughlin et al. [-@Laughlin+Bakker+etal-2008] followed a restoration for over a decade after multiple entries. In this system, there was an immediate positive response to herbaceous production. However, differences in species richness took much longer to occur; species richness was higher in treated areas compared to controls after 11 years. The results from this long-term study indicate that restoration of the understory to historical variability is a long-term process involving repeated prescribed burns. The @Laughlin+Bakker+etal-2008 data also provide another important lesson: active fire suppression has occurred for most of the last century and restoration management of the forests is a relatively new occurrence, therefore, it may take multiple treatments to restore a forest. In addition, it may take many years before the effects of the treatments are fully realized.
