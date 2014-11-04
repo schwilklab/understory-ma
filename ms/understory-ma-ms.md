@@ -128,9 +128,8 @@ Thinning increased percent cover of native species and exotic species as compare
 
 Shrubs were the only functional group to experience a significant decrease in percent cover after any form of treatment. There was a significant decrease in shrub percent cover between burn and control treatments. There was no significant difference in shrub percent cover between thin and burn treatments, or between burn and control treatments. 
 
-
-Table 1: Standardized mean differences. An "*" indicates a significant result at $\alpha = 0.1$. [DWS: is this true? Table need to be improved.  Perhaps separate tables for subsets of variables?]
-
+Table 1. Standardized mean differences (z-values) and lower and upper confidence intervals at $\alpha = 0.1$.
+`table1`{.include}
 
 There were not a sufficient number of papers that reported data on forb richness, forb cover, and graminoid richness for burn vs control, thin vs control, or thin vs control groups. Because of this, further study on the effects of burning and thinning on forb richness, forb cover, and graminoid richness are needed for analysis to take place. [DWS: can we lump and or eliminate variables then?]
 

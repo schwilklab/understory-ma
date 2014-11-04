@@ -49,36 +49,48 @@ tex:	clean $(TEX)
 docx:	clean $(DOCX)
 
 %.html:	%.md
-	cat $^ | ./include.py | pandoc -r \
-             markdown+simple_tables+table_captions+yaml_metadata_block \
+	../scripts/make-tables.R
+	cp ../results/tables/zvals2 table1
+	cat $^ | ./include.py |  pandoc -r \
+             markdown+grid_tables+table_captions+yaml_metadata_block \
              -w html -S --mathml \
              --template=$(PREFIX)/templates/$(HTMLT) \
              --css=$(PREFIX)/css/$(CSS) \
              --filter pandoc-citeproc \
-             --csl=$(PREFIX)/csl/$(CSL)  -o $@ $<
+             --csl=$(PREFIX)/csl/$(CSL)  -o $@
+	rm table1
 
 %.tex:	%.md
+	../scripts/make-tables.R
+	cp ../results/tables/zvals.latex table1
 	cat $^ | ./include.py | pandoc -r \
-             markdown+simple_tables+table_captions+yaml_metadata_block \
+             markdown+grid_tables+table_captions+yaml_metadata_block \
              -w latex -s -S --latex-engine=pdflatex \
              --template=$(PREFIX)/templates/$(LATEXT) \
              --filter pandoc-citeproc   \
-             --csl=$(PREFIX)/csl/$(CSL) -o $@ $<
+             --csl=$(PREFIX)/csl/$(CSL) -o $@
+	rm table1
 
 %.pdf:	%.md
+	../scripts/make-tables.R
+	cp ../results/tables/zvals.latex table1
 	cat $^ | ./include.py | pandoc -r \
-             markdown+simple_tables+table_captions+yaml_metadata_block -s -S \
+             markdown+grid_tables+table_captions+yaml_metadata_block -s -S \
              --latex-engine=pdflatex \
              --template=$(PREFIX)/templates/$(LATEXT)  \
              --filter pandoc-citeproc  \
-             --csl=$(PREFIX)/csl/$(CSL) -o $@ $<
+             --csl=$(PREFIX)/csl/$(CSL) -o $@
+	rm table1
 
 %.docx:	%.md
+	../scripts/make-tables.R
+	cp ../results/tables/zvals2 table1
 	cat $^ | ./include.py | pandoc -r \
-             markdown+simple_tables+table_captions+yaml_metadata_block \
+             markdown+grid_tables+table_captions+yaml_metadata_block \
              -s -S  --filter pandoc-citeproc   \
              --reference-docx=$(PREFIX)/templates/reference.docx \
-             --csl=$(PREFIX)/csl/$(CSL) -o $@ $<
+             --csl=$(PREFIX)/csl/$(CSL) -o $@
+	rm table1
 
 clean:
 	rm -f *.html *.pdf *.tex *.docx *.log *.aux
