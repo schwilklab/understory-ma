@@ -11,29 +11,44 @@ EXCLUDES = c("g-richness.csv"  # Only three lines for thin-control and only 2
             )
 
 # Run a single treatment comparison.  neds some tricky text parsing
-runComparison <- function(data, bname, t1, t2) {
+runComparison <- function(data, t1, t2) {
     dat <- escalc("SMD",  m1i=eval(parse(text=paste(t1, ".mean",sep=""))),
                           m2i=eval(parse(text=paste(t2, ".mean", sep=""))),
-                          sd2i=eval(parse(text=paste(t1, ".s", sep=""))),
-                          sd1i=eval(parse(text=paste(t2, ".s", sep=""))),
+                          sd1i=eval(parse(text=paste(t1, ".s", sep=""))),
+                          sd2i=eval(parse(text=paste(t2, ".s", sep=""))),
                           n1i=eval(parse(text=paste(t1, ".n", sep=""))),
                           n2i=eval(parse(text=paste(t2, ".n", sep=""))),
                   data=data)
+
+    returnNull <- function(err) NULL # we just need to skip any errors
     
-    res <- rma(yi, vi, data=dat, level=90) # change confidence interval alpha,
-                                           # set level, eg level=90
+    res <- tryCatch(rma(yi, vi, data=dat, level=90),
+                      error = returnNull)
+    
+    return(res)
+}
 
+getZVals <- function(rma.res, t1, t2) {
     ci <- data.frame( contrast = paste(t1,"-", t2,sep=""),
-                     zval = res$zval, ci.lb = res$ci.lb, ci.ub = res$ci.ub)
-    print(paste(t1, " vs ", t2, bname))
-    print(res)
-
-    pdf(paste(RESULTS_DIR, bname, paste("-", t1, "-vs-", t2, ".pdf", sep="")))
-        forest(res, slab=dat$Paper)
-    dev.off()
+                     zval = rma.res$zval, ci.lb = rma.res$ci.lb, ci.ub = rma.res$ci.ub)
     return(ci)
 }
 
+
+makePlotsGetZs <- function(data, resp.var, t1, t2) {
+    r <- runComparison(data, t1, t2)
+    if(is.null(r)) {
+        return(NULL)
+    }
+    print(paste(t1, " vs ", t2, resp.var))
+    pdf(paste(RESULTS_DIR, resp.var, paste("-", t1, "-vs-", t2, ".pdf", sep="")))
+    forest(r, slab=data$Paper)
+    dev.off()
+
+    print(r)
+    z <- getZVals(r, t1, t2)
+    return(z)
+}
 
 
 # Create three forest plots for a file and save them, 
@@ -42,18 +57,13 @@ plotsAndConfint <- function(x) {
     df <- read.csv(x, header = TRUE)
     bname <- strsplit(basename(x),".", fixed=TRUE)[[1]][1]    
     print(paste("Running tests on", bname))
-
-    returnNull <- function(err) NULL # we just need to skip any errors
     
     # burn vs control  
-    ci.bc <- tryCatch(runComparison(df, bname, "burn", "control"),
-                      error = returnNull)
+    ci.bc <- makePlotsGetZs(df, bname, "burn", "control")
     # thin vs control
-    ci.tc <- tryCatch(runComparison(df, bname, "thin", "control"),
-                      error = returnNull)
+    ci.tc <- makePlotsGetZs(df, bname, "thin", "control")
     # thin vs burn
-    ci.bt <- tryCatch(runComparison(df, bname, "burn", "thin"),
-                      error = returnNull)
+    ci.bt <- makePlotsGetZs(df, bname, "burn", "thin")
         
     r.df <- rbind(ci.bc,ci.tc,ci.bt)
     r.df$var <- bname
