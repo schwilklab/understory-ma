@@ -39,6 +39,7 @@ PDFS=$(SRC:.md=.pdf)
 HTML=$(SRC:.md=.html)
 TEX=$(SRC:.md=.tex)
 DOCX=$(SRC:.md=.docx)
+ODT=$(SRC:.md=.odt)
 
 
 all:	$(PDFS) $(HTML) $(TEX) $(DOCX)
@@ -47,6 +48,7 @@ pdf:	clean $(PDFS)
 html:	clean $(HTML)
 tex:	clean $(TEX)
 docx:	clean $(DOCX)
+odt:	clean $(ODT)
 
 %.html:	%.md
 	../scripts/make-tables.R
@@ -81,6 +83,16 @@ docx:	clean $(DOCX)
              --filter pandoc-citeproc  \
              --csl=$(PREFIX)/csl/$(CSL) -o $@
 	rm table1
+
+%.odt:	%.md
+	../scripts/make-tables.R
+	cp ../results/tables/zvals2 table1
+	cat $^ | ./include.py | pandoc -r \
+             markdown+grid_tables+table_captions+yaml_metadata_block \
+             -s -S  --filter pandoc-citeproc   \
+             --csl=$(PREFIX)/csl/$(CSL) -o $@
+	rm table1
+
 
 %.docx:	%.md
 	../scripts/make-tables.R
