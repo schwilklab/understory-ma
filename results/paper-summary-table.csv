@@ -1,42 +1,120 @@
 PaperID,Author,Year,Journal,Location,Measurements,OldVsNew,UsedOrNot
 1,Adel et al.,2012,Forestry Studies in China,Northern Iran,Percent Cover,New,No
 2,Ares et al.,2010,Forest Ecology and Management,"Keel Mountain, O.M. Hubbard, and Bottom-line sites in the western Oregon Cascades and Coast Range, Oregon","Percent Cover, Species Richness",New,No
-,Burton et al.,2011,Plant Ecology,"Okmulgee Game Management Area, Oklahoma","Percent Cover, Species Richness",New,No
-,Busse et al. ,2000,Forest Science,"Fremont National Forest, Oregon","Percent Cover, Species Richness",Old,No
-,Collins et al. ,2007,Forest Ecology & Management,"Blodgett Forest Research Station, California","Percent Cover, Species Richness",Old,Yes
-,Dodson and Peterson,,,,,,
-,Dodson et al. ,2007,Restoration Ecology,"Lubrecht Experimental Forest, Montana","Percent Cover, Species Richness",Old,Yes
-,Dodson et al. ,2008,Forest Ecology & Management,"Okanogan-Wenatchee National Forest, Washington","Percent Cover, Species Richness",Old,No
-,"Dodson, Peterson",2010,Forest Ecology & Management,"Okanogan-Wenatchee National Forest, Washington",Percent Cover,Old,No
-,Enloe et al. 2013,,,,,,
-,Freeman et al.,2007,Ecological Applications,"Coronado NF, Arizona; Deschutes NF, Oregon; Bandelier NM, New Mexico; Pike, San Isabel NF, Colorado; Wenatchee NF, Washington; El Dorado NF, California","Percent Cover, Species Richness",New,Yes
-,Fulé et al. ,2002,Forest Ecology & Management,"Kaibab National Forest, Arizona",Species Richness,Old,Yes
-,Griffis et al. ,2001,Forest Ecology & Management,"Coconino National Forest, Arizona",Species Richness,Old,No
-,"Harrington, Edwards",1999,Canadian Journal of Forestry,"Savannah River Site, South Carolina","Percent Cover, Species Richness",Old,No
-,Harrod et al. ,2008,Northwest Science,"Okanogan-Wenatchee National Forest, Washington",Percent Cover,Old,No
-,Huffman et al.,2013,Forest Ecology and Management,"Kaibab NF, Arizona","Percent Cover, Species Richness",New,Yes
-,Joubert et al. 2013,,,,,,
-,Kane et al. ,2010,Applied Vegetation Science,"Challenge Experimental Forest, California","Percent Cover, Species Richness",Old,
-,Kerns et al.,2006,Ecoscience,"Malheur NF, Oregon",,New,
-,Kerns et al. 2011,,,,,,
-,Laughlin et al. ,2008,Plant Ecology,"Coconino National Forest, Arizona",Species Richness,Old,Yes
-,Laughlin et al. 2007,,,,,,
-,Mason et al. ,2009,Forest Ecology & Management,"Lincoln National Forest, New Mexico",Percent Cover,Old,Yes
-,Metlen et al. ,2004,Northwest Science,"Hungry Bob Study Area, Oregon",Percent Cover,Old,No
-,"Metlen, Fiedler",2006,Forest Ecology & Management,"Lubrecht Experimental Forest, Montana","Percent Cover, Species Richness",Old,Yes
-,Nelson et al. ,2008,Ecological Applications,"Colville, Okanogan, Wenatchee National Forests, Washington",Percent Cover,Old,Yes
-,Phillips and Waldrop 2007,,,,,,
-,"Phillips, Waldrop",2008,Forest Ecology & Management,"Clemson Experimental Forest, South Carolina",Percent Cover,Old,Yes
-,Scudieri et al.,2010,Forest Ecology & Management,"Fort Valley EF and Long Valley EF in Coconino NF, Arizona","Percent Cover, Species Richness",New,Yes
-,Shartell et al. 2012,,,,,,
-,Shive et al.,2013,Applied Vegetation Science,"Apache-Sitgreaves NF, Arizona","Percent Cover, Species Richness",New,Yes
-,"Shive, Sieg, Fule",2013,Forest Ecology & Management,"White Mountain Apache Tribal lands, Arizona","Percent Cover, Species Richness",New,No
-,Stoddard et al.,2011,Western North American Naturalist,"Fort Valley EF in Coconino NF, Arizona","Percent Cover, Species Richness",New,No
-,Waldrop et al. ,2008,Forest Ecology & Management,"Green River Site, North Carolina and Ohio Hills, Ohio",Percent Cover,Old,No
-,"Wayman, North",2007,Forest Ecology & Management,"Teakettle Experimental Forest, California",Percent Cover,Old,Yes
-,Wienk et al. ,2004,Forest Ecology & Management,"Badger Game Production Area, South Dakota",Species Richness,Old,Yes
-,"Wolk, Rocca",2009,Forest Ecology & Management,"Heil Valley Ranch, Colorado","Percent Cover, Species Richness",Old,Yes
-,Youngblood et al.,2006,Forest Ecology & Management,"Blue Mountains, Oregon",Percent Cover,Old,Yes
-,Zald et al. ,2008,Forest Ecology & Management,"Teakettle Experimental Forest, California",Percent Cover,Old,Yes
-,Zenner et al. ,2006,Forest Ecology & Management,Missouri,"Percent Cover, Species Richness",Old,No
-,Zhang et al. ,2008,Canadian Journal of Forestry,"Blacks Mountain Experimental Forest, California",Percent Cover,Old,No
+3,Burton et al.,2011,Plant Ecology,"Okmulgee Game Management Area, Oklahoma","Percent Cover, Species Richness",New,No
+4,Busse et al. ,2000,Forest Science,"Fremont National Forest, Oregon","Percent Cover, Species Richness",Old,No
+5,Collins et al. ,2007,Forest Ecology & Management,"Blodgett Forest Research Station, California","Percent Cover, Species Richness",Old,Yes
+6,Dodson and Peterson,,,,,,
+7,Dodson et al. ,2007,Restoration Ecology,"Lubrecht Experimental Forest, Montana","Percent Cover, Species Richness",Old,Yes
+8,Dodson et al. ,2008,Forest Ecology & Management,"Okanogan-Wenatchee National Forest, Washington","Percent Cover, Species Richness",Old,No
+9,"Dodson, Peterson",2010,Forest Ecology & Management,"Okanogan-Wenatchee National Forest, Washington",Percent Cover,Old,No
+10,Enloe et al. 2013,,,,,,
+11,Freeman et al.,2007,Ecological Applications,"Coronado NF, Arizona; Deschutes NF, Oregon; Bandelier NM, New Mexico; Pike, San Isabel NF, Colorado; Wenatchee NF, Washington; El Dorado NF, California","Percent Cover, Species Richness",New,Yes
+12,Fulé et al. ,2002,Forest Ecology & Management,"Kaibab National Forest, Arizona",Species Richness,Old,Yes
+13,Griffis et al. ,2001,Forest Ecology & Management,"Coconino National Forest, Arizona",Species Richness,Old,No
+14,"Harrington, Edwards",1999,Canadian Journal of Forestry,"Savannah River Site, South Carolina","Percent Cover, Species Richness",Old,No
+15,Harrod et al. ,2008,Northwest Science,"Okanogan-Wenatchee National Forest, Washington",Percent Cover,Old,No
+16,Huffman et al.,2013,Forest Ecology and Management,"Kaibab NF, Arizona","Percent Cover, Species Richness",New,Yes
+17,Joubert et al. 2013,,,,,,
+18,Kane et al. ,2010,Applied Vegetation Science,"Challenge Experimental Forest, California","Percent Cover, Species Richness",Old,
+19,Kerns et al.,2006,Ecoscience,"Malheur NF, Oregon",,New,
+20,Kerns et al. 2011,,,,,,
+21,Laughlin et al. ,2008,Plant Ecology,"Coconino National Forest, Arizona",Species Richness,Old,Yes
+22,Laughlin et al. 2007,,,,,,
+23,Mason et al. ,2009,Forest Ecology & Management,"Lincoln National Forest, New Mexico",Percent Cover,Old,Yes
+24,Metlen et al. ,2004,Northwest Science,"Hungry Bob Study Area, Oregon",Percent Cover,Old,No
+25,"Metlen, Fiedler",2006,Forest Ecology & Management,"Lubrecht Experimental Forest, Montana","Percent Cover, Species Richness",Old,Yes
+26,Nelson et al. ,2008,Ecological Applications,"Colville, Okanogan, Wenatchee National Forests, Washington",Percent Cover,Old,Yes
+27,Phillips and Waldrop 2007,,,,,,
+28,"Phillips, Waldrop",2008,Forest Ecology & Management,"Clemson Experimental Forest, South Carolina",Percent Cover,Old,Yes
+29,Scudieri et al.,2010,Forest Ecology & Management,"Fort Valley EF and Long Valley EF in Coconino NF, Arizona","Percent Cover, Species Richness",New,Yes
+30,Shartell et al. 2012,,,,,,
+31,Shive et al.,2013,Applied Vegetation Science,"Apache-Sitgreaves NF, Arizona","Percent Cover, Species Richness",New,Yes
+32,"Shive, Sieg, Fule",2013,Forest Ecology & Management,"White Mountain Apache Tribal lands, Arizona","Percent Cover, Species Richness",New,No
+33,Stoddard et al.,2011,Western North American Naturalist,"Fort Valley EF in Coconino NF, Arizona","Percent Cover, Species Richness",New,No
+34,Waldrop et al. ,2008,Forest Ecology & Management,"Green River Site, North Carolina and Ohio Hills, Ohio",Percent Cover,Old,No
+35,"Wayman, North",2007,Forest Ecology & Management,"Teakettle Experimental Forest, California",Percent Cover,Old,Yes
+36,Wienk et al. ,2004,Forest Ecology & Management,"Badger Game Production Area, South Dakota",Species Richness,Old,Yes
+37,"Wolk, Rocca",2009,Forest Ecology & Management,"Heil Valley Ranch, Colorado","Percent Cover, Species Richness",Old,Yes
+38,Youngblood et al.,2006,Forest Ecology & Management,"Blue Mountains, Oregon",Percent Cover,Old,Yes
+39,Zald et al. ,2008,Forest Ecology & Management,"Teakettle Experimental Forest, California",Percent Cover,Old,Yes
+40,Zenner et al. ,2006,Forest Ecology & Management,Missouri,"Percent Cover, Species Richness",Old,No
+41,Zhang et al. ,2008,Canadian Journal of Forestry,"Blacks Mountain Experimental Forest, California",Percent Cover,Old,No
+42,,,,,,,
+43,,,,,,,
+44,,,,,,,
+45,,,,,,,
+46,,,,,,,
+47,,,,,,,
+48,,,,,,,
+49,,,,,,,
+50,,,,,,,
+51,,,,,,,
+52,,,,,,,
+53,,,,,,,
+54,,,,,,,
+55,,,,,,,
+56,,,,,,,
+57,,,,,,,
+58,,,,,,,
+59,,,,,,,
+60,,,,,,,
+61,,,,,,,
+62,,,,,,,
+63,,,,,,,
+64,,,,,,,
+65,,,,,,,
+66,,,,,,,
+67,,,,,,,
+68,,,,,,,
+69,,,,,,,
+70,,,,,,,
+71,,,,,,,
+72,,,,,,,
+73,,,,,,,
+74,,,,,,,
+75,,,,,,,
+76,,,,,,,
+77,,,,,,,
+78,,,,,,,
+79,,,,,,,
+80,,,,,,,
+81,,,,,,,
+82,,,,,,,
+83,,,,,,,
+84,,,,,,,
+85,,,,,,,
+86,,,,,,,
+87,,,,,,,
+88,,,,,,,
+89,,,,,,,
+90,,,,,,,
+91,,,,,,,
+92,,,,,,,
+93,,,,,,,
+94,,,,,,,
+95,,,,,,,
+96,,,,,,,
+97,,,,,,,
+98,,,,,,,
+99,,,,,,,
+100,,,,,,,
+101,,,,,,,
+102,,,,,,,
+103,,,,,,,
+104,,,,,,,
+105,,,,,,,
+106,,,,,,,
+107,,,,,,,
+108,,,,,,,
+109,,,,,,,
+110,,,,,,,
+111,,,,,,,
+112,,,,,,,
+113,,,,,,,
+114,,,,,,,
+115,,,,,,,
+116,,,,,,,
+117,,,,,,,
+118,,,,,,,
+119,,,,,,,
