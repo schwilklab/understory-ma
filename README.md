@@ -6,12 +6,21 @@ Metanalysis project effects of thinning and burning on understory vegetation
 Authors: Josh Willms, Anne Bartuszevige, Dylan Schwilk, Pat Kennedy.
 
 
-Code and Results
-----------------
+Data organization
+-----------------
 
-Forest plots of effect sizes are produced by the R code (https://github.com/schwilklab/understory-ma/blob/master/scripts/understory-stats.R).  Those plots are saved in [.results/plots] which is not under version control
+- Databases of searches, papers vetted and papers selected are all under ./database-searches
+- Extracted data on treatments means, etc, are in files under ./data. There is one file per response variable
+- Code to analyze these data are under ./scripts
 
-A spreadsheet of the confidence intervals is here: [../results/confidence-intervals.csv] on github:  https://github.com/schwilklab/understory-ma/blob/master/results/confidence-intervals.csv
+Results
+-------
+
+Results are stored under ./results. Although a few files under this directory have been entered into version control for convenience, nothing should go under this folder that cannot be automatically recreated from raw data. In other words, this is where code in the ./scripts directory saves tables and figures.
+
+Forest plots of effect sizes are produced by the R code (https://github.com/schwilklab/understory-ma/blob/master/scripts/understory-stats.R). Those plots are saved in [.results/plots] which is not under version control
+
+A spreadsheet of the effect size confidence intervals is here: [../results/confidence-intervals.csv] on github:  https://github.com/schwilklab/understory-ma/blob/master/results/confidence-intervals.csv
 
 
 Manuscript
