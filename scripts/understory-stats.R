@@ -4,7 +4,7 @@ library(plyr) # for rbind.fill
 library(reshape2)
 
 RESULTS_DIR = "../results/plots/"
-DATA_DIR = "../data/"
+DATA_DIR = "../data/response-vars/"
 
 EXCLUDES = c("g-richness.csv"  # Only three lines for thin-control and only 2
                                # for others. Won't run at all
