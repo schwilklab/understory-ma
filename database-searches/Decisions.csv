@@ -1,52 +1,53 @@
-Key,Citation for text,Full authors,Methods,Methods,Methods,Methods,Methods
-,Abella,,"Excluded because only had thin+burn treatments--no thin alone, and no burn alone",,,,
-,Adel et al.,"Mohammad Adel, Hassan Pourbabaei, Ali Omidi, and David Pothier",Excluded due to reporting data outside of the Northern Hemisphere (data came from Northern Iran),,,,
-,Amour,,Excluded because SE's were not included,,,,
-,Ares et al.,"Adrian Ares, Andrew Neill, and Klaus Puettmann",Excluded due to data collection taking place too long after treatment (11 years),,,,
-,Burton et al.,"Jesse Burton, Stephen Hallgren, Samuel Fuhlendorf, and David Leslie Jr.",Excluded due to incorrect method of data reporting (Figure 7),,,,
-,Busse et al.,"Matt Busse, Steven Simon, and Gregg Riegel",Excluded due to incorrect method of data reporting (Table 7),,,,
-,Collins et al. 2007,"Brandon M. Collins, Jason J. Moghaddas, Scott L. Stephens",Used means and SE's. I took data from Table 1 on page 105.,,,,
-,Dodson and Peterson,Erich Dodson and Richy Harrod,Excluded due to incorrect method of data reporting (Figures 1 and 2),,,,
-,Dodson et al. (2008),"Erich Dodson, David Peterson, and Richy Harrod",Excluded due to incorrect method of data reporting (Table 2),,,,
-,Dodson et al. 2007,"Erich K. Dodson, Kerry L. Metlen, and Carl E. Fiedler","Used a ruler to measure means and SE's. The timing of pre and post testing was vague: According to 'Vegetation Sampling' on page 698, Pre-tests took place in 2000 for thin-only, and 2001 for burn-only and control. Post-treatment data collection took place in 2002, 2003, and 2004 (so the timing for thin-only is different than the timing for burn-only and control). However, under 'Statistical Analysis' on the same page, it says that richness values were calculated 3 years post-treatment, in 2004. Because there was a difference between pre-testing years, if all post-tests for this took place in 2004, then there would be a difference of 1 year between the length of treatment between thin-only and the other two groups. I decided to assume that there was a 3 year treatment time. With regards to n, our previous document recorded a value of n=3. According to me, it seems that we should use n=30 based on page 699 (the paragraph before results). I chose to use n=3 until this recommendation can be checked. Data was extracted from Figure 1 on page 700.",,,,
-,Dodson+Fiedler-2006,,Used means and SE's.,,,,
-,Dodson-2004,,Table 7 for richness. Table 5 for percent cover,,,,Used quadrat scale for percent cover. Used treatment scale for richness. This is because treatment scale was not reported for percent cover.
-,Enloe et al. 2013,"Stephen Enloe, Nancy Loewenstein, David Held, Lori Eckhardt, and Dwight Lauer",Excluded because SE's were not included Figure 2),,,,
-,Freeman et al.,"Jonathan P. Freeman, Thomas J. Stohlgren, Molly E. Hunter, Philip N. Omi, Erik J. Martinson, Geneva W. Chong, Cynthia S. Brown","Figure 2, page 1659. Data collected in the first growing season after fire, except for High Meadow Fire, which was collected on the 2nd season",Treatments for the seven sites are broadly described and encompass a wide range of activities,May be able to get more data out of this paper.,"There are 'treated' and 'untreated' groups, that can be either 'thin', 'burn', or something else. This made some of the data unusable.","There were three degrees of severety for 'burn': 0 = no burn, 1 = low severity, and 2 = high severity. I used low severity for the burn data."
-,Fule et al. 2002,"Peter Z. Fule, W. Wallace Covington, H.B. Smith, Judith D. Springer, Thomas A. Heinlein, Kristin D. Huisinga, Margaret M. Moore","Means and SE's. Table 4, page 29. Used 'Post-treatment' results only.",,,,
-,Fule+Laughlin+etal-2005,,Table 4,,,,
-,Griffis et al. ,"Kerry Griffis, Julie Crawford, Michael Wagner, and W.H. Moir",Excluded due to incorrect method of data reporting.,,,,
-,Harrington and Edwards,Timothy Harrington and Boyd Edwards,Excluded because SE's were not included (Table 2),,,,
-,Harrod et al. ,Richy Harrod and Charles Halpern,Excluded because the appropriate data was not included.,,,,
-,Huffman et al. 2013,"D.W. Huffman, M.T. Stoddard, J.D. Springer, J.E. Crouse, W.W. Chancellor",Means and SE's. Used 'Native' for 'Total',Used Table 1 on page 482.,,,
-,Huisinga+Laughlin-2005,,Excluded because N=1,Table 2,"Summed annual/biennial forbs, perennial forbs, and graminoids to get herbs",Would have Used unburned in 1998 for control and burned in 2001 for treatment,
-,Joubert et al. 2013,"Lize Joubert, James Pryke, and Michael Samways",,,,,
-,Kane et al. 2010,"Jeffrey M. Kane, J. Morgan Varner, Eric E. Knapp, Robert F. Powers",Table 3 page 214. ,"For thin, I used 'MAST' (which means mastication only)",There was no 'burn only' for this study.,,
-,Kerns et al. 2011,"Becky K. Kerns, Michelle Buonopane, Walter G. Thies, Christine Niwa",Means and SE's.,Used Exotic annuals/biennals vs Natives annuals/biennals for E and N,Used Native perennial forbs for total forbs,Used Forbs as representative of total,
-,Kerns+Buonopane+etal-2011,,Would work in Unweighted,,,,
-,Knapp+Schwilk+etal-2006,,"Only differences are included, not raw pre and post values. Might work in unweighted. Perhaps original data is available?",,,,
-,Laughlin et al. 2007,"Daniel C. Laughlin, Jonathan D. Bakker, Mark L. Daniels, Margaret M. Moore, Cheryl A. Casey, Judith D. Springer",Means and SE's. Took mean from years 1-8. It may be best to narrow this down to not include years after the 4th year.,,,,
-,Laughlin+Fule-2008,,Wrong stats,,,,
-,Mason et al. 2009,"Glenn J. Mason, Terrell T. Baker, Douglas S. Cram, Jon C. Boren, Alexander G. Fernald, Dawn M. VanLeeuwen",Means and SE's. Three sites were available. I used all three sites for richness and cover.,"I used Scatter for 'Thin', and not pile.","For the Bailey site, I used the data from 2005. For the Cox site, I took the average of the data from the years 2005, 2006, and 2007. ",I used Figure 5 on page 872 and Table 3 on page 873.,
-,Metlen and Fiedler 2006,"Kerry L. Metlen, Carl E. Fiedler",Used means and SE's. I took the average of the means for years 1-3 and the average of the SE's for years 1-3 and used those means of means as a representative mean (see Excel calculator for how I calculated this). Used data from Table 2 and Table 5 on pages 361 and 363,,,,
-,Metlen et al. ,"Kerry Metlen, Carl Fiedler, and Andrew Youngblood",Excluded because SE's were not included (Table 2),,,,
-,Moore+Casey-2006,,Excluded because did not contain correct data (reported standing crop only),,,,
-,Nelson et al. 2008,"Cara R. Nelson, Charles B. Halpern, James K. Agee",Fig 1 and 2 on page 766,A ruler was used to determine means and SE's.,,,
-,Phillips and Waldrop 2007,"R.J. Phillips, T.A. Waldrop","Used means and SE's. Table 4, page 3112. Took average of the means from 1st year post and 3rd year post.",,,,
-,Phillips+Hutchinson-2007,,Figure 2. Figure 4.,,"I averaged the ""pre"" treatments for control. Then, I used the individual values for thin and burn from the 2 years later data points.",,
-,Phillips+Waldrop+etal-2004,,Would work in Unweighted,,,,
-,Scudieri et al. 2010,"Catherine A. Scudieri, Carolyn Hull Sieg, Sally M. Haase, Andrea E. Thode, and Stephen S. Sackett",Means and SE's.,Utilized figures 2 and 3 on pages 2138 and 2139.,,,
-,Shartell et al. 2012,"Lindsey Shartell, Linda Nagel, and Andrew Storer",Excluded because thinning and burning was done on the target species (Garlic Mustard) rather than the area in general,Would work in unweighted,,,
-,Shive et al. 2013,"Kristen L. Shive, Amanda M. Kuenzi, Carolyn H. Sieg, Peter Z. Fule",Means and SE's,Unsure if the statistics reported in this paper are usable.,,,
-,"Shive, Sieg, and Fule","Kristen Shive, Carolyn Sieg, Peter Fule",Excluded because the appropriate amount of time did not take place between treatments,,,,
-,Stoddard et al.,"Michael Stoddard, Christopher McGlone, Peter Fule, Daniel Laughlin, Mark Daniels",Excluded because the appropriate amount of time did not take place between treatments,,,,
-,Waldrop et al. 2008,"Thomas A. Waldrop, Daniel A. Yaussy, Ross J. Phillips, Todd A. Hutchinson, Lucy Brudnak, Ralph E.J. Boerner","Fig 4, 5, and 6 on pages 3123, 3124, and 3125 were used. Years 1 and 3 were averaged for means and SE's.",,,,
-,Waldrop+Phillips+etal-2010,,Figure 2,Used Control from year 0. Used Burn and Mechanical from year 3.,,,
-,Wayman and North 2007,"Rebecca Bewley Wayman, Malcolm North","No SE's given. It may be best to remove this paper. The data I used was from Fig 2 on page 38. For richness, I used the data from 2003. ","There was no SE given, so I entered ""0.1"" as a placeholder for richness until we decide what to do about this.","There was no SE given for cover as well, so I entered ""1.0"" as a placeholder. This needs to be justified, a better value determined, another way to calculate d must be used, or this paper needs to be thrown out.",,
-,Wienk et al. 2004,"Cody L. Wienk, Carolyn Hull Sieg, Guy R. McPherson","Used means and SE's. Took data from Table 8, page 385. I utilized 'Partial cut' as opposed to 'Clearcut', which was also available.",,,,
-,Wolk and Rocca 2009,"Brett Wolk, Monique E. Rocca","Used means and SE's. Took data from Table 4, page 257. Used 'Total (# species/1000 m^2). Used 'Thin-only' as opposed to 'Thin + chip'.",,,,
-,Youngblood et al. 2006,"Andrew Youngblood, Kerry L. Metlen, Kent Coe","Used means and SE's. Took data from Table 9, page 156. Additional data is potentially available from Table 8, page 156, but I was unsure of how to extract this data.",,,,
-,Zald et al. 2008,"Harold S.J. Zald, Andrew N. Gray, Malcolm North, Ruth A. Kern",Means and SE's. Table 2. Did not use data for shrubs because the first data point in Table 2 is an average of 11 years.,"I used the data from Figure 5 on page 872, ",,,
-,Zenner et al. 2006,"Eric K. Zenner, John M. Kabrick, Randy G. Jensen, JeriLynn E. Peck, Jennifer K. Grabner","Fig 1 page 327, Fig 2",Only the difference between pre and post is given; the actualy pre and most means are not included.,I attempted to calculate d the way I did for regular data. I am not sure if this is accurate. See Excel Calculation File.,,
-,Zhang et al. 2008,"Jianwei Zhang, Martin W. Ritchie, William W. Oliver",Fig 5 page 519,Only has data for immediately after treatments and 5 years later. I am using the 5 years later data.,"There is only data for shrubs, but I am going to include this paper in the total.richness file. In doing so I am assuming that shrubs serve as an indicator species for other understory species.",,
-,Fornwalt+Kaufmann+etal-2010,,Incorrect method of data reporting. May work in unweighted.,,,,
+PaperID,Decisions
+Abella,"Excluded because only had thin+burn treatments--no thin alone, and no burn alone"
+Adel et al.,Excluded due to reporting data outside of the Northern Hemisphere (data came from Northern Iran)
+Amour,Excluded because SE's were not included
+Ares+Neill+etal-2010,Excluded due to data collection taking place too long after treatment (11 years)
+Burton+Hallgren+etal-2011,Excluded due to incorrect method of data reporting (Figure 7)
+Busse+Simon+etal-2000,Excluded due to incorrect method of data reporting (Table 7)
+Collins+Moghaddas+etal-2007,Used means and SE's. I took data from Table 1 on page 105.
+Dodson+Peterson-2010,Excluded due to incorrect method of data reporting (Figures 1 and 2)
+Dodson+Peterson+etal-2008,Excluded due to incorrect method of data reporting (Table 2)
+Dodson+Metlen+etal-2007,"Used a ruler to measure means and SE's. The timing of pre and post testing was vague: According to 'Vegetation Sampling' on page 698, Pre-tests took place in 2000 for thin-only, and 2001 for burn-only and control. Post-treatment data collection took place in 2002, 2003, and 2004 (so the timing for thin-only is different than the timing for burn-only and control). However, under 'Statistical Analysis' on the same page, it says that richness values were calculated 3 years post-treatment, in 2004. Because there was a difference between pre-testing years, if all post-tests for this took place in 2004, then there would be a difference of 1 year between the length of treatment between thin-only and the other two groups. I decided to assume that there was a 3 year treatment time. With regards to n, our previous document recorded a value of n=3. According to me, it seems that we should use n=30 based on page 699 (the paragraph before results). I chose to use n=3 until this recommendation can be checked. Data was extracted from Figure 1 on page 700."
+Dodson+Fiedler-2006,Used means and SE's.
+Dodson-2004,Table 7 for richness. Table 5 for percent cover. Used quadrat scale for percent cover. Used treatment scale for richness. This is because treatment scale was not reported for percent cover.
+Enloe et al. 2013,Excluded because SE's were not included Figure 2)
+Fornwalt+Kaufmann+etal-2010,Incorrect method of data reporting. May work in unweighted.
+Freeman+Stohlgren+etal-2007,"DID NOT USE, see email from Dr. Schwilk to Josh on Jan 2, 2015"
+Fule+Covington+etal-2002,"Means and SE's. Table 4, page 29. Used 'Post-treatment' results only."
+Fule+Laughlin+etal-2005,Table 4
+Griffis+Crawford+etal-2001,Excluded due to incorrect method of data reporting.
+Harrington+Edwards-1999,Excluded because SE's were not included (Table 2)
+Harrod+Halpern-2009,Excluded because the appropriate data was not included.
+Huffman+Stoddard+etal-2013,Means and SE's. Used 'Native' for 'Total'. Used Table 1 on page 482.
+Huisinga+Laughlin-2005,"Excluded because N=1. Table 2. Summed annual/biennial forbs, perennial forbs, and graminoids to get herbs. Would have Used unburned in 1998 for control and burned in 2001 for treatment"
+Joubert et al. 2013,
+Kane+Morgan+etal-2010,"Table 3 page 214. For thin, I used 'MAST' (which means mastication only). There was no 'burn only' for this study."
+Kerns+Buonopane+etal-2011,Would work in Unweighted
+Kerns+Thies+etal-2006,Means and SE's. Used Exotic annuals/biennals vs Natives annuals/biennals for E and N. Used Native perennial forbs for total forbs. Used Forbs as representative of total. Figure 1
+Knapp+Schwilk+etal-2006,"Only differences are included, not raw pre and post values. Might work in unweighted. Perhaps original data is available?"
+Laughlin+Bakker+etal-2008,Means and SE's. Took mean from years 1-8. It may be best to narrow this down to not include years after the 4th year.
+Laughlin+Fule-2008,Wrong stats
+Mason+Baker+etal-2009,"Means and SE's. Three sites were available. I used all three sites for richness and cover. I used Scatter for 'Thin', and not pile. For the Bailey site, I used the data from 2005. For the Cox site, I took the average of the data from the years 2005, 2006, and 2007. I used Figure 5 on page 872 and Table 3 on page 873."
+Metlen+Fiedler-2006,Used means and SE's. I took the average of the means for years 1-3 and the average of the SE's for years 1-3 and used those means of means as a representative mean (see Excel calculator for how I calculated this). Used data from Table 2 and Table 5 on pages 361 and 363
+Metlen+Fiedler+etal-2004,Excluded because SE's were not included (Table 2)
+Moore+Casey-2006,Excluded because did not contain correct data (reported standing crop only)
+Nelson+Halpern+etal-2008,Fig 1 and 2 on page 766. A ruler was used to determine means and SE's.
+Phillips+Waldrop-2008,"Used means and SE's. Table 4, page 3112. Took average of the means from 1st year post and 3rd year post."
+Phillips+Hutchinson-2007,"Figure 2. Figure 4. I averaged the ""pre"" treatments for control. Then, I used the individual values for thin and burn from the 2 years later data points."
+Phillips+Waldrop+etal-2004,Would work in Unweighted
+Scudieri+Sieg+etal-2010,Means and SE's. Utilized figures 2 and 3 on pages 2138 and 2139.
+Shartell+Nagel+etal-2012,Excluded because thinning and burning was done on the target species (Garlic Mustard) rather than the area in general. Would work in unweighted
+Shive+Kenzi+etal-2013,Means and SE's. Unsure if the statistics reported in this paper are usable.
+Shive+Sieg+etal-2013,Excluded because the appropriate amount of time did not take place between treatments
+Stoddard+McGlone+etal-2011,Excluded because the appropriate amount of time did not take place between treatments
+Waldrop+Yaussy+etal-2008,"Fig 4, 5, and 6 on pages 3123, 3124, and 3125 were used. Years 1 and 3 were averaged for means and SE's."
+Waldrop+Phillips+etal-2010,Figure 2. Used Control from year 0. Used Burn and Mechanical from year 3.
+Wayman+North-2007,"No SE's given. It may be best to remove this paper. The data I used was from Fig 2 on page 38. For richness, I used the data from 2003. There was no SE given, so I entered ""0.1"" as a placeholder for richness until we decide what to do about this. There was no SE given for cover as well, so I entered ""1.0"" as a placeholder. This needs to be justified, a better value determined, another way to calculate d must be used, or this paper needs to be thrown out.EDIT on 1/1/2015 This was removed because I don't think it is ok to use 0.1 as a placeholder. This paper is currently removed."
+Wienk+Sieg+etal-2004,"Used means and SE's. Took data from Table 8, page 385. I utilized 'Partial cut' as opposed to 'Clearcut', which was also available."
+Wolk+Rocca-2009,"Used means and SE's. Took data from Table 4, page 257. Used 'Total (# species/1000 m^2). Used 'Thin-only' as opposed to 'Thin + chip'."
+Youngblood+Metlen+etal-2006,"Used means and SE's. Took data from Table 9, page 156. Additional data is potentially available from Table 8, page 156, but I was unsure of how to extract this data."
+Zald+Gray+etal-2008,"Means and SE's. Table 2. Did not use data for shrubs because the first data point in Table 2 is an average of 11 years. I used the data from Figure 5 on page 872, "
+Zenner+Kabrick+etal-2006,"Fig 1 page 327, Fig 2. Only the difference between pre and post is given; the actualy pre and most means are not included. I attempted to calculate d the way I did for regular data. I am not sure if this is accurate. See Excel Calculation File."
+Zhang+Webster+etal-2008,"Fig 5 page 519. Only has data for immediately after treatments and 5 years later. I am using the 5 years later data. There is only data for shrubs, but I am going to include this paper in the total.richness file. In doing so I am assuming that shrubs serve as an indicator species for other understory species."
+Provencher+Thompson-2014,
