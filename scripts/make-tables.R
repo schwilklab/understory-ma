@@ -2,7 +2,7 @@
 
 ## Code to create different table options
 
-library(reshape2)
+# library(reshape2)
 library(pander)
 library(xtable)
 
@@ -13,11 +13,11 @@ conf.int.df <- read.csv("../results/confidence-intervals.csv", stringsAsFactors 
 table1.caption <- "Standardized mean differences (z-values) and lower and upper confidence intervals at $\\alpha = 0.1$."
 
 ## write table for manuscript.
-melted <- melt(conf.int.df)
+melted <- reshape2::melt(conf.int.df)
 
 ## First style: separate cell for each value, this would work well for LaTeX
 ## output if I can create custom headers rows with multi column spans
-tabledat <- dcast(melted, var ~ contrast + variable)
+tabledat <- reshape2::dcast(melted, var ~ contrast + variable)
 names(tabledat) <- c("Response", "B-C zval" ,"B-C ci.lb",  "B-C ci.ub",  "B-T zval", "B-T ci.lb",   "B-T ci.ub" , "T-C zval", "T-C ci.lb", "T-C ci.ub") 
 panderOptions("table.split.table", Inf)
 zvals.table <- pandoc.table.return(tabledat, style="rmarkdown",
@@ -68,7 +68,7 @@ make.cistrings <- function(d) {
 }
 
 tabledat2 <- make.cistrings(conf.int.df)
-tabledat2 <- dcast(tabledat2,  variable  ~ contrast)
+tabledat2 <- reshape2::dcast(tabledat2,  variable  ~ contrast)
 set.caption(table1.caption)
 zvals.table2 <- pandoc.table.return(tabledat2, style="rmarkdown", digits=3)
 cat(zvals.table2, file="../results/tables/zvals2")
