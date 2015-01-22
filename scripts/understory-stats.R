@@ -1,6 +1,7 @@
 library(ggplot2)
 library(metafor)
 #library(plyr) # for rbind.fill
+options(na.action = "na.omit")
 
 RESULTS_DIR = "../results/plots/"
 DATA_DIR = "../data/response-vars/"
@@ -26,7 +27,7 @@ runComparison <- function(data, t1, t2) {
 
     returnNull <- function(err) NULL # we just need to skip any errors
     
-    res <- tryCatch(rma(yi, vi, mods = ~ Long, data=dat, level=90),
+    res <- tryCatch(rma(yi, vi, mods = ~ FuelType + Long, data=dat, level=90),
                       error = function(cond) {
                           message("RMA failed")
                           return(NULL)
@@ -52,7 +53,7 @@ makePlotsGetZs <- function(data, resp.var, t1, t2) {
     }
     print(paste(t1, " vs ", t2, resp.var))
     pdf(paste(RESULTS_DIR, resp.var, paste("-", t1, "-vs-", t2, ".pdf", sep="")))
-    forest(r, slab=data$FormattedName)
+    forest(r, slab=data$FormattedName, addfit=FALSE)
     dev.off()
 
     print(r)
@@ -97,8 +98,8 @@ write.csv(conf.int.df, "../results/confidence-intervals.csv", row.names=FALSE)
 
 
 # some code to run particular comparisons
-## erich <- "../data/response-vars//exotic-richness.csv"
-## df <- read.csv(erich, header = TRUE)
+erich <- "../data/response-vars/total-richness.csv"
+df <- read.csv(erich, header = TRUE)
 ## df <- merge(df, papers, all.x=TRUE)
 ## bname <- strsplit(basename(erich),".", fixed=TRUE)[[1]][1]    
 ## r <- runComparison(df, "thin" , "control")
