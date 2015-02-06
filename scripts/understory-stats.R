@@ -1,7 +1,6 @@
 library(ggplot2)
 library(metafor)
-library(plyr) # for rbind.fill
-library(reshape2)
+#library(plyr) # for rbind.fill
 
 RESULTS_DIR = "../results/plots/"
 DATA_DIR = "../data/response-vars/"
@@ -79,5 +78,5 @@ varfiles <- varfiles[! basename(varfiles) %in% EXCLUDES]
 r.list <-  lapply(varfiles,FUN=plotsAndConfint)
 
 # make big data frame of all confint results
-conf.int.df <- rbind.fill(r.list)
+conf.int.df <- plyr::rbind.fill(r.list)
 write.csv(conf.int.df, "../results/confidence-intervals.csv", row.names=FALSE)
