@@ -2,6 +2,8 @@
 
 ## Code to create different table options
 
+## TODO: edit so it will work with new stats code and p value tables
+
 # library(reshape2)
 library(pander)
 library(xtable)
