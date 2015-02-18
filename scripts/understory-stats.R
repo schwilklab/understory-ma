@@ -26,8 +26,9 @@ runComparison <- function(data, t1, t2) {
                   data=data)
 
     returnNull <- function(err) NULL # we just need to skip any errors
-    
-    res <- tryCatch(rma(yi, vi, mods = ~ FuelType + Long, data=dat, level=90),
+
+#    res <- tryCatch(rma(yi, vi, mods = ~ FuelType + Long, data=dat, level=90),
+    res <- tryCatch(rma(yi, vi, mods = ~ YearsSinceTreatment, data=dat, level=90),
                       error = function(cond) {
                           message("RMA failed")
                           return(NULL)
