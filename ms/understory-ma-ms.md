@@ -20,7 +20,8 @@ affiliations:
   address: Playa Lakes Joint Venture, Lafayette, CO 80026
 - id: 3
   address: Eastern Oregon Agriculture & Natural Resource Program and Dept. of Fisheries and Wildlife, Oregon State University
-abstract: "We conducted a meta-analysis to determine the effects of fire and fire-surrogates on understory vegetation in dry forests in North America. Means and standard errors were extracted from papers containing data on the response of understory functional groups to thinning and burning treatments to calculate effect sizes. For each response variable, we compared three treatment pairs: burn versus control, thin vs control and thin vs burn. We calculated standardized mean differences (Hedges’ d), for each pair and tested if this differed from zero using a random effects model fit with restricted maximum likelihood. Most understory variables did not vary among treatments. Of the differences that were significant, they were the result of thinning and burning on native and non-native species. Richness of non-native plants was significantly higher in thin treatments than in control or burn treatments. In addition, cover of native plants was significantly higher in thin treatments than in control and burn treatments. Non-native plant cover was also significantly higher in thin treatments than in control treatments. In addition, shrubs cover was significantly lower after fire compared to the controls."
+abstract: "We conducted a meta-analysis to determine the effects of fire and fire-surrogates on understory vegetation in dry forests in North America. Means and standard errors were extracted from papers containing data on the response of understory functional groups to thinning and burning treatments to calculate effect sizes. For each response variable, we compared three treatment pairs: burn versus control, thin vs control and thin vs burn. We calculated standardized mean differences (Hedges’ d) [JOW: Should we cite Hedges and Olkin 1985 here?] for each pair and tested if this differed from zero using a random effects model fit with restricted maximum likelihood. Total species richness was significantly higher in thin treatments than in control treatments, but there was not a significant difference in total species richness between burn and control treatments. Total plant cover was significantly lower in burn treatments than in control treatments, but there was not a significant difference in total plant cover between thin and control treatments. 
+Native richness, native cover, exotic richness, and exotic cover were all significantly higher in thin treatments than in control treatments. Only exotic richness and exotic cover were significantly higher in burn treatments than in control treatments. Species-specific understory variables did not vary among treatments, except for shrub species: Shrub cover was significantly lower after fire compared to both control and thin treatments."
 bibliography: understory-ma.bib
 note: <!-- \bibliography{understory-ma} So that RefTeX knows about the bibliography -->
 
@@ -73,16 +74,31 @@ In May 2014 we performed a search of the scientific literature investigating eff
 - Thin* AND Understory
 - Thin* AND Percent Cover
 
-The literature search from the databases yielded approximately 3,500 references which were then vetted for appropriate material. Documents were eliminated that dealt with medical issues (i.e. new treatments for burn victims), investigations of ecological processes related to fire but not relevant to the scope of this document (i.e. nutrient cycling, insect infestation, etc.), or modeling studies with little empirical data. Papers from geographical locations outside of North America were also excluded. We were specifically interested in studies that were experimental in nature and that collected quantitative data on the response of understory plants to a prescribed fire or thinning treatment. We further narrowed our search to papers that specifically compared thinning (understory or overstory) and prescribed fire. We excluded papers that dealt exclusively with thinning, prescribed fire or wildfire. This vetting process yielded the 35 references included in this document.
+The literature search from the databases yielded approximately 3,500 references which were then vetted for appropriate material. Documents were eliminated that dealt with medical issues (i.e. new treatments for burn victims), investigations of ecological processes related to fire but not relevant to the scope of this document (i.e. nutrient cycling, insect infestation, etc.), or modeling studies with little empirical data. Papers from geographical locations outside of North America were also excluded. We were specifically interested in studies that were experimental in nature and that collected quantitative data on the response of understory plants to a prescribed fire or thinning treatment. We further narrowed our search to papers that specifically compared thinning (understory or overstory) and prescribed fire. We excluded papers that dealt exclusively with thinning, prescribed fire or wildfire. This vetting process yielded the 57 references included in this document.
 
-Because statistical reporting was not uniform across references, we performed a second round of vetting to exclude papers that could not be placed in a quantitative meta analysis. Papers that reported chi square tests, standardized mean differences, and failed to include standard errors were excluded [DWS: Josh, why, shouldn't those work for calculating d?]. In addition, studies which reported data that was collected 20 or more years after the thinning or burning event were excluded. After the final vetting, a total of 22 references remained. [DWS: Josh, see issues #10 and #11]
+Because statistical reporting was not uniform across references, we performed a second round of vetting to exclude papers that could not be placed in a quantitative meta analysis. Papers that reported chi square tests, standardized mean differences, and failed to include standard errors were excluded 
+
+[DWS: Josh, why, shouldn't those work for calculating d?
+
+JOW: The answer to this is not simple, sorry! Here is my reasoning: One can mathematically calculate d from those, but I still don't think they should be included: "Once a metric is chosen, it must be applied to all included studies; one cannot mix and match different measures of effect in a single meta-analysis (Koricheva 2013, page 71). That one quote is somewhat insufficient for explaining why I don't want to include them. I have a digital copy of Koricheva 2013 if you would like to take a look.
+
+Basically, different assumptions go into the different methodologies for reporting results. If we allow for multiple reporting methods, we mix and match the assumptions going into our overall calculations. This mixing of assumptions either weakens or invalidates our results when we put everything together. The number of papers that reported using chi square tests, for example, was low, so even if we 'softened' up our parameters to allow their inclusion, it would hurt our results more than help. What we are using was by far the most common method of reporting data, so I think it makes sense to keep things as pure as possible.
+
+More detail from Koricheva Chapter 7:
+"However, in many other cases it is of interest to combine various types of noncomparative metrics (i.e., simple measurements of responses) of effect size across studies. The need to combine such ecological or evolutionary responses or parameters is characteristic of observational data, but may also be useful for experimental data. Such effects include parameters like heritability, diversity indices, rate of population increase, time to an event such as metamorphosis or death [...]. In these cases, the response itself is combined across studies, rather than combining the comparison of the experimental and control groups' responses (as in Hedges' d or the log response ratio) across studies. (Koricheva 2013, page 72)"
+
+Basically, the way we have done it, we kept things simple and pure by only allowing one method for data reporting. Am I missing something?
+ --]. 
+
+In addition, studies which reported data that was collected 20 or more years after the thinning or burning event were excluded. After the final vetting, a total of 33 references remained.
 
 Data Extraction and Analysis
 ----------------------------
 
-We investigate the effect of burning and thinning treatments on two response variables describing effects on understory vegetation: species richness and plant cover. Each of these was recorded separately for each of six species groups: total species, native only, non-native only, graminoids, forbs, and shrubs. These results in 12 possible variables, although not all were available in each study included.
+We investigate the effect of burning and thinning treatments on two response variables describing effects on understory vegetation: species richness and plant cover. Each of these was recorded separately for each of six species groups: total species, native only, non-native only, graminoids, forbs, and shrubs. Graminoids and forbs data was also combined into a "herbaceous" species group due to the low availability of data for graminoids and forbs. This results in 14 possible variables, although not all were available in each study included.
 
 [Josh:  How did you deal with papers that reported herbaceous rather than graminoid, forb?  Can we lump these?  It does not make much sense to keep them separate. see issue #10]
+[JOW: We decided to lump graminoids and forbs. As I just wrote it, I reported gramionids, forbs, and the combination of the two (herbacious). Want me to take out graminoids and forbs completely?]
 
 For each selected article, we extracted means and either standard deviations or standard errors of the mean for each response variable across each treatment. We calculated pairwise treatment effect sizes for each response variable for three different pairwise comparisons: Thin vs Burn, Thin vs Control, and Burn vs Control. For each comparison, we calculated the unbiased standardized mean difference (Hedge's d) between mean values with the following equation:
 
@@ -93,25 +109,66 @@ where $X^E$ is the mean value of the response variable in the "experimental trea
 We conducted all analyses in R [@R_Development_Core_Team-2013] using the metafor package [@Viechtbauer-2010]. We assumed effect sizes varied randomly among comparisons and therefore  we used random-effects models [@Gurevitch+Hedges-2001]. We fit models using restricted maximum-likelihood. To test whether mean effect sizes for a comparison differed significantly from zero, we assumed a normal distribution of effect sizes and their confidence intervals [z statistics, @Viechtbauer-2010]. 
 
 All hypotheses were a priori, thus no adjustments for multiple comparisons were made [DWS: NO, this does not make sense. We need to adjust and/or reduce comparisons. Our comparisons are highly correlated with one another!]. Because we were making one-tail comparisons, we used $\alpha = 0.1$. [DWS; then make sure your hypotheses are one-tailed and make sure CIs are alpha=0.1. Right now both are 2-tailed, see https://github.com/schwilklab/understory-ma/issues/12]
+[JWS: We decided on one tailed, https://github.com/schwilklab/understory-ma/issues/12. Does that resolve this?]
 
 For each article, we extracted treatment mean values, standard errors or standard deviations, and sample sizes from the results text, tables or figures as required. A handful of compromises and assumptions were necessary to reconcile each reference into a single, comparable format. When papers reported mean species richness or percent cover values and standard errors for multiple years per treatment, the mean of these means and standard errors was taken to generate a single representative value. This methodology was used when extracting data from @Metlen+Fiedler-2006, @Phillips+Waldrop-2008, @Laughlin+Fule-2008, @Mason+Baker+etal-2009, and @Waldrop+Yaussy+etal-2008. All other sources reported data for a single year.
 
 [DWS: Josh, Your references table in the repo does not have the full references. Please solve this and make sure the schwilk.bib file has all references we used.only Zald etal 2008 ref I could find was for overstory only ??. Could not find correct Fule ref, but he has others which should have data.  See https://github.com/schwilklab/understory-ma/issues/11].
+[JOW: The references table is complete. I don't see an issue with Zald, it contained understory data in Table 2.]
 
 Because native species represented over 99% of species richness and percent cover for papers in which both parameters were reported, 'total' and 'native' species were used interchangeably for papers in which only one or the other was reported [@Metlen+Fiedler-2006; @Nelson+Halpern+etal-2008; @Kerns+Thies+etal-2006]. 'Native' was used for 'total' in @Dodson+Metlen+etal-2007, @Collins+Moghaddas+etal-2007, and Huffman+Stoddard-2013. 'Total' was used for 'native' in @Youngblood+Metlen+etal-2006, @Wolk+Rocca-2009, @Phillips+Waldrop-2008, @Fule+Covington+etal-2002, @Laughlin+Bakker+etal-2008, @Mason+Baker+etal-2009, @Zenner+Kabrick+etal-2006, @Waldrop+Yaussy+etal-2008, @Stoddard+McGlone+etal-2011, @Shive+Kenzi+etal-2013, and @Scudieri+Sieg+etal-2010.
 
 [DWS: Josh, check references.  You had (Fule et al 2007) but table said 2002, see other notes, above, ALso, can we simplify and simply report total species richness and non-native and ignore native?]
+[JOW: We can simplify and take out the natives, but in the final data there is a difference between natives and total. Maybe we should talk about this one in person.]
 
-Papers with a wide degree of sampling methodologies and time-lines were included. Length of time from treatment to sampling ranged from 1 to 13 years (mean = 4 years) [DWS: median=?]. Only two papers reported data that was collected more than 9 years after treatment. Varying levels of prescribed burn severity were inherent due to differences in species composition, terrain, weather, and season. For studies which reported data for multiple levels of burning severity, the moderate level of burning was selected for inclusion in this analysis. Varying forms of thinning and mastication were used in thinning treatments. These included, chainsaw, dragging a chain between tractors, hand-thinning, thin-and-pile, thin-and-burn, thin-and-scatter, thin-only, thin-and-chip, partial-cut, and clear-cut. For each paper, data were selected that were close to a thin-only treatment as possible.
+Papers with a wide degree of sampling methodologies and time-lines were included. Length of time from treatment to sampling ranged from 1 to 8 years (mean = 2.85 years) [DWS: median=2]. Only one paper reported data that was collected more than 5 years after treatment. Varying levels of prescribed burn severity were inherent due to differences in species composition, terrain, weather, and season. For studies which reported data for multiple levels of burning severity, the moderate level of burning was selected for inclusion in this analysis. Varying forms of thinning and mastication were used in thinning treatments. These included chainsaw, dragging a chain between tractors, hand-thinning, thin-and-pile, thin-and-scatter, thin-only, thin-and-chip, partial-cut, and clear-cut. For each paper, data were selected that were close to a thin-only treatment as possible.
 
 [DWS: something on other per-study variables recorded, use of those?  Did we simply not have the replication?]
+[JOW: Can you clarify?]
 
 Results
 =======
 
-[DWS: No need for predictions here, those are not results]
+|    variable     |     burn-control     |      burn-thin       |    thin-control    |
+|:---------------:|:--------------------:|:--------------------:|:------------------:|
+|  exotic-cover   |  2.25 (0.12, 0.77)   | -1.40 (-0.70, 0.06)  | 2.87 (0.29, 1.07)  |
+| exotic-richness |  3.97 (0.73, 1.75)   |  0.22 (-0.63, 0.82)  | 4.39 (0.71, 1.55)  |
+|     f-cover     | -1.42 (-0.70, 0.05)  | -0.35 (-0.79, 0.51)  | 0.01 (-0.24, 0.25) |
+|   f-richness    | -0.60 (-0.70, 0.32)  |  0.12 (-0.68, 0.79)  | 0.30 (-1.50, 2.17) |
+|     g-cover     |  0.44 (-0.53, 0.92)  | -0.72 (-0.49, 0.19)  | 0.28 (-0.20, 0.28) |
+|   herb-cover    | -1.48 (-0.51, 0.03)  | -0.28 (-0.32, 0.23)  | 0.30 (-0.17, 0.24) |
+|  herb-richness  |  1.48 (-0.07, 1.43)  | -0.67 (-7.27, 3.08)  | 1.06 (-1.49, 6.98) |
+|  native-cover   | -0.79 (-0.78, 0.28)  | -2.15 (-2.54, -0.34) | 1.96 (0.09, 1.06)  |
+| native-richness |  0.91 (-0.24, 0.82)  | -0.65 (-1.22, 0.53)  | 1.93 (0.11, 1.45)  |
+|     s-cover     | -2.14 (-1.05, -0.14) | -1.68 (-6.83, -0.07) | 1.32 (-0.54, 4.84) |
+|   s-richness    | -1.12 (-1.37, 0.26)  | -1.15 (-10.78, 1.92) | 0.99 (-2.12, 8.50) |
+|   total-cover   | -1.97 (-0.54, -0.05) | -1.15 (-1.23, 0.22)  | 0.31 (-0.36, 0.53) |
+| total-richness  |  0.09 (-0.48, 0.53)  |  0.46 (-0.17, 0.31)  | 2.40 (0.29, 1.53)  |
 
-[DWS: perhaps an overview, however?]
+Table: Standardized mean differences (z-values) and lower and upper confidence intervals at $\alpha = 0.1$.
+
+
+
+
+|    Response     |  B-C zval  |  B-C ci.lb  |  B-C ci.ub  |  B-T zval  |  B-T ci.lb  |  B-T ci.ub  |  T-C zval  |  T-C ci.lb  |  T-C ci.ub  |
+|:---------------:|:----------:|:-----------:|:-----------:|:----------:|:-----------:|:-----------:|:----------:|:-----------:|:-----------:|
+|  exotic-cover   |    2.25    |    0.12     |    0.773    |    -1.4    |   -0.698    |   0.0566    |    2.87    |    0.289    |    1.07     |
+| exotic-richness |    3.97    |    0.725    |    1.75     |   0.225    |   -0.627    |    0.825    |    4.39    |    0.706    |    1.55     |
+|     f-cover     |   -1.42    |   -0.695    |   0.0506    |   -0.351   |   -0.788    |    0.511    |   0.0123   |   -0.245    |    0.248    |
+|   f-richness    |   -0.599   |   -0.696    |    0.324    |    0.12    |   -0.685    |    0.793    |   0.301    |    -1.5     |    2.17     |
+|     g-cover     |    0.44    |   -0.534    |    0.924    |   -0.719   |   -0.489    |    0.192    |   0.278    |   -0.196    |    0.275    |
+|   herb-cover    |   -1.48    |    -0.51    |   0.0265    |   -0.283   |   -0.323    |    0.228    |   0.295    |   -0.169    |    0.243    |
+|  herb-richness  |    1.48    |   -0.074    |    1.43     |   -0.665   |    -7.27    |    3.08     |    1.06    |    -1.49    |    6.98     |
+|  native-cover   |   -0.788   |   -0.783    |    0.276    |   -2.15    |    -2.54    |   -0.339    |    1.96    |   0.0923    |    1.06     |
+| native-richness |   0.906    |   -0.237    |    0.819    |   -0.647   |    -1.22    |    0.533    |    1.93    |    0.114    |    1.45     |
+|     s-cover     |   -2.14    |    -1.05    |   -0.138    |   -1.68    |    -6.83    |   -0.066    |    1.32    |   -0.537    |    4.84     |
+|   s-richness    |   -1.12    |    -1.37    |    0.263    |   -1.15    |    -10.8    |    1.92     |   0.989    |    -2.12    |     8.5     |
+|   total-cover   |   -1.97    |   -0.539    |   -0.0484   |   -1.15    |    -1.23    |    0.219    |   0.309    |   -0.362    |    0.529    |
+| total-richness  |   0.094    |   -0.477    |    0.535    |   0.463    |   -0.174    |    0.31     |    2.4     |    0.287    |    1.53     |
+
+Table: Standardized mean differences (z-values) and lower and upper confidence intervals at $\alpha = 0.1$.
+
+
 
 Species Richness
 ----------------
