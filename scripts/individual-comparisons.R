@@ -13,8 +13,7 @@ get_var <-  function(var) {
 
 # some code to run particular comparisons
 
-## exotic-richness
-## exotic-richness
+## exotic-richnessg
 ## s-cover
 ## herb-cover
 ## total-richness
@@ -24,27 +23,43 @@ ex.richness <- get_var("exotic-richness")
 
 runComparison(ex.richness, "burn", "control", mods = NULL) # no sig modifiers for this comparison
 runComparison(ex.richness, "thin", "control",  mods = NULL)
-forest(runComparison(ex.richness, "burn", "thin",  mods = NULL))
+runComparison(ex.richness, "burn", "thin",  mods = NULL)
+forest(runComparison(ex.richness, "burn", "thin",  mods = ~ YearsSinceTreatment))
 
-runComparison(get_var("total-cover"), "burn", "control")
-runComparison(get_var("total-cover"), "thin", "control")
-runComparison(get_var("total-cover"), "burn", "thin")
+t.richness <- get_var("total-richness")
+runComparison(t.richness, "burn", "control") 
+runComparison(t.richness, "thin", "control")
+runComparison(t.richness, "burn", "thin")
+forest(runComparison(t.richness, "burn", "thin",  mods = ~ YearsSinceTreatment))
+# no treatment effect total richness
+
+t.cover <- get_var("total-cover")
+runComparison(t.cover, "burn", "control") 
+runComparison(t.cover, "thin", "control")
+runComparison(t.cover, "burn", "thin", mods=NULL)
+forest(runComparison(t.cover, "burn", "control",  mods = ~ YearsSinceTreatment))
+# no treatment effect on total cover
+
+
+runComparison(get_var("herb-cover"), "burn", "control", mods=NULL)
+runComparison(get_var("herb-cover"), "thin", "control", mods = NULL)
+runComparison(get_var("herb-cover"), "burn", "thin")
+# No treatment effects on herb cover
+
 
 runComparison(get_var("herb-richness"), "burn", "thin", mods = ~ YearsSinceTreatment)
 forest(runComparison(get_var("herb-richness"), "burn", "thin", mods = ~ YearsSinceTreatment))
 runComparison(get_var("herb-cover"), "burn", "thin",  mods = ~ EastWest)
-
-runComparison(get_var("exotic-richness"), "burn", "control")
-runComparison(get_var("exotic-richness"), "burn", "thin")
-
-runComparison(get_var("s-cover"), "burn", "thin",  mods = ~ EastWest)
+# nothing
 
 
+runComparison(get_var("s-cover"), "burn", "control")
+runComparison(get_var("s-cover"), "burn", "thin")
+runComparison(get_var("s-cover"), "thin", "control")
+# 
 
 
-
-
-# exmaine potential modifiers
+# examine potential modifiers
 
 
 ggplot(get_var("total-richness"), aes(EastWest, burn.mean - control.mean)) +
