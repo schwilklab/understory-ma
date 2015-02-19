@@ -10,13 +10,22 @@ DATA_DIR = "../data/response-vars/"
 EXCLUDES = c("g-richness.csv", "g-cover.csv", "f-richness.csv", "f-cover.csv" )
 
 
+## Global varibale for default modifers:
+MODS = ~ EastWest
+
+
 # read in table of papers
 papers <- read.csv("../data/papers.csv", stringsAsFactors=FALSE)
 papers$FireIntensity <- factor(papers$FireIntensity)
 papers$FuelType <- factor(papers$FuelType)
+papers$EastWest <- ifelse(papers$Long < -100, "West", "East")
+papers$EastWest <- factor(papers$EastWest, levels = c("West", "East"))
+
+
+
 
 # Run a single treatment comparison.  neds some tricky text parsing
-runComparison <- function(data, t1, t2) {
+runComparison <- function(data, t1, t2, mods = MODS) {
     dat <- escalc("SMD",  m1i=eval(parse(text=paste(t1, ".mean",sep=""))),
                           m2i=eval(parse(text=paste(t2, ".mean", sep=""))),
                           sd1i=eval(parse(text=paste(t1, ".s", sep=""))),
@@ -27,8 +36,7 @@ runComparison <- function(data, t1, t2) {
 
     returnNull <- function(err) NULL # we just need to skip any errors
 
-#    res <- tryCatch(rma(yi, vi, mods = ~ FuelType + Long, data=dat, level=90),
-    res <- tryCatch(rma(yi, vi, mods = ~ YearsSinceTreatment, data=dat, level=90),
+    res <- tryCatch(rma(yi, vi, mods = mods, data=dat, level=90),
                       error = function(cond) {
                           message("RMA failed")
                           return(NULL)
@@ -54,7 +62,7 @@ makePlotsGetZs <- function(data, resp.var, t1, t2) {
     }
     print(paste(t1, " vs ", t2, resp.var))
     pdf(paste(RESULTS_DIR, resp.var, paste("-", t1, "-vs-", t2, ".pdf", sep="")))
-    forest(r, slab=data$FormattedName, addfit=FALSE)
+    forest(r, slab=data$FormattedName)
     dev.off()
 
     print(r)
@@ -94,16 +102,6 @@ r.list <-  lapply(varfiles,FUN=plotsAndConfint)
 # make big data frame of all confint results
 conf.int.df <- plyr::rbind.fill(r.list)
 conf.int.df <- plyr::mutate(conf.int.df, sig=(ci.lb>0 & ci.ub>0) |  (ci.lb<0 & ci.ub<0))
+conf.int.df <- conf.int.df[with(conf.int.df, order(pval)), ]
 write.csv(conf.int.df, "../results/confidence-intervals.csv", row.names=FALSE)
 
-
-
-# some code to run particular comparisons
-erich <- "../data/response-vars/total-richness.csv"
-df <- read.csv(erich, header = TRUE)
-## df <- merge(df, papers, all.x=TRUE)
-## bname <- strsplit(basename(erich),".", fixed=TRUE)[[1]][1]    
-## r <- runComparison(df, "thin" , "control")
-## getZVals(r, "thin" , "control")
-
-## plotsAndConfint(erich)
