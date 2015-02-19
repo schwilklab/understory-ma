@@ -15,13 +15,6 @@ EXCLUDES = c("g-richness.csv", "g-cover.csv", "f-richness.csv", "f-cover.csv" ,
              )
 
 
-    Total Richness, N = 16-19
-    Exotic richness N = 8-10
-    Total Cover, N = 11 - 15
-    Herbaceous Cover, N = 13-15
-    Shrub cover, N = 7 - 9
-
-
 ## Global varibale for default modifers:
 MODS = ~ EastWest
 
