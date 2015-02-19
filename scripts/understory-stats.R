@@ -7,7 +7,19 @@ RESULTS_DIR = "../results/plots/"
 DATA_DIR = "../data/response-vars/"
 
 # no need to look at graminoids and forbs separately now
-EXCLUDES = c("g-richness.csv", "g-cover.csv", "f-richness.csv", "f-cover.csv" )
+EXCLUDES = c("g-richness.csv", "g-cover.csv", "f-richness.csv", "f-cover.csv" ,
+              "exotic-cover.csv", # use exotic richness
+              "herb-richness.csv", # use herb-cover
+              "s-richness.csv", #use shrub cover
+              "native-cover.csv", "native-richness.csv" # similar to total
+             )
+
+
+    Total Richness, N = 16-19
+    Exotic richness N = 8-10
+    Total Cover, N = 11 - 15
+    Herbaceous Cover, N = 13-15
+    Shrub cover, N = 7 - 9
 
 
 ## Global varibale for default modifers:
@@ -102,6 +114,7 @@ r.list <-  lapply(varfiles,FUN=plotsAndConfint)
 # make big data frame of all confint results
 conf.int.df <- plyr::rbind.fill(r.list)
 conf.int.df <- plyr::mutate(conf.int.df, sig=(ci.lb>0 & ci.ub>0) |  (ci.lb<0 & ci.ub<0))
-conf.int.df <- conf.int.df[with(conf.int.df, order(pval)), ]
+conf.int.df <- conf.int.df[with(conf.int.df, order(param, pval)), ]
+
 write.csv(conf.int.df, "../results/confidence-intervals.csv", row.names=FALSE)
 
