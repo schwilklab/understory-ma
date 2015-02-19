@@ -66,7 +66,7 @@ makePlotsGetZs <- function(data, resp.var, t1, t2) {
         return(NULL)
     }
     print(paste(t1, " vs ", t2, resp.var))
-    pdf(paste(RESULTS_DIR, resp.var, paste("-", t1, "-vs-", t2, ".pdf", sep="")))
+    pdf(file.path(RESULTS_DIR, paste(resp.var, "-", t1, "-vs-", t2, ".pdf", sep="")))
     forest(r, slab=data$FormattedName)
     dev.off()
 
