@@ -10,13 +10,20 @@ get_var <-  function(var) {
 }
 
 
-
-
 # some code to run particular comparisons
 
-runComparison(get_var("total-richness"), "burn", "control")
-runComparison(get_var("total-richness"), "thin", "control")
-runComparison(get_var("total-richness"), "burn", "thin")
+## exotic-richness
+## exotic-richness
+## s-cover
+## herb-cover
+## total-richness
+
+ex.richness <- get_var("exotic-richness")
+#ex.richness <-  subset(ex.richness, Paper != "Nelson+Halpern+etal-2008")
+
+runComparison(ex.richness, "burn", "control", mods = NULL) # no sig modifiers for this comparison
+runComparison(ex.richness, "thin", "control",  mods = NULL)
+forest(runComparison(ex.richness, "burn", "thin",  mods = NULL))
 
 runComparison(get_var("total-cover"), "burn", "control")
 runComparison(get_var("total-cover"), "thin", "control")
