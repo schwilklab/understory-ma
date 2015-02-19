@@ -1,4 +1,4 @@
-# to run inidividual comparisons and make figures
+# to run individual comparisons and make figures
 
 source("./understory-stats.R")
 
@@ -6,6 +6,7 @@ source("./understory-stats.R")
 get_var <-  function(var) {
     df <- read.csv(file.path(DATA_DIR, paste(var, "csv", sep=".")), header = TRUE)
     df <- merge(df, papers, all.x=TRUE)
+    df <- subset(df, Paper != "Nelson+Halpern+etal-2008")
     return(df)
 }
 

@@ -81,6 +81,7 @@ makePlotsGetZs <- function(data, resp.var, t1, t2) {
 plotsAndConfint <- function(x) {
     df <- read.csv(x, header = TRUE)
     df <- merge(df, papers, all.x=TRUE)
+    df <- subset(df, Paper != "Nelson+Halpern+etal-2008")
     bname <- strsplit(basename(x),".", fixed=TRUE)[[1]][1]    
     print(paste("Running tests on", bname))
     
