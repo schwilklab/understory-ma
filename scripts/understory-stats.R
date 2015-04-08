@@ -1,6 +1,6 @@
 library(ggplot2)
 library(metafor)
-#library(plyr) # for rbind.fill
+library(plyr)
 options(na.action = "na.omit")
 
 RESULTS_DIR = "../results/plots/"
@@ -29,7 +29,7 @@ papers$EastWest <- factor(papers$EastWest, levels = c("West", "East"))
 
 
 
-# Run a single treatment comparison.  neds some tricky text parsing
+# Run a single treatment comparison. Needs some tricky text parsing
 runComparison <- function(data, t1, t2, mods = MODS) {
     dat <- escalc("SMD",  m1i=eval(parse(text=paste(t1, ".mean",sep=""))),
                           m2i=eval(parse(text=paste(t2, ".mean", sep=""))),
@@ -41,6 +41,7 @@ runComparison <- function(data, t1, t2, mods = MODS) {
 
     returnNull <- function(err) NULL # we just need to skip any errors
 
+    # "level" below indicates sig level. We use 90, for one-tailed test.
     res <- tryCatch(rma(yi, vi, mods = mods, data=dat, level=90),
                       error = function(cond) {
                           message("RMA failed")
@@ -109,6 +110,16 @@ r.list <-  lapply(varfiles,FUN=plotsAndConfint)
 conf.int.df <- plyr::rbind.fill(r.list)
 conf.int.df <- plyr::mutate(conf.int.df, sig=(ci.lb>0 & ci.ub>0) |  (ci.lb<0 & ci.ub<0))
 conf.int.df <- conf.int.df[with(conf.int.df, order(param, pval)), ]
+
+# Ok, so if we ahve strong a priori for one tailed tests, we can halve all p values, yes?
+conf.int.df$pval <- conf.int.df$pval/2
+
+
+# P value adjustment "holm" is most conservative (= sequential Bonferroni), but
+# "hommel" or "hochberg" are almost appropriate these data. Here we are really
+# only interested in the intercept pvalue for adjustment, but I run on both
+# params using ddply:
+conf.int.df <- ddply(conf.int.df, .(param), mutate, adj.pval = p.adjust(pval, "holm"))
 
 write.csv(conf.int.df, "../results/confidence-intervals.csv", row.names=FALSE)
 
