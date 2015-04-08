@@ -41,7 +41,9 @@ runComparison <- function(data, t1, t2, mods = MODS) {
 
     returnNull <- function(err) NULL # we just need to skip any errors
 
-    # "level" below indicates sig level. We use 90, for one-tailed test.
+    # "level" below indicates sig level. We use 90, for one-tailed test. This
+    # effects confidence intervals, no p values, so we can still adjust those
+    # manually.
     res <- tryCatch(rma(yi, vi, mods = mods, data=dat, level=90),
                       error = function(cond) {
                           message("RMA failed")
