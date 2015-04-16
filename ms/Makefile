@@ -52,7 +52,7 @@ odt:	clean $(ODT)
 
 %.html:	%.md
 	../scripts/make-tables.R
-	cp ../results/tables/zvals2 table1
+	cp ../results/tables/pvals1 table1
 	cat $^ | ./include.py |  pandoc -r \
              markdown+grid_tables+table_captions+yaml_metadata_block \
              -w html -S --mathml \
@@ -64,7 +64,7 @@ odt:	clean $(ODT)
 
 %.tex:	%.md
 	../scripts/make-tables.R
-	cp ../results/tables/zvals.latex table1
+	cp ../results/tables/pvals.latex table1
 	cat $^ | ./include.py | pandoc -r \
              markdown+grid_tables+table_captions+yaml_metadata_block \
              -w latex -s -S --latex-engine=pdflatex \
@@ -75,7 +75,7 @@ odt:	clean $(ODT)
 
 %.pdf:	%.md
 	../scripts/make-tables.R
-	cp ../results/tables/zvals.latex table1
+	cp ../results/tables/pvals.latex table1
 	cat $^ | ./include.py | pandoc -r \
              markdown+grid_tables+table_captions+yaml_metadata_block -s -S \
              --latex-engine=pdflatex \
@@ -86,7 +86,7 @@ odt:	clean $(ODT)
 
 %.odt:	%.md
 	../scripts/make-tables.R
-	cp ../results/tables/zvals2 table1
+	cp ../results/tables/pvals1 table1
 	cat $^ | ./include.py | pandoc -r \
              markdown+grid_tables+table_captions+yaml_metadata_block \
              -s -S  --filter pandoc-citeproc   \
@@ -96,7 +96,7 @@ odt:	clean $(ODT)
 
 %.docx:	%.md
 	../scripts/make-tables.R
-	cp ../results/tables/zvals2 table1
+	cp ../results/tables/pvals1 table1
 	cat $^ | ./include.py | pandoc -r \
              markdown+grid_tables+table_captions+yaml_metadata_block \
              -s -S  --filter pandoc-citeproc   \

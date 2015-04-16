@@ -2,8 +2,6 @@
 
 ## Code to create different table options
 
-## TODO: edit so it will work with new stats code and p value tables
-
 # library(reshape2)
 library(pander)
 library(xtable)
@@ -12,23 +10,26 @@ library(xtable)
 ## TABLE 1 ####################################################################
 
 conf.int.df <- read.csv("../results/confidence-intervals.csv", stringsAsFactors = FALSE)
-table1.caption <- "Standardized mean differences (z-values) and lower and upper confidence intervals at $\\alpha = 0.1$."
+table1.caption <- "Contrast coefficent estimates (b), z-values (z) and adjusted p-values (p) for treatment contrasts."
 
 ## write table for manuscript.
 melted <- reshape2::melt(conf.int.df)
 
+# just the variables of interest:
+melted <- subset(melted, ! variable %in% c("pval", "ci.lb", "ci.ub") & param == "intrcpt")
+
 ## First style: separate cell for each value, this would work well for LaTeX
 ## output if I can create custom headers rows with multi column spans
 tabledat <- reshape2::dcast(melted, var ~ contrast + variable)
-names(tabledat) <- c("Response", "B-C zval" ,"B-C ci.lb",  "B-C ci.ub",  "B-T zval", "B-T ci.lb",   "B-T ci.ub" , "T-C zval", "T-C ci.lb", "T-C ci.ub") 
+names(tabledat) <- c("Response", "B-C coef" ,"B-C zval",  "B-C adj. p", "B-T coef" ,"B-T zval",  "B-T adj. p", "T-C coef" ,"T-C zval",  "T-C adj. p") 
 panderOptions("table.split.table", Inf)
-zvals.table <- pandoc.table.return(tabledat, style="rmarkdown",
+pvals.table <- pandoc.table.return(tabledat, style="rmarkdown",
                                    digits=3, caption=table1.caption)
-cat(zvals.table, file="../results/tables/zvals1")
+cat(pvals.table, file="../results/tables/pvals1")
 
-latex.tab <- xtable(tabledat, caption=c("Contrast z-values"))
-digits(latex.tab) <- c(0, 0, rep(2,9))
-ltable = print(latex.tab, file="../results/tables/zvals.latex", # File is empty, post-processing needed
+latex.tab <- xtable(tabledat, caption=table1.caption )
+digits(latex.tab) <- c(0, 0, rep(3s,9))
+ltable = print(latex.tab, file="../results/tables/pvals.latex", # File is empty, post-processing needed
     include.rownames=FALSE,
     include.colnames=FALSE,
     only.contents=TRUE,
@@ -48,29 +49,29 @@ table_str <- paste("\\begin{table}\n
   \\toprule\n
   & \\multicolumn{3}{c}{Burn vs Control} & \\multicolumn{3}{c}{Thin vs Control} & \\multicolumn{3}{c}{Burn vs Thin}\\\\ \n
   \\cmidrule(lr){2-4}  \\cmidrule(lr){5-7} \\cmidrule{8-10} \\\\ \n
-  Response & z & lb & ub & z & lb & ub & z & lb & ub \\\\ \n
+  Response & b & z & p & b & z & p & b &z & p \\\\ \n
   \\midrule \n",
   ltable,
   "\\bottomrule \n
   \\end{tabular} \n
 \\end{table}" )
 
-write(table_str, "../results/tables/zvals.latex")
+write(table_str, "../results/tables/pvals.latex")
 
 
-## Style #2
-make.cistrings <- function(d) {
-    row.names(d) <- NULL
-    d$str <- sprintf("%.2f (%.2f, %.2f)",
-                         d$zval,
-                           d$ci.lb, d$ci.ub)
-    d <- d[c(1, 5:6)]
-    names(d) <- c("contrast", "variable", "z-value")
-    return(d)
-}
+## ## Style #2
+## make.cistrings <- function(d) {
+##     row.names(d) <- NULL
+##     d$str <- sprintf("%.2f (%.2f, %.2f)",
+##                          d$zval,
+##                            d$ci.lb, d$ci.ub)
+##     d <- d[c(1, 5:6)]
+##     names(d) <- c("contrast", "variable", "p-value")
+##     return(d)
+## }
 
-tabledat2 <- make.cistrings(conf.int.df)
-tabledat2 <- reshape2::dcast(tabledat2,  variable  ~ contrast)
-set.caption(table1.caption)
-zvals.table2 <- pandoc.table.return(tabledat2, style="rmarkdown", digits=3)
-cat(zvals.table2, file="../results/tables/zvals2")
+## tabledat2 <- make.cistrings(conf.int.df)
+## tabledat2 <- reshape2::dcast(tabledat2,  variable  ~ contrast)
+## set.caption(table1.caption)
+## zvals.table2 <- pandoc.table.return(tabledat2, style="rmarkdown", digits=3)
+## cat(zvals.table2, file="../results/tables/zvals2")
