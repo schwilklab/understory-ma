@@ -28,7 +28,7 @@ pvals.table <- pandoc.table.return(tabledat, style="rmarkdown",
 cat(pvals.table, file="../results/tables/pvals1")
 
 latex.tab <- xtable(tabledat, caption=table1.caption )
-digits(latex.tab) <- c(0, 0, rep(3s,9))
+digits(latex.tab) <- c(0, 0, rep(3,9))
 ltable = print(latex.tab, file="../results/tables/pvals.latex", # File is empty, post-processing needed
     include.rownames=FALSE,
     include.colnames=FALSE,
