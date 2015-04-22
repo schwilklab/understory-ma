@@ -38,14 +38,14 @@ Phillips+Hutchinson-2007,"Figure 2. Figure 4. I averaged the ""pre"" treatments 
 Phillips+Waldrop+etal-2004,Would work in Unweighted
 Scudieri+Sieg+etal-2010,Means and SE's. Utilized figures 2 and 3 on pages 2138 and 2139.
 Shartell+Nagel+etal-2012,Excluded because thinning and burning was done on the target species (Garlic Mustard) rather than the area in general. Would work in unweighted
-Shive+Kenzi+etal-2013,Means and SE's. Unsure if the statistics reported in this paper are usable.
+Shive+Kuenzi+etal-2013,Means and SE's. Unsure if the statistics reported in this paper are usable. Removed do to seeding and time post-fire
 Shive+Sieg+etal-2013,Excluded because the appropriate amount of time did not take place between treatments
 Stoddard+McGlone+etal-2011,Excluded because the appropriate amount of time did not take place between treatments
 Waldrop+Yaussy+etal-2008,"Fig 4, 5, and 6 on pages 3123, 3124, and 3125 were used. Years 1 and 3 were averaged for means and SE's."
 Waldrop+Phillips+etal-2010,Figure 2. Used Control from year 0. Used Burn and Mechanical from year 3.
 Wayman+North-2007,"No SE's given. It may be best to remove this paper. The data I used was from Fig 2 on page 38. For richness, I used the data from 2003. There was no SE given, so I entered ""0.1"" as a placeholder for richness until we decide what to do about this. There was no SE given for cover as well, so I entered ""1.0"" as a placeholder. This needs to be justified, a better value determined, another way to calculate d must be used, or this paper needs to be thrown out.EDIT on 1/1/2015 This was removed because I don't think it is ok to use 0.1 as a placeholder. This paper is currently removed."
 Wienk+Sieg+etal-2004,"Used means and SE's. Took data from Table 8, page 385. I utilized 'Partial cut' as opposed to 'Clearcut', which was also available."
-Wolk+Rocca-2009,"Used means and SE's. Took data from Table 4, page 257. Used 'Total (# species/1000 m^2). Used 'Thin-only' as opposed to 'Thin + chip'."
+Wolk+Rocca-2009,"Used means and SE's. Took data from Table 4. Used 'Total (# species/1000 m^2). Used 'Thin-only' as opposed to 'Thin + chip'. Variable amounts of time ""at least 3 years"""
 Youngblood+Metlen+etal-2006,"Used means and SE's. Took data from Table 9, page 156. Additional data is potentially available from Table 8, page 156, but I was unsure of how to extract this data."
 Zald+Gray+etal-2008,"Means and SE's. Table 2. Did not use data for shrubs because the first data point in Table 2 is an average of 11 years. I used the data from Figure 5 on page 872, "
 Zenner+Kabrick+etal-2006,"Fig 1 page 327, Fig 2. Only the difference between pre and post is given; the actualy pre and most means are not included. I attempted to calculate d the way I did for regular data. I am not sure if this is accurate. See Excel Calculation File."
