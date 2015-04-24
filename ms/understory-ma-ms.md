@@ -129,41 +129,8 @@ Papers with a wide degree of sampling methodologies and time-lines were included
 Results
 =======
 
-Table 1. Standardized mean differences (z-values) and lower and upper confidence intervals at $\alpha = 0.1$.
-`table1`{.include}
 
-| contrast     	| param        	| b            	| zval         	| pval        	| ci.lb        	| ci.ub        	| var             	| sig   	| adj.pval    	|
-|--------------	|--------------	|--------------	|--------------	|-------------	|--------------	|--------------	|-----------------	|-------	|-------------	|
-| thin-control 	| intrcpt      	| 0.911959841  	| 3.968269852  	| 3.62E-05    	| 0.53395116   	| 1.289968522  	| exotic-richness 	| TRUE  	| 0.000542972 	|
-| burn-control 	| intrcpt      	| -0.977158829 	| -2.812249034 	| 0.00245982  	| -1.548688314 	| -0.405629343 	| s-cover         	| TRUE  	| 0.034437478 	|
-| burn-control 	| intrcpt      	| 0.645752923  	| 2.614424342  	| 0.004468898 	| 0.239480299  	| 1.052025546  	| exotic-richness 	| TRUE  	| 0.05809567  	|
-| thin-control 	| intrcpt      	| 0.550593271  	| 1.966277107  	| 0.024633305 	| 0.090004407  	| 1.011182134  	| total-cover     	| TRUE  	| 0.295599658 	|
-| burn-thin    	| intrcpt      	| -1.865922778 	| -1.93577861  	| 0.026447411 	| -3.451419091 	| -0.280426465 	| total-cover     	| TRUE  	| 0.295599658 	|
-| burn-thin    	| intrcpt      	| -0.449048747 	| -1.712402592 	| 0.043411251 	| -0.880383916 	| -0.017713579 	| exotic-richness 	| TRUE  	| 0.434112509 	|
-| burn-thin    	| intrcpt      	| -0.677338514 	| -1.507301123 	| 0.065866745 	| -1.416489235 	| 0.061812207  	| herb-cover      	| FALSE 	| 0.592800705 	|
-| burn-thin    	| intrcpt      	| -0.992291273 	| -1.487716117 	| 0.068412888 	| -2.089391641 	| 0.104809095  	| s-cover         	| FALSE 	| 0.592800705 	|
-| burn-control 	| intrcpt      	| -0.252304317 	| -1.380547248 	| 0.083709106 	| -0.552912408 	| 0.048303773  	| total-cover     	| FALSE 	| 0.592800705 	|
-| thin-control 	| intrcpt      	| 0.305647157  	| 0.923162162  	| 0.177961352 	| -0.238942792 	| 0.850237106  	| herb-cover      	| FALSE 	| 1           	|
-| burn-control 	| intrcpt      	| -0.265264811 	| -0.866780492 	| 0.193031146 	| -0.768646914 	| 0.238117292  	| total-richness  	| FALSE 	| 1           	|
-| thin-control 	| intrcpt      	| 0.110503574  	| 0.333962352  	| 0.369203984 	| -0.433755989 	| 0.654763136  	| total-richness  	| FALSE 	| 1           	|
-| thin-control 	| intrcpt      	| 0.151379183  	| 0.301027658  	| 0.381696702 	| -0.675776035 	| 0.9785344    	| s-cover         	| FALSE 	| 1           	|
-| burn-control 	| intrcpt      	| -0.08168465  	| -0.254297852 	| 0.399632729 	| -0.610038672 	| 0.446669372  	| herb-cover      	| FALSE 	| 1           	|
-| burn-thin    	| intrcpt      	| -0.081056152 	| -0.16436941  	| 0.434720172 	| -0.89218947  	| 0.730077167  	| total-richness  	| FALSE 	| 1           	|
-| burn-control 	| EastWestEast 	| 3.750587317  	| 3.581886669  	| 0.000170561 	| 2.028263938  	| 5.472910696  	| total-richness  	| TRUE  	| 0.002046731 	|
-| thin-control 	| EastWestEast 	| -2.284673346 	| -2.882918087 	| 0.001970049 	| -3.588197458 	| -0.981149234 	| total-cover     	| TRUE  	| 0.021670544 	|
-| burn-thin    	| EastWestEast 	| 2.522314029  	| 2.33959769   	| 0.009652261 	| 0.749001721  	| 4.295626337  	| total-richness  	| TRUE  	| 0.096522611 	|
-| burn-control 	| EastWestEast 	| -1.425919288 	| -2.048128394 	| 0.02027371  	| -2.571076261 	| -0.280762315 	| total-cover     	| TRUE  	| 0.182463392 	|
-| thin-control 	| EastWestEast 	| 1.416077179  	| 2.030134938  	| 0.021171413 	| 0.268744733  	| 2.563409626  	| total-richness  	| TRUE  	| 0.182463392 	|
-| burn-thin    	| EastWestEast 	| 0.977280141  	| 1.736249902  	| 0.041259829 	| 0.051444072  	| 1.903116211  	| herb-cover      	| TRUE  	| 0.2888188   	|
-| burn-thin    	| EastWestEast 	| 2.00726909   	| 1.333158687  	| 0.091239867 	| -0.469303186 	| 4.483841365  	| total-cover     	| FALSE 	| 0.547439201 	|
-| burn-control 	| EastWestEast 	| 0.515695588  	| 1.021373241  	| 0.153538819 	| -0.314797835 	| 1.346189011  	| herb-cover      	| FALSE 	| 0.767694096 	|
-| burn-control 	| EastWestEast 	| 0.190576261  	| 0.285731372  	| 0.387541937 	| -0.906503321 	| 1.287655844  	| s-cover         	| FALSE 	| 1           	|
-| burn-thin    	| EastWestEast 	| 0.260525962  	| 0.238081842  	| 0.405908809 	| -1.539389021 	| 2.060440946  	| s-cover         	| FALSE 	| 1           	|
-| thin-control 	| EastWestEast 	| 0.088978673  	| 0.202871659  	| 0.419617673 	| -0.632447343 	| 0.810404689  	| herb-cover      	| FALSE 	| 1           	|
-| thin-control 	| EastWestEast 	| 0.112362903  	| 0.13823353   	| 0.445027928 	| -1.224653722 	| 1.449379528  	| s-cover         	| FALSE 	| 1           	|
-
-
-Table 2. Papers utilized
+Table 1. Data sources
 
 | Paper                                        	| FormattedName                     	| Year 	| Journal                                	| Location                                                                                 	| Measurements                    	| OldVsNew 	| FireIntensity 	| State          	| ForestType                         	| FuelType 	| YearsSinceTreatment 	| Lat        	| Long         	|
 |----------------------------------------------	|-----------------------------------	|------	|----------------------------------------	|------------------------------------------------------------------------------------------	|---------------------------------	|----------	|---------------	|----------------	|------------------------------------	|----------	|---------------------	|------------	|--------------	|
@@ -201,6 +168,42 @@ Table 2. Papers utilized
 | Wolk+Rocca-2009                              	| Wolk and Rocca 2009               	| 2009 	| Forest Ecology & Management            	| Heil Valley Ranch, Colorado                                                              	| Percent Cover, Species Richness 	| Old      	| NA            	| Colorado       	| Ponderosa Pine                     	| grass    	| 3                   	| 40.1494144 	| -105.3002    	|
 | Youngblood+Metlen+etal-2006                  	| Youngblood et al 2006             	| 2006 	| Forest Ecology & Management            	| Blue Mountains, Oregon                                                                   	| Percent Cover                   	| Old      	| Low           	| Oregon         	| Ponderosa Pine/Douglas Fir         	| grass    	| 5                   	| 45.727378  	| -117.273496  	|
 | Zald+Gray+etal-2008                          	| Zald et al 2008                   	| 2008 	| Forest Ecology & Management            	| Teakettle Experimental Forest, California                                                	| Percent Cover                   	| Old      	| Medium        	| California     	| Mixed Conifer                      	| litter   	| 1.5                 	| 36.966667  	| 119.016667   	|
+
+
+Table 2. Standardized mean differences (z-values) and lower and upper confidence intervals at $\alpha = 0.1$.
+
+
+| contrast     	| param        	| b            	| zval         	| pval        	| ci.lb        	| ci.ub        	| var             	| sig   	| adj.pval    	|
+|--------------	|--------------	|--------------	|--------------	|-------------	|--------------	|--------------	|-----------------	|-------	|-------------	|
+| thin-control 	| intrcpt      	| 0.911959841  	| 3.968269852  	| 3.62E-05    	| 0.53395116   	| 1.289968522  	| exotic-richness 	| TRUE  	| 0.000542972 	|
+| burn-control 	| intrcpt      	| -0.977158829 	| -2.812249034 	| 0.00245982  	| -1.548688314 	| -0.405629343 	| s-cover         	| TRUE  	| 0.034437478 	|
+| burn-control 	| intrcpt      	| 0.645752923  	| 2.614424342  	| 0.004468898 	| 0.239480299  	| 1.052025546  	| exotic-richness 	| TRUE  	| 0.05809567  	|
+| thin-control 	| intrcpt      	| 0.550593271  	| 1.966277107  	| 0.024633305 	| 0.090004407  	| 1.011182134  	| total-cover     	| TRUE  	| 0.295599658 	|
+| burn-thin    	| intrcpt      	| -1.865922778 	| -1.93577861  	| 0.026447411 	| -3.451419091 	| -0.280426465 	| total-cover     	| TRUE  	| 0.295599658 	|
+| burn-thin    	| intrcpt      	| -0.449048747 	| -1.712402592 	| 0.043411251 	| -0.880383916 	| -0.017713579 	| exotic-richness 	| TRUE  	| 0.434112509 	|
+| burn-thin    	| intrcpt      	| -0.677338514 	| -1.507301123 	| 0.065866745 	| -1.416489235 	| 0.061812207  	| herb-cover      	| FALSE 	| 0.592800705 	|
+| burn-thin    	| intrcpt      	| -0.992291273 	| -1.487716117 	| 0.068412888 	| -2.089391641 	| 0.104809095  	| s-cover         	| FALSE 	| 0.592800705 	|
+| burn-control 	| intrcpt      	| -0.252304317 	| -1.380547248 	| 0.083709106 	| -0.552912408 	| 0.048303773  	| total-cover     	| FALSE 	| 0.592800705 	|
+| thin-control 	| intrcpt      	| 0.305647157  	| 0.923162162  	| 0.177961352 	| -0.238942792 	| 0.850237106  	| herb-cover      	| FALSE 	| 1           	|
+| burn-control 	| intrcpt      	| -0.265264811 	| -0.866780492 	| 0.193031146 	| -0.768646914 	| 0.238117292  	| total-richness  	| FALSE 	| 1           	|
+| thin-control 	| intrcpt      	| 0.110503574  	| 0.333962352  	| 0.369203984 	| -0.433755989 	| 0.654763136  	| total-richness  	| FALSE 	| 1           	|
+| thin-control 	| intrcpt      	| 0.151379183  	| 0.301027658  	| 0.381696702 	| -0.675776035 	| 0.9785344    	| s-cover         	| FALSE 	| 1           	|
+| burn-control 	| intrcpt      	| -0.08168465  	| -0.254297852 	| 0.399632729 	| -0.610038672 	| 0.446669372  	| herb-cover      	| FALSE 	| 1           	|
+| burn-thin    	| intrcpt      	| -0.081056152 	| -0.16436941  	| 0.434720172 	| -0.89218947  	| 0.730077167  	| total-richness  	| FALSE 	| 1           	|
+| burn-control 	| EastWestEast 	| 3.750587317  	| 3.581886669  	| 0.000170561 	| 2.028263938  	| 5.472910696  	| total-richness  	| TRUE  	| 0.002046731 	|
+| thin-control 	| EastWestEast 	| -2.284673346 	| -2.882918087 	| 0.001970049 	| -3.588197458 	| -0.981149234 	| total-cover     	| TRUE  	| 0.021670544 	|
+| burn-thin    	| EastWestEast 	| 2.522314029  	| 2.33959769   	| 0.009652261 	| 0.749001721  	| 4.295626337  	| total-richness  	| TRUE  	| 0.096522611 	|
+| burn-control 	| EastWestEast 	| -1.425919288 	| -2.048128394 	| 0.02027371  	| -2.571076261 	| -0.280762315 	| total-cover     	| TRUE  	| 0.182463392 	|
+| thin-control 	| EastWestEast 	| 1.416077179  	| 2.030134938  	| 0.021171413 	| 0.268744733  	| 2.563409626  	| total-richness  	| TRUE  	| 0.182463392 	|
+| burn-thin    	| EastWestEast 	| 0.977280141  	| 1.736249902  	| 0.041259829 	| 0.051444072  	| 1.903116211  	| herb-cover      	| TRUE  	| 0.2888188   	|
+| burn-thin    	| EastWestEast 	| 2.00726909   	| 1.333158687  	| 0.091239867 	| -0.469303186 	| 4.483841365  	| total-cover     	| FALSE 	| 0.547439201 	|
+| burn-control 	| EastWestEast 	| 0.515695588  	| 1.021373241  	| 0.153538819 	| -0.314797835 	| 1.346189011  	| herb-cover      	| FALSE 	| 0.767694096 	|
+| burn-control 	| EastWestEast 	| 0.190576261  	| 0.285731372  	| 0.387541937 	| -0.906503321 	| 1.287655844  	| s-cover         	| FALSE 	| 1           	|
+| burn-thin    	| EastWestEast 	| 0.260525962  	| 0.238081842  	| 0.405908809 	| -1.539389021 	| 2.060440946  	| s-cover         	| FALSE 	| 1           	|
+| thin-control 	| EastWestEast 	| 0.088978673  	| 0.202871659  	| 0.419617673 	| -0.632447343 	| 0.810404689  	| herb-cover      	| FALSE 	| 1           	|
+| thin-control 	| EastWestEast 	| 0.112362903  	| 0.13823353   	| 0.445027928 	| -1.224653722 	| 1.449379528  	| s-cover         	| FALSE 	| 1           	|
+
+
 
 
 Table 3. Complete list of a papers 
@@ -266,6 +269,11 @@ Table 3. Complete list of a papers
 | Zald+Gray+etal-2008                          	| Zald et al 2008                   	| 2008 	| Forest Ecology & Management                 	| Teakettle Experimental Forest, California                                                                                                               	| Percent Cover                   	| Old      	| Yes       	| Medium        	| California     	| Mixed Conifer                      	| litter   	| 1.5                 	| 36.966667  	| 119.016667   	| https://www.dropbox.com/home/UnderstoryMetaPdfs 	|
 | Zenner+Kabrick+etal-2006                     	| Zenner et al 2006                 	| 2006 	| Forest Ecology & Management                 	| Ozark Highlands, Missouri                                                                                                                               	| Percent Cover, Species Richness 	| Old      	| No        	| NA            	| Missouri       	| NA                                 	| NA       	| NA                  	| 36.901777  	| -90.928589   	| https://www.dropbox.com/home/UnderstoryMetaPdfs 	|
 | Zhang+Webster+etal-2008                      	| Zhang et al 2008                  	| 2008 	| Canadian Journal of Forestry                	| Blacks Mountain Experimental Forest, California                                                                                                         	| Percent Cover                   	| Old      	| No        	| NA            	| California     	| NA                                 	| NA       	| NA                  	| 40.730265  	| -121.149734  	| https://www.dropbox.com/home/UnderstoryMetaPdfs 	|
+
+
+
+
+
 
 
 Species Richness
