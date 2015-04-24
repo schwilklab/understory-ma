@@ -9,12 +9,12 @@ Collins+Moghaddas+etal-2007,"Used means and SE's. I took data from Table 1 on pa
 Dodson+Peterson-2010,Excluded due to incorrect method of data reporting (Figures 1 and 2)
 Dodson+Peterson+etal-2008,Excluded due to incorrect method of data reporting (Table 2)
 Dodson+Metlen+etal-2007,"Used a ruler to measure means and SE's. The timing of pre and post testing was vague: According to 'Vegetation Sampling' on page 698, Pre-tests took place in 2000 for thin-only, and 2001 for burn-only and control. Post-treatment data collection took place in 2002, 2003, and 2004 (so the timing for thin-only is different than the timing for burn-only and control). However, under 'Statistical Analysis' on the same page, it says that richness values were calculated 3 years post-treatment, in 2004. Because there was a difference between pre-testing years, if all post-tests for this took place in 2004, then there would be a difference of 1 year between the length of treatment between thin-only and the other two groups. I decided to assume that there was a 3 year treatment time. With regards to n, our previous document recorded a value of n=3. According to me, it seems that we should use n=30 based on page 699 (the paragraph before results). I chose to use n=3 until this recommendation can be checked. Data was extracted from Figure 1 on page 700."
-Dodson+Fiedler-2006,Used means and SE's.
+Dodson+Fiedler-2006,Removed because the data is the same as Metlen+Fiedler-2006. Used means and SE's.
 Dodson-2004,Table 7 for richness. Table 5 for percent cover. Used quadrat scale for percent cover. Used treatment scale for richness. This is because treatment scale was not reported for percent cover.
 Enloe et al. 2013,Excluded because SE's were not included Figure 2)
-Fornwalt+Kaufmann+etal-2010,Incorrect method of data reporting. May work in unweighted.
+Fornwalt+Kaufmann+etal-2010,Did use.
 Freeman+Stohlgren+etal-2007,"DID NOT USE, see email from Dr. Schwilk to Josh on Jan 2, 2015"
-Fule+Covington+etal-2002,"Did not use, would work in unweighted"
+Fule+Covington+etal-2002,"Did not use, would work in unweighted. See Tables 8 and maybe 9. Email author."
 Fule+Laughlin+etal-2005,Table 4
 Griffis+Crawford+etal-2001,Excluded due to incorrect method of data reporting.
 Harrington+Edwards-1999,Excluded because SE's were not included (Table 2)
@@ -26,7 +26,7 @@ Kane+Morgan+etal-2010,"Table 3 page 214. For thin, I used 'MAST' (which means ma
 Kerns+Buonopane+etal-2011,Would work in Unweighted
 Kerns+Thies+etal-2006,Means and SE's. Used Exotic annuals/biennals vs Natives annuals/biennals for E and N. Used Native perennial forbs for total forbs. Used Forbs as representative of total. Figure 1
 Knapp+Schwilk+etal-2006,"Only differences are included, not raw pre and post values. Might work in unweighted. Perhaps original data is available?"
-Laughlin+Bakker+etal-2008,Means and SE's. Took mean from years 1-8. It may be best to narrow this down to not include years after the 4th year.
+Laughlin+Bakker+etal-2008,Means and SE's. Fig 1 on page 144. Pulled control from 1992 and thin from 1996.
 Laughlin+Fule-2008,Wrong stats
 Mason+Baker+etal-2009,"Means and SE's. Three sites were available. I used all three sites for richness and cover. I used Scatter for 'Thin', and not pile. For the Bailey site, I used the data from 2005. For the Cox site, I took the average of the data from the years 2005, 2006, and 2007. I used Figure 5 on page 872 and Table 3 on page 873."
 Metlen+Fiedler-2006,Used means and SE's. I took the average of the means for years 1-3 and the average of the SE's for years 1-3 and used those means of means as a representative mean (see Excel calculator for how I calculated this). Used data from Table 2 and Table 5 on pages 361 and 363
