@@ -1,14 +1,14 @@
 # ignore output formats and intermediate files
-*.docx
-*.doc
-*.odt
-*.xls
-*.pdf
-*.md~
-*.bcf
-*.aux
-*.xml
-*.out
-*.log
-*.html
-*.rel
+./*.docx
+/*.doc
+/*.odt
+/*.xls
+/*.pdf
+/*.md~
+/*.bcf
+/*.aux
+/*.xml
+/*.out
+/*.log
+/*.html
+/*.rel
