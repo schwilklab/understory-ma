@@ -52,7 +52,7 @@ odt:	clean $(ODT)
 
 %.html:	%.md
 	../scripts/make-tables.R
-	cp ../results/tables/pvals1 table1
+	cp ../results/tables/pvals1 pvals-table
 	cat $^ | ./include.py |  pandoc -r \
              markdown+grid_tables+table_captions+yaml_metadata_block \
              -w html -S --mathml \
@@ -60,49 +60,49 @@ odt:	clean $(ODT)
              --css=$(PREFIX)/css/$(CSS) \
              --filter pandoc-citeproc \
              --csl=$(PREFIX)/csl/$(CSL)  -o $@
-	rm table1
+	rm pvals-table
 
 %.tex:	%.md
 	../scripts/make-tables.R
-	cp ../results/tables/pvals.latex table1
+	cp ../results/tables/pvals.latex pvals-table
 	cat $^ | ./include.py | pandoc -r \
              markdown+grid_tables+table_captions+yaml_metadata_block \
              -w latex -s -S --latex-engine=pdflatex \
              --template=$(PREFIX)/templates/$(LATEXT) \
              --filter pandoc-citeproc   \
              --csl=$(PREFIX)/csl/$(CSL) -o $@
-	rm table1
+	rm pvals-table
 
 %.pdf:	%.md
 	../scripts/make-tables.R
-	cp ../results/tables/pvals.latex table1
+	cp ../results/tables/pvals.latex pvals-table
 	cat $^ | ./include.py | pandoc -r \
              markdown+grid_tables+table_captions+yaml_metadata_block -s -S \
              --latex-engine=pdflatex \
              --template=$(PREFIX)/templates/$(LATEXT)  \
              --filter pandoc-citeproc  \
              --csl=$(PREFIX)/csl/$(CSL) -o $@
-	rm table1
+	rm pvals-table
 
 %.odt:	%.md
 	../scripts/make-tables.R
-	cp ../results/tables/pvals1 table1
+	cp ../results/tables/pvals1 pvals-table
 	cat $^ | ./include.py | pandoc -r \
              markdown+grid_tables+table_captions+yaml_metadata_block \
              -s -S  --filter pandoc-citeproc   \
              --csl=$(PREFIX)/csl/$(CSL) -o $@
-	rm table1
+	rm pvals-table
 
 
 %.docx:	%.md
 	../scripts/make-tables.R
-	cp ../results/tables/pvals1 table1
+	cp ../results/tables/pvals1 pvals-table
 	cat $^ | ./include.py | pandoc -r \
              markdown+grid_tables+table_captions+yaml_metadata_block \
              -s -S  --filter pandoc-citeproc   \
              --reference-docx=$(PREFIX)/templates/reference.docx \
              --csl=$(PREFIX)/csl/$(CSL) -o $@
-	rm table1
+	rm pvals-table
 
 clean:
 	rm -f *.html *.pdf *.tex *.docx *.log *.aux

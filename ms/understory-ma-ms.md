@@ -130,16 +130,17 @@ Results
 Table 1. Data sources
 
 Table 2. Standardized mean differences (z-values) and lower and upper confidence intervals at $\alpha = 0.1$.
+`pvals-table`{.include}
 
-Figure 1. Thinning treatments caused an increase in exotic species richness when compared with control treatments (p=0.000543).
+Figure 1. Geographic distribution of data sources. Each triangle represents a study site.
 
-Figure 2. Burning treatments caused a decrease in shrub cover when compared with control treatments (p=0.034437).
+Figure 2. Thinning treatments caused an increase in exotic species richness when compared with control treatments (p=0.000543).
 
-Figure 3. Burning treatments caused an increase in total species richness when compared with control treatments when modified East/West (p=0.002047).
+Figure 3. Burning treatments caused a decrease in shrub cover when compared with control treatments (p=0.034437).
 
-Figure 4. Thinning treatments caused a decrease in total cover when compared with control treatments when modified East/West (p=0.021671).
+Figure 4. Burning treatments caused an increase in total species richness when compared with control treatments when modified East/West (p=0.002047).
 
-Figure 5. Geographic distribution of data sources. Each triangle represents a study site.
+Figure 5. Thinning treatments caused a decrease in total cover when compared with control treatments when modified East/West (p=0.021671).
 
 Table 3. Complete list of a papers
 
