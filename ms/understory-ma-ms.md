@@ -21,7 +21,7 @@ affiliations:
 - id: 3
   address: Eastern Oregon Agriculture & Natural Resource Program and Dept. of Fisheries and Wildlife, Oregon State University
 
-abstract: "We conducted a meta-analysis to determine the effects of fire and fire-surrogates on understory vegetation in dry forests in North America. Means and standard errors were extracted from papers containing data on the response of understory functional groups to thinning and burning treatments to calculate effect sizes. For each response variable, we compared three treatment pairs: burn versus control, thin vs control and thin vs burn. We calculated standardized mean differences (Hedges’ d) for each pair and tested if this differed from zero using a random effects model fit with restricted maximum likelihood [@Hedges+Olkin-1985]. Exotic richness was higher in thin treatments than in control treatments (p=0.000543) and shrub cover was lower in burn treatments than in control treatments (p=0.034437). East-West coefficient p values were also calculated to account for geographic variation. After the East-West correction, total understory richness was found to be higher than control treatments (p=0.002047) and total understory percent cover was found to be significantly lower in thin treatments than in control treatments (p=0.021671)."
+abstract: "We conducted a meta-analysis to determine the effects of fire and fire-surrogates on understory vegetation in dry forests in North America. Means and standard errors were extracted from papers containing data on the response of understory functional groups to thinning and burning treatments to calculate effect sizes. For each response variable, we compared three treatment pairs: burn versus control, thin vs control and thin vs burn. We calculated standardized mean differences (Hedges’ d) for each pair and tested if this differed from zero using a random effects model fit with restricted maximum likelihood [@Hedges+Olkin-1985]. Exotic species richness was higher in thin treatments than in control treatments (p=0.000543) and shrub cover was lower in burn treatments than in control treatments (p=0.034437). East-West coefficient p values were also calculated to account for geographic variation. After the East-West correction, total understory species richness was found to be higher in burn treatments than control treatments (p=0.002047) and total understory percent cover was found to be significantly lower in thin treatments than in control treatments (p=0.021671)."
 bibliography: understory-ma.bib
 note: <!-- \bibliography{understory-ma} So that RefTeX knows about the bibliography -->
 
@@ -111,18 +111,14 @@ We conducted all analyses in R [@R_Development_Core_Team-2013] using the metafor
 
 All hypotheses were a priori. We utilized one-tailed comparisons and halved p values (alpha = 0.05). We utilized a Holm p value adjustment (Bonferroni correction) to control for familywise error rate. 
 
-
-For each article, we extracted treatment mean values, standard errors or standard deviations, and sample sizes from the results text, tables or figures as required. A handful of compromises and assumptions were necessary to reconcile each reference into a single, comparable format. When papers reported mean species richness or percent cover values and standard errors for multiple years per treatment, the mean of these means and standard errors was taken to generate a single representative value. This methodology was used when extracting data from @Metlen+Fiedler-2006, @Phillips+Waldrop-2008, @Laughlin+Fule-2008, @Mason+Baker+etal-2009, and @Waldrop+Yaussy+etal-2008. All other sources reported data for a single year.
+For each article, we extracted treatment mean values, standard errors or standard deviations, and sample sizes from the results text, tables or figures as required. A handful of compromises and assumptions were necessary to reconcile each reference into a single, comparable format. When papers reported mean species richness or percent cover values and standard errors for multiple years per treatment, the mean of these means and standard errors was taken to generate a single representative value. This methodology was used when extracting data from @Metlen+Fiedler-2006, @Phillips+Waldrop-2008, @Laughlin+Fule-2008, @Mason+Baker+etal-2009, and @Waldrop+Yaussy+etal-2008. All other sources reported data for a single year. [JOW My methods on a few of these changed--I need to double check which ones really used means vs specific years]
 
 [DWS: Josh, Your references table in the repo does not have the full references. Please solve this and make sure the schwilk.bib file has all references we used.only Zald etal 2008 ref I could find was for overstory only ??. Could not find correct Fule ref, but he has others which should have data.  See https://github.com/schwilklab/understory-ma/issues/11].
 [JOW: The references table is complete. I don't see an issue with Zald, it contained understory data in Table 2.]
 
-Because native species represented over 99% of species richness and percent cover for papers in which both parameters were reported, 'total' and 'native' species were used interchangeably for papers in which only one or the other was reported [@Metlen+Fiedler-2006; @Nelson+Halpern+etal-2008; @Kerns+Thies+etal-2006]. 'Native' was used for 'total' in @Dodson+Metlen+etal-2007, @Collins+Moghaddas+etal-2007, and Huffman+Stoddard-2013. 'Total' was used for 'native' in @Youngblood+Metlen+etal-2006, @Wolk+Rocca-2009, @Phillips+Waldrop-2008, @Fule+Covington+etal-2002, @Laughlin+Bakker+etal-2008, @Mason+Baker+etal-2009, @Zenner+Kabrick+etal-2006, @Waldrop+Yaussy+etal-2008, @Stoddard+McGlone+etal-2011, @Shive+Kenzi+etal-2013, and @Scudieri+Sieg+etal-2010.
+Because native species represented over 99% of species richness and percent cover for papers in which both parameters were reported, 'native' was utilized as a representative value for 'total' species in cases where only 'native' was reported [@Dodson+Metlen+etal-2007, @Collins+Moghaddas+etal-2007, and @Huffman+Stoddard-2013].
 
-[DWS: Josh, check references.  You had (Fule et al 2007) but table said 2002, see other notes, above, ALso, can we simplify and simply report total species richness and non-native and ignore native?]
-[JOW: We can simplify and take out the natives, but in the final data there is a difference between natives and total. Maybe we should talk about this one in person.]
-
-Papers with a wide degree of sampling methodologies and time-lines were included. Length of time from treatment to sampling ranged from 1 to 8 years (mean = 2.85 years) [DWS: median=2]. Only one paper reported data that was collected more than 5 years after treatment. Varying levels of prescribed burn severity were inherent due to differences in species composition, terrain, weather, and season. For studies which reported data for multiple levels of burning severity, the moderate level of burning was selected for inclusion in this analysis. Varying forms of thinning and mastication were used in thinning treatments. These included chainsaw, dragging a chain between tractors, hand-thinning, thin-and-pile, thin-and-scatter, thin-only, thin-and-chip, partial-cut, and clear-cut. For each paper, data were selected that were close to a thin-only treatment as possible.
+Papers with a wide degree of sampling methodologies and time-lines were included. Length of time from treatment to sampling ranged from 1 to 8 years (mean = 2.8 years, median = 2 years). Only one paper reported data that was collected more than 5 years after treatment (@Nelson+Halpern+etal-2008). Varying levels of prescribed burn severity were inherent due to differences in species composition, terrain, weather, and season. For studies which reported data for multiple levels of burning severity, the moderate level of burning was selected for inclusion in this analysis. Varying forms of thinning and mastication were used in thinning treatments. These included chainsaw, dragging a chain between tractors, hand-thinning, thin-and-pile, thin-and-scatter, thin-only, thin-and-chip, partial-cut, and clear-cut. For each paper, data were selected that were as close to a thin-only treatment as possible.
 
 [DWS: something on other per-study variables recorded, use of those?  Did we simply not have the replication?]
 [JOW: Can you clarify?]
@@ -133,33 +129,17 @@ Results
 
 Table 1. Data sources
 
-
-
 Table 2. Standardized mean differences (z-values) and lower and upper confidence intervals at $\alpha = 0.1$.
-
-
 
 Figure 1. Thinning treatments caused an increase in exotic species richness when compared with control treatments (p=0.000543).
 
-![](http://i.imgur.com/zyFUowJ.png)
-
-
 Figure 2. Burning treatments caused a decrease in shrub cover when compared with control treatments (p=0.034437).
 
-![](http://i.imgur.com/l0mSRVA.png)
-
-
 Figure 3. Burning treatments caused an increase in total species richness when compared with control treatments when modified East/West (p=0.002047).
-![](http://i.imgur.com/k8VAK1q.png)
 
 Figure 4. Thinning treatments caused a decrease in total cover when compared with control treatments when modified East/West (p=0.021671).
-![](http://i.imgur.com/2PfujC0.png)
-
-
 
 Figure 5. Geographic distribution of data sources. Each triangle represents a study site.
-![](http://i.imgur.com/gK29t08.png)
-
 
 Table 3. Complete list of a papers
 
@@ -168,38 +148,37 @@ Table 3. Complete list of a papers
 Species Richness
 ----------------
 
-Thinning increased exotic species richness as compared to burns and controls. There was no significant difference in exotic species richness between burn and control treatments.
+Exotic species richness was higher in thin treatments than in control treatments (p=0.000543). There was no significant difference in exotic species richness between burn and control treatments, or between thin and burn treatments. After the East-West correction, total understory species richness was found to be higher in burn treatments than control treatments (p=0.002047). Before East-West correction, there was no significant difference in total understory species richness between any of the treatment groups.
 
-There was no significant difference in species richness for the total number of species, native species, forbs, graminoids, or shrubs between burn and control treatments, thin and control treatments, or thin and burn treatments.
+There was no significant difference in herbaceous species richness or shrub species richness between any of the treatment groups. However, only 5 papers reported species richness data for thinning and burning in shrubs.
+
 
 Percent Cover
 -------------
 
-Thinning increased percent cover of native species and exotic species as compared to burning and the controls which did not differ.
+Burning decreased percent cover of shrubs compared to controls (p=0.034437). There was no significant difference in shrub percent cover between thin and control treatments, or between thin and burn treatments. After East-West correction, total understory percent cover was found to be significantly lower in thin treatments than in control treatments (p=0.021671). Before East-West correction, there was no significant difference in total understory percent cover between any of the treatment groups.
 
-Shrubs were the only functional group to experience a significant decrease in percent cover after any form of treatment. There was a significant decrease in shrub percent cover between burn and control treatments. There was no significant difference in shrub percent cover between thin and burn treatments, or between burn and control treatments. 
-
-There were not a sufficient number of papers that reported data on forb richness, forb cover, and graminoid richness for burn vs control, thin vs control, or thin vs control groups. Because of this, further study on the effects of burning and thinning on forb richness, forb cover, and graminoid richness are needed for analysis to take place. [DWS: can we lump and or eliminate variables then?]
+There was no significant difference in exotic percent cover or herbaceous percent cover between any of the treatment groups. However, only 4 papers reported percent cover data for thinning in non-natives, and only 6 papers reported percent cover data for burning in non-natives. 
 
 
 Discussion
 ==========
 
-Understory communities response to fire and thinning was highly variable across the included studies and few comparisons had mean differences signfiicantly different from zero [Table ??].
-In general, understory plant species did not respond as predicted to fire surrogate treatments.
+Understory communities response to fire and thinning was highly variable across the included studies and few comparisons had mean differences significantly different from zero [Table 2]. In general, understory plant species did not respond as predicted to fire surrogate treatments.
 
-Thinning treatments had higher understory species richness, especially of non-native plants, than did burn treatments or controls.
+All thinning treatments resulted in positive z-values (increased species richness and percent cover). All burning treatments resulted in negative z-values (decreased species richness and percent cover), except for burning in non-native richness, in which case burning had a significantly positive effect compared with controls (Table 2). Non-native understory species tended to thrive after disturbances, but especially after thinning.
 
-Disturbance treatments were different from controls as predicted but thinning and burning were not surrogates. Thinning increased understory cover and richness (both native and non-native) which presumably increased understory diversity and thus, forest diversity. In addition thinning has the negative consequence of enhancing richness and cover of non-native species which is not a desirable outcome in most management scenarios. Burning reduced shrub cover as compared to the other two treatments and this may or may not be a negative consequence depending on the management objective. 
+We were extremely conservative when reporting our results and when vetting papers for inclusion in our study. It is likely that as the body of data concerning understory species continues to grow, additional trends will emerge. In particular, exotic richness may increase in burning compared to controls (we found this to be true with p=0.00447, but p=0.05809567 after Bonferroni), and total cover may increase in thinning treatments compared to controls (p=0.02463, but p=0.2955996567 after Bonferroni). In future studies it may be appropriate to utilize less stringent requirements for paper-inclusion.
+
+Disturbance treatments were different from controls, as predicted, but thinning and burning were not surrogates. Thinning has the negative consequence of enhancing richness and cover of non-native species, which is not a desirable outcome in most management scenarios. Burning reduced shrub cover as compared to the other two treatments and this may or may not be a negative consequence depending on the management objective.
 
 [DWS: TODO, more]
 
-Increase of exotic species due to disturbance is well established as is the intensity of disturbance and amount of increase [@Bartuszevige+Kennedy-2009; @Schwilk+Keeley+etal-2009]. One concern of manipulating systems for conservation outcomes (e.g. fire surrogate treatments) is the risk of increasing the amount of exotic species. This is especially true when large-scale manipulations are applied such as in national forests for which follow-up treatment may be unfeasible. Although increases in these studies were not large, they could be biologically significant if they were allowed to increase in forest understory or if they were introduced after the treatment application. However, some forest stands may be at greater risk for establishment of exotic species. For example, exotic species are less likely to establish in the interior of forests, and more likely to establish in areas near other large invasions and human establishments [OTHER CITATIONS, @Bartuszevige+Gorchov+etal-2006]. Thus, an important consideration for treatment application is proximity to the wildland urban interface (WUI).
+Increase of non-native species due to disturbance is well established as is the intensity of disturbance and amount of increase [@Bartuszevige+Kennedy-2009; @Schwilk+Keeley+etal-2009]. One concern of manipulating systems for conservation outcomes (e.g. fire surrogate treatments) is the risk of increasing the amount of exotic species. This is especially true when large-scale manipulations are applied such as in national forests for which follow-up treatment may be unfeasible. Although increases in these studies were not large, they could be biologically significant if they were allowed to increase in forest understory or if they were introduced after the treatment application. However, some forest stands may be at greater risk for establishment of exotic species. For example, exotic species are less likely to establish in the interior of forests, and more likely to establish in areas near other large invasions and human establishments [OTHER CITATIONS, @Bartuszevige+Gorchov+etal-2006]. Thus, an important consideration for treatment application is proximity to the wildland urban interface (WUI).
 
 To prevent the spread of exotic plants into forest ecosystems after thinning, managers should consider several management options including: no treatment, pre-treatment of exotic plants to reduce their abundance prior to treatment, seeding with native plants [@Korb+Johnson+etal-2004], reducing grazing by domestic livestock prior to and immediately after treatment [@Keeley-2006b], or conducting a low impact disturbance (e.g. burning only); [@Dodson+Fiedler-2006; @Laughlin+Bakker+etal-2008]. Thinning treatments in particular can be modified to reduce soil disturbance (which facilitates invasion of exotic plants). Also, thinning in winter months when equipment will drive over snow will also minimize soil disturbance and thus, the probability of invasion [@Gundale+DeLuca+etal-2005].
 
-We had insufficient data on forbs to generate significant results. Further studies directed at the effects of fire and fire surrogates on forb richness and cover are needed for analysis to take place. [DWS: then remove, lump]
-
+We had insufficient data on hebaceous species to generate significant results, even after lumping together forbs and graminoids. Further studies directed at the effects of fire and fire surrogates on the richness and cover of herbaceous species, forbs, and graminoids are needed for analysis to take place.
 
 Many of the studies included in this review concluded that multiple entries into a forest are needed to properly restore the understory to the historical range of variation [Harrington+Edwards-1999; @Metlen+Fiedler-2006; @Laughlin+Bakker+etal-2008; @Waldrop+Yaussy+etal-2008]. Few studies have followed systems over multiple entries; however, Laughlin et al. [-@Laughlin+Bakker+etal-2008] followed a restoration for over a decade after multiple entries. In this system, there was an immediate positive response to herbaceous production. However, differences in species richness took much longer to occur; species richness was higher in treated areas compared to controls after 11 years. The results from this long-term study indicate that restoration of the understory to historical variability is a long-term process involving repeated prescribed burns. The @Laughlin+Bakker+etal-2008 data also provide another important lesson: active fire suppression has occurred for most of the last century and restoration management of the forests is a relatively new occurrence, therefore, it may take multiple treatments to restore a forest. In addition, it may take many years before the effects of the treatments are fully realized.
 
