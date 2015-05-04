@@ -92,12 +92,9 @@ The final data used to conduct this analysis was reported from a wide array of g
 
 Results
 =======
-Table 1. Standardized mean differences (z-values) and lower and upper confidence intervals at $\alpha = 0.1$.
-`table1`{.include}
-
 Table 1. Data sources
 
-Table 2. Standardized mean differences (z-values) and lower and upper confidence intervals at $\alpha = 0.1$.
+Table 2. Standardized mean differences (z-values) and lower and upper confidence intervals at $\alpha = 0.1$. [NOT CORRECT CAPTION]
 `pvals-table`{.include}
 
 Figure 1. Geographic distribution of data sources. Each triangle represents a study site.
