@@ -21,7 +21,7 @@ affiliations:
 - id: 3
   address: Eastern Oregon Agriculture & Natural Resource Program and Dept. of Fisheries and Wildlife, Oregon State University
 
-abstract: "We conducted a meta-analysis to determine the effects of fire and fire-surrogates on understory vegetation in dry forests in North America. Means and standard errors were extracted from papers containing data on the response of understory functional groups to thinning and burning treatments to calculate effect sizes. For each response variable, we compared three treatment pairs: burn versus control, thin vs control and thin vs burn. We calculated standardized mean differences (Hedges’ d) for each pair and tested if this differed from zero using a random effects model fit with restricted maximum likelihood [@Hedges+Olkin-1985]. Exotic species richness was higher in thin treatments than in control treatments (p=0.000543) and shrub cover was lower in burn treatments than in control treatments (p=0.034437). East-West coefficient p values were also calculated to account for geographic variation. After the East-West correction, total understory species richness was found to be higher in burn treatments than control treatments (p=0.002047) and total understory percent cover was found to be significantly lower in thin treatments than in control treatments (p=0.021671)."
+abstract: "We conducted a meta-analysis to determine the effects of fire and fire-surrogates on understory vegetation in dry forests in North America. Means and standard errors were extracted from papers containing data on the response of understory functional groups to thinning and burning treatments to calculate effect sizes. For each response variable, we compared three treatment pairs: burn versus control, thin vs control and thin vs burn. We calculated standardized mean differences (Hedges’ d) for each pair and tested if this differed from zero using a random effects model fit with restricted maximum likelihood [@Hedges+Olkin-1985]. Exotic species richness was higher in thin treatments than in control treatments and shrub cover was lower in burn treatments than in control treatments. 28 papers reported data from study sites in the western United States and 7 papers reported data from the eastern United States. There were no study sites in the central United States. Consequently, longitude was utilized as a qualitative moderator. Sites were categorized as either East or West by their relation to longitude 100. East-West coefficient p values were calculated to account for geographic variation. After East-West correction, total understory species richness was found to be higher in burn treatments than control treatments and total understory percent cover was found to be significantly lower in thin treatments than in control treatments."
 bibliography: understory-ma.bib
 note: <!-- \bibliography{understory-ma} So that RefTeX knows about the bibliography -->
 
@@ -125,7 +125,8 @@ Papers with a wide degree of sampling methodologies and time-lines were included
 
 Results
 =======
-
+Table 1. Standardized mean differences (z-values) and lower and upper confidence intervals at $\alpha = 0.1$.
+`table1`{.include}
 
 Table 1. Data sources
 
