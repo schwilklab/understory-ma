@@ -113,10 +113,6 @@ conf.int.df <- plyr::rbind.fill(r.list)
 conf.int.df <- plyr::mutate(conf.int.df, sig=(ci.lb>0 & ci.ub>0) |  (ci.lb<0 & ci.ub<0))
 conf.int.df <- conf.int.df[with(conf.int.df, order(param, pval)), ]
 
-# Ok, so if we ahve strong a priori for one tailed tests, we can halve all p values, yes?
-conf.int.df$pval <- conf.int.df$pval/2
-
-
 # P value adjustment "holm" is most conservative (= sequential Bonferroni), but
 # "hommel" or "hochberg" are almost appropriate these data. Here we are really
 # only interested in the intercept pvalue for adjustment, but I run on both
