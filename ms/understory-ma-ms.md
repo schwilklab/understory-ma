@@ -90,17 +90,6 @@ The final data used to conduct this analysis was reported from a wide array of l
 Results
 =======
 
-Table 1. Papers with data included in this study
-
-Table 2. Contrast coefficient estimates (b), z-values (z) and adjusted p-values (p) for treatment contrasts.
-
-Figure 1. Geographic distribution of data sources. Each triangle represents a study site.
-
-Figure 2. Thinning treatments caused an increase in exotic species richness compared with control treatments (p=0.0005).
-
-Figure 3. Burning treatments caused a decrease in shrub cover when compared with control treatments (p=0.0344).
-
-
 Species Richness
 ----------------
 

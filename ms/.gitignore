@@ -1,7 +1,7 @@
 # ignore output formats and intermediate files
-./*.docx
-/*.doc
-/*.odt
+./understory-ma-ms.docx
+/understory-ma-ms.doc
+/understory-ma-ms.odt
 /*.xls
 /*.pdf
 /*.md~
@@ -12,3 +12,4 @@
 /*.log
 /*.html
 /*.rel
+.directory
