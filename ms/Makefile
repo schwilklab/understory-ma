@@ -105,5 +105,5 @@ odt:	clean $(ODT)
 	rm pvals-table
 
 clean:
-	rm -f *.html *.pdf *.tex *.docx *.log *.aux
+	rm -f *.html *.pdf *.tex *.log *.aux
 
