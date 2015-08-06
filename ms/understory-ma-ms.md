@@ -20,45 +20,6 @@ affiliations:
   address: Playa Lakes Joint Venture, Lafayette, CO 80026
 - id: 3
   address: Eastern Oregon Agriculture & Natural Resource Program and Dept. of Fisheries and Wildlife, Oregon State University
-nocite: |
-@Collins+Moghaddas+etal-2007
-@Dodson+Metlen+etal-2007
-@Dodson-2004
-@Fornwalt+Kaufmann+etal-2010-Riparian-Low
-@Fornwalt+Kaufmann+etal-2010-Upland-High
-@Fornwalt+Kaufmann+etal-2010-Upland-Low
-@Fornwalt+Kaufmann+etal-2010-Upland-Medium
-@Fornwalt+Kaufmann+etal-2014-Riparian-Low
-@Fornwalt+Kaufmann+etal-2014-Upland
-@Fule+Laughlin+etal-2005
-@Huffman+Stoddard+etal-2013
-@Kane+Morgan+etal-2010
-@Kerns+Thies+etal-2006
-@Knapp+Schwilk+etal-2006
-@Laughlin+Bakker+etal-2008
-@Mason+Baker+etal-2009-Bailey
-@Mason+Baker+etal-2009-Cox
-@Mason+Baker+etal-2009-Sleepy
-@Metlen+Fiedler-2006
-@Nelson+Halpern+etal-2008
-@O'Connor+Miller+etal-2013
-@Phillips+Hutchinson-2007-OhioHills
-@Phillips+Hutchinson-2007-SouthernAppalachian
-@Phillips+Waldrop-2008
-@Provencher+Thompson-2014
-@Scudieri+Sieg+etal-2010-Chimney
-@Scudieri+Sieg+etal-2010-Limestone
-@Waldrop+Phillips+etal-2010
-@Waldrop+Yaussy+etal-2008-GreenRiver
-@Waldrop+Yaussy+etal-2008-OhioHills
-@Weekley+Menges+etal-2013
-@Wienk+Sieg+etal-2004
-@Wolk+Rocca-2009
-@Youngblood+Metlen+etal-2006
-@Zald+Gray+etal-2008
-@Zhang+Ritchie+etal-2008
-...
-
 abstract: "We conducted a meta-analysis to determine the effects of fire and fire-surrogates on understory vegetation in dry forests in North America. Means and standard errors were extracted from papers containing data on the response of understory functional groups to thinning and burning treatments to calculate effect sizes. For each response variable, we compared three treatment pairs: burn versus control, thin vs control and thin vs burn. We calculated standardized mean differences (Hedges’ d) for each pair and tested if this differed from zero using a random effects model fit with restricted maximum likelihood [@Hedges+Olkin-1985]. Exotic species richness was higher in thin treatments than in control treatments and shrub cover was lower in burn treatments than in control treatments. When accounting for differences between eastern and western forests, we found that burning treatments increased total species richness relative to controls and that thinning treatments decreased cover relative to controls."
 bibliography: understory-ma.bib
 note: <!-- \bibliography{understory-ma} So that RefTeX knows about the bibliography -->
@@ -166,7 +127,7 @@ Acknowledgments
 
 We thank the Joint Fire Science Program for funding. We thank John Cissel, Colette Coiner, Tim Swedberg, Kim Mckague and Becky Jenison for administrative support. We would like to thank a number of people who participated in the development of the original review document from which this document is derived. They were: Jim Gallagher, Robert Means, Kenneth Outcalt, Dana Perkins, Roger Rosentreter, and Steve Sutherland. John Bailey, Carl Fiedler, Joe Fontaine, David Hibbs and Dana Perkins reviewed the original review document. This is contribution number XX of the National Fire and Fire Surrogate Project (FFS), funded by the U.S. Joint Fire Science Program.
 
-
+nocite: @Collins+Moghaddas+etal-2007, @Dodson+Metlen+etal-2007, @Dodson-2004, @Fornwalt+Kaufmann+etal-2010, @Fule+Laughlin+etal-2005, @Huffman+Stoddard+etal-2013, @Kane+Morgan+etal-2010, @Kerns+Thies+etal-2006, @Knapp+Schwilk+etal-2006, @Laughlin+Bakker+etal-2008, @Mason+Baker+etal-2009, @Metlen+Fiedler-2006, @Nelson+Halpern+etal-2008, @OConnor+Miller+etal-2013, @Phillips+Hutchinson-2007, @Phillips+Waldrop-2008, @Provencher+Thompson-2014, @Scudieri+Sieg+etal-2010, @Waldrop+Phillips+etal-2010, @Waldrop+Yaussy+etal-2008, @Weekley+Menges+etal-2013, @Wienk+Sieg+etal-2004, @Wolk+Rocca-2009, @Youngblood+Metlen+etal-2006, @Zald+Gray+etal-2008, @Zhang+Ritchie+etal-2008
 
 References
 ==========
