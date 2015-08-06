@@ -20,6 +20,44 @@ affiliations:
   address: Playa Lakes Joint Venture, Lafayette, CO 80026
 - id: 3
   address: Eastern Oregon Agriculture & Natural Resource Program and Dept. of Fisheries and Wildlife, Oregon State University
+nocite: |
+@Collins+Moghaddas+etal-2007
+@Dodson+Metlen+etal-2007
+@Dodson-2004
+@Fornwalt+Kaufmann+etal-2010-Riparian-Low
+@Fornwalt+Kaufmann+etal-2010-Upland-High
+@Fornwalt+Kaufmann+etal-2010-Upland-Low
+@Fornwalt+Kaufmann+etal-2010-Upland-Medium
+@Fornwalt+Kaufmann+etal-2014-Riparian-Low
+@Fornwalt+Kaufmann+etal-2014-Upland
+@Fule+Laughlin+etal-2005
+@Huffman+Stoddard+etal-2013
+@Kane+Morgan+etal-2010
+@Kerns+Thies+etal-2006
+@Knapp+Schwilk+etal-2006
+@Laughlin+Bakker+etal-2008
+@Mason+Baker+etal-2009-Bailey
+@Mason+Baker+etal-2009-Cox
+@Mason+Baker+etal-2009-Sleepy
+@Metlen+Fiedler-2006
+@Nelson+Halpern+etal-2008
+@O'Connor+Miller+etal-2013
+@Phillips+Hutchinson-2007-OhioHills
+@Phillips+Hutchinson-2007-SouthernAppalachian
+@Phillips+Waldrop-2008
+@Provencher+Thompson-2014
+@Scudieri+Sieg+etal-2010-Chimney
+@Scudieri+Sieg+etal-2010-Limestone
+@Waldrop+Phillips+etal-2010
+@Waldrop+Yaussy+etal-2008-GreenRiver
+@Waldrop+Yaussy+etal-2008-OhioHills
+@Weekley+Menges+etal-2013
+@Wienk+Sieg+etal-2004
+@Wolk+Rocca-2009
+@Youngblood+Metlen+etal-2006
+@Zald+Gray+etal-2008
+@Zhang+Ritchie+etal-2008
+...
 
 abstract: "We conducted a meta-analysis to determine the effects of fire and fire-surrogates on understory vegetation in dry forests in North America. Means and standard errors were extracted from papers containing data on the response of understory functional groups to thinning and burning treatments to calculate effect sizes. For each response variable, we compared three treatment pairs: burn versus control, thin vs control and thin vs burn. We calculated standardized mean differences (Hedges’ d) for each pair and tested if this differed from zero using a random effects model fit with restricted maximum likelihood [@Hedges+Olkin-1985]. Exotic species richness was higher in thin treatments than in control treatments and shrub cover was lower in burn treatments than in control treatments. When accounting for differences between eastern and western forests, we found that burning treatments increased total species richness relative to controls and that thinning treatments decreased cover relative to controls."
 bibliography: understory-ma.bib
@@ -81,7 +119,7 @@ For each selected article, we extracted means and either standard deviations or 
 
 where $X^E$ is the mean value of the response variable in the "experimental treatment" (Burn or Thin depending on contrast), $X^C$ is the mean value of the response variables in the "experimental control" (Control or Burn depending on the contrast), $S^{EC}$ is the pooled standard deviation of both groups, and $J$ is a term that corrects for bias due to small sample size [@Gurevitch+Hedges-2001]. The effect size, d, can be interpreted as the difference between the cover or species richness of plants in treatments relative to controls, measured in units of standard deviations.
 
-We conducted all analyses in R [@R_Development_Core_Team-2013] using the metafor package [@Viechtbauer-2010]. We assumed effect sizes varied randomly among comparisons and therefore  we used random-effects models [@Gurevitch+Hedges-2001]. We fit models using restricted maximum-likelihood. To test whether mean effect sizes for a comparison differed significantly from zero, we assumed a normal distribution of effect sizes and their confidence intervals [@Viechtbauer-2010]. All hypotheses were a priori and we therefore accepted as significant adjust p-values up to 0.1. We utilized one-tailed comparisons. We utilized a Holm p value adjustment (sequential Bonferroni correction) to control for familywise error rate. For each article, we extracted treatment mean values, standard errors or standard deviations, and sample sizes from the results text, tables or figures as required. A handful of compromises and assumptions were necessary to reconcile each reference into a single, comparable format. When papers reported mean species richness or percent cover values and standard errors for multiple years per treatment, the mean of these means and standard errors was taken to generate a single representative value. This methodology was used when extracting data from @Metlen+Fiedler-2006, @Phillips+Waldrop-2008, @Laughlin+Fule-2008, @Mason+Baker+etal-2009, and @Waldrop+Yaussy+etal-2008. All other sources reported data for a single year. [JOW My methods on a few of these changed--I need to double check which ones really used means vs specific years] Because native species represented over 99% of species richness and percent cover for papers in which both parameters were reported, 'native' was substituted for 'total' species in cases where only 'native' was reported [@Dodson+Metlen+etal-2007; @Collins+Moghaddas+etal-2007; and @Huffman+Stoddard-2013].
+We conducted all analyses in R [@R_Development_Core_Team-2013] using the metafor package [@Viechtbauer-2010]. We assumed effect sizes varied randomly among comparisons and therefore  we used random-effects models [@Gurevitch+Hedges-2001]. We fit models using restricted maximum-likelihood. To test whether mean effect sizes for a comparison differed significantly from zero, we assumed a normal distribution of effect sizes and their confidence intervals [@Viechtbauer-2010]. All hypotheses were a priori and we therefore accepted as significant adjust p-values up to 0.1. We utilized one-tailed comparisons. We utilized a Holm p value adjustment (sequential Bonferroni correction) to control for familywise error rate. For each article, we extracted treatment mean values, standard errors or standard deviations, and sample sizes from the results text, tables or figures as required. A handful of compromises and assumptions were necessary to reconcile each reference into a single, comparable format. When papers reported mean species richness or percent cover values and standard errors for multiple years per treatment, we selected the data closest to the average years since treatment for the overall data set (3 years). Because native species represented over 99% of species richness and percent cover for papers in which both parameters were reported, 'native' was substituted for 'total' species in cases where only 'native' was reported [@Dodson+Metlen+etal-2007; @Collins+Moghaddas+etal-2007; and @Huffman+Stoddard-2013].
 
 The final data used to conduct this analysis was reported from a wide array of locations, forest types, and ecological management histories (Table 1, Fig. 1). Papers with a wide variation of sampling methodologies and time-lines were included. To account for these differences, the following covariates were recorded: fire intensity, forest type, fuel type, years since treatment, latitude, and longitude. We graphically explored the potential effects of these  to detect potential interactions between these variables and our results. The only covariate with explanatory power was longitude discretized as eastern vs western forests (east or west of Longitude 100 West). Twenty-eight papers reported data from study sites in the western United States and seven papers reported data from the eastern United States. We then ran all models using this discrete factor, east vs west as a moderator variable and dropped it from  the model when it was not significant.
 
@@ -122,7 +160,6 @@ While it may take many years for the effects of restoration treatments to become
 Finally human socio-economic factors are often considered when determining application of treatments. Exotic plants are also associated with the wildland urban interface (WUI) because many exotics are used in landscape and horticultural plantings. Although the Healthy Forest Restoration Act (2003) mandates that most of the forest restoration occurs at the WUI, it is important to recognize that these areas serve as foci for exotic spread into the forest matrix [@Bartuszevige+Gorchov+etal-2006]. Invasion of the forest by exotic plants works against the prescribed goals of forest management to reduce wildfire risk and increase native biodiversity. Some exotic plants can change the fire interval or intensity through a variety of mechanisms such as increasing fuel loads or moisture content of the fuel [@Brooks+DAntonio+etal-2004]. In addition, exotic plants can reduce biodiversity by becoming the dominant species in the forest understory.
 
 In conclusion, burning and thinning effects on understory plan communities were either minor or highly variable. Disturbance increases understory richness, especially that of exotic species. It is important to understand the potential threat of these species to native understory species in forested landscapes. In general, prescribed fire and thinning treatments can be used successfully to restore understory community composition, but managers would be wise to take into consideration the presence and potential impacts of exotic plants.
-
 
 Acknowledgments
 ===============
