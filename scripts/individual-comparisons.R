@@ -34,8 +34,8 @@ forest(runComparison(t.richness, "burn", "thin",  mods = ~ YearsSinceTreatment))
 # no treatment effect total richness
 
 t.cover <- get_var("total-cover")
-runComparison(t.cover, "burn", "control") 
-runComparison(t.cover, "thin", "control")
+runComparison(t.cover, "burn", "control", mods=NULL) 
+runComparison(t.cover, "thin", "control", mods=NULL)
 runComparison(t.cover, "burn", "thin", mods=NULL)
 forest(runComparison(t.cover, "burn", "control",  mods = ~ YearsSinceTreatment))
 # no treatment effect on total cover
