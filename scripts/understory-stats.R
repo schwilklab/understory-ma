@@ -73,6 +73,10 @@ makePlotsGetZs <- function(data, resp.var, t1, t2) {
     forest(r, slab=data$FormattedName)
     dev.off()
 
+    pdf(file.path(RESULTS_DIR, paste(resp.var, "-", t1, "-vs-", t2, "-funnel.pdf", sep="")))
+    funnel(r)
+    dev.off()
+
     print(r)
     z <- getZVals(r, t1, t2)
     return(z)
