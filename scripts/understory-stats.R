@@ -15,9 +15,8 @@ EXCLUDES = c("g-richness.csv", "g-cover.csv", "f-richness.csv", "f-cover.csv" ,
              )
 
 
-## Global varibale for default modifers:
-MODS = ~ EastWest
-
+## Global variable for default modifers:
+MODS = ~ EastWest  # this is only modifier that ends up significant
 
 # read in table of papers
 papers <- read.csv("../data/papers.csv", stringsAsFactors=FALSE)
@@ -64,7 +63,7 @@ getZVals <- function(rma.res, t1, t2) {
 
 
 makePlotsGetZs <- function(data, resp.var, t1, t2) {
-    r <- runComparison(data, t1, t2)
+    r <- runComparison(data, t1, t2, mods=MODS)
     if(is.null(r)) {
         return(NULL)
     }
@@ -73,7 +72,7 @@ makePlotsGetZs <- function(data, resp.var, t1, t2) {
     forest(r, slab=data$FormattedName)
     dev.off()
 
-    pdf(file.path(RESULTS_DIR, paste(resp.var, "-", t1, "-vs-", t2, "-funnel.pdf", sep="")))
+    png(file.path(RESULTS_DIR, paste(resp.var, "-", t1, "-vs-", t2, "-funnel.png", sep="")))
     funnel(r)
     dev.off()
 
