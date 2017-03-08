@@ -1,7 +1,7 @@
 Paper,control.mean,control.s,control.n,thin.mean,thin.s,thin.n,burn.mean,burn.s,burn.n
 Collins+Moghaddas+etal-2007,6.3,1.029563014,3,10.5,2.701851217,3,6,1.006876358,3
-Fornwalt+Kaufmann+etal-2014-Riparian,1.5,1.732050808,4,,,,5.5,5.196152423,4
-Fornwalt+Kaufmann+etal-2014-Upland,0.5,1.118033989,6,,,,8.5,17.88854382,6
+Fornwalt+Kaufmann+etal-Riparian,1.5,1.732050808,4,,,,5.5,5.196152423,4
+Fornwalt+Kaufmann+etal-Upland,0.5,1.118033989,6,,,,8.5,17.88854382,6
 Huffman+Stoddard+etal-2013,0.6,0.331662479,12,0.4,0.331662479,12,0.4,0.331662479,12
 Kerns+Thies+etal-2006,2.694560669,2.488678167,6,,,,2.753138075,3.012610414,6
 Knapp+Schwilk+etal-2006,0,0,3,,,,4.05,2.496157046,3
