@@ -1,6 +1,6 @@
 library(ggplot2)
 library(metafor)
-library(plyr)
+library(dplyr)
 options(na.action = "na.omit")
 
 RESULTS_DIR = "../results/plots/"
@@ -17,9 +17,11 @@ EXCLUDES = c("g-richness.csv", "g-cover.csv", "f-richness.csv", "f-cover.csv" ,
 
 ## Global variable for default modifers:
 MODS = ~ EastWest  # this is only modifier that ends up significant
+#MODS=NULL
 
 # read in table of papers
 papers <- read.csv("../data/papers.csv", stringsAsFactors=FALSE)
+papers <- filter(papers, UsedOrNot=="Yes")
 papers$FireIntensity <- factor(papers$FireIntensity)
 papers$FuelType <- factor(papers$FuelType)
 papers$EastWest <- ifelse(papers$Long < -100, "West", "East")
@@ -112,15 +114,16 @@ varfiles <- varfiles[! basename(varfiles) %in% EXCLUDES]
 r.list <-  lapply(varfiles,FUN=plotsAndConfint)
 
 # make big data frame of all confint results
-conf.int.df <- plyr::rbind.fill(r.list)
-conf.int.df <- plyr::mutate(conf.int.df, sig=(ci.lb>0 & ci.ub>0) |  (ci.lb<0 & ci.ub<0))
+conf.int.df <- bind_rows(r.list)
+conf.int.df <- mutate(conf.int.df, sig=(ci.lb>0 & ci.ub>0) |  (ci.lb<0 & ci.ub<0))
 conf.int.df <- conf.int.df[with(conf.int.df, order(param, pval)), ]
 
 # P value adjustment "holm" is most conservative (= sequential Bonferroni), but
 # "hommel" or "hochberg" are almost appropriate these data. Here we are really
 # only interested in the intercept pvalue for adjustment, but I run on both
 # params using ddply:
-conf.int.df <- ddply(conf.int.df, .(param), mutate, adj.pval = p.adjust(pval, "holm"))
+conf.int.df <- conf.int.df %>% group_by(param) %>%
+  mutate(adj.pval = p.adjust(pval, "holm"))
 
 write.csv(conf.int.df, "../results/confidence-intervals.csv", row.names=FALSE)
 
