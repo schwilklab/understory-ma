@@ -40,7 +40,7 @@ runComparison <- function(data, t1, t2, mods = MODS) {
                           n2i=eval(parse(text=paste(t2, ".n", sep=""))),
                   data=data)
 
-    returnNull <- function(err) NULL # we just need to skip any errors
+    #returnNull <- function(err) NULL # we just need to skip any errors
 
     # "level" below indicates sig level. We use 90, for one-tailed test. This
     # effects confidence intervals, no p values, so we can still adjust those
@@ -89,7 +89,7 @@ makePlotsGetZs <- function(data, resp.var, t1, t2) {
 plotsAndConfint <- function(x) {
     df <- read.csv(x, header = TRUE)
     df <- merge(df, papers, all.x=TRUE)
-    df <- subset(df, Paper != "Nelson+Halpern+etal-2008")
+    #df <- subset(df, Paper != "Nelson+Halpern+etal-2008")
     bname <- strsplit(basename(x),".", fixed=TRUE)[[1]][1]    
     print(paste("Running tests on", bname))
     
